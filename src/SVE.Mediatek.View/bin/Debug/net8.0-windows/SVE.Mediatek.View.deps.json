@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v8.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v8.0": {
+      "SVE.Mediatek.View/1.0.0": {
+        "runtime": {
+          "SVE.Mediatek.View.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "SVE.Mediatek.View/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

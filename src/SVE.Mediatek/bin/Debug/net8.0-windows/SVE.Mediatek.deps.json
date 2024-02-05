@@ -1,0 +1,47 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v8.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v8.0": {
+      "SVE.Mediatek/1.0.0": {
+        "dependencies": {
+          "SVE.Mediatek.View": "1.0.0",
+          "SVE.Mediatek.ViewModel": "1.0.0"
+        },
+        "runtime": {
+          "SVE.Mediatek.dll": {}
+        }
+      },
+      "SVE.Mediatek.View/1.0.0": {
+        "runtime": {
+          "SVE.Mediatek.View.dll": {}
+        }
+      },
+      "SVE.Mediatek.ViewModel/1.0.0": {
+        "runtime": {
+          "SVE.Mediatek.ViewModel.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "SVE.Mediatek/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "SVE.Mediatek.View/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "SVE.Mediatek.ViewModel/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

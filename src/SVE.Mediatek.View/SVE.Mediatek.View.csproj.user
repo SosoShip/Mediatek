@@ -1,0 +1,74 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup />
+  <ItemGroup>
+    <Compile Update="AbscenceAdd.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="AbsenceChange.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="AbsenceHandler.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Connection.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="DelConfirmation.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="ErrorConnection.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="ErrorDateAbsenceAdd.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="ErrorFieldAbsenceAdd.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="StaffAdd.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="StaffChange.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="StaffHandler.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Update="AbscenceAdd.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="AbsenceChange.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="AbsenceHandler.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Connection.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="DelConfirmation.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="ErrorConnection.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="ErrorDateAbsenceAdd.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="ErrorFieldAbsenceAdd.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="StaffAdd.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="StaffChange.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="StaffHandler.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+</Project>

@@ -1,0 +1,11 @@
+C:\Users\LENOVO\source\repos\SVE.Mediatek\SVE.Mediatek.ViewModel\bin\Debug\net8.0-windows\SVE.Mediatek.ViewModel.deps.json
+C:\Users\LENOVO\source\repos\SVE.Mediatek\SVE.Mediatek.ViewModel\bin\Debug\net8.0-windows\SVE.Mediatek.ViewModel.dll
+C:\Users\LENOVO\source\repos\SVE.Mediatek\SVE.Mediatek.ViewModel\bin\Debug\net8.0-windows\SVE.Mediatek.ViewModel.pdb
+C:\Users\LENOVO\source\repos\SVE.Mediatek\SVE.Mediatek.ViewModel\obj\Debug\net8.0-windows\SVE.Mediatek.ViewModel.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\LENOVO\source\repos\SVE.Mediatek\SVE.Mediatek.ViewModel\obj\Debug\net8.0-windows\SVE.Mediatek.ViewModel.AssemblyInfoInputs.cache
+C:\Users\LENOVO\source\repos\SVE.Mediatek\SVE.Mediatek.ViewModel\obj\Debug\net8.0-windows\SVE.Mediatek.ViewModel.AssemblyInfo.cs
+C:\Users\LENOVO\source\repos\SVE.Mediatek\SVE.Mediatek.ViewModel\obj\Debug\net8.0-windows\SVE.Mediatek.ViewModel.csproj.CoreCompileInputs.cache
+C:\Users\LENOVO\source\repos\SVE.Mediatek\SVE.Mediatek.ViewModel\obj\Debug\net8.0-windows\SVE.Mediatek.ViewModel.dll
+C:\Users\LENOVO\source\repos\SVE.Mediatek\SVE.Mediatek.ViewModel\obj\Debug\net8.0-windows\refint\SVE.Mediatek.ViewModel.dll
+C:\Users\LENOVO\source\repos\SVE.Mediatek\SVE.Mediatek.ViewModel\obj\Debug\net8.0-windows\SVE.Mediatek.ViewModel.pdb
+C:\Users\LENOVO\source\repos\SVE.Mediatek\SVE.Mediatek.ViewModel\obj\Debug\net8.0-windows\ref\SVE.Mediatek.ViewModel.dll
