@@ -53,7 +53,7 @@ namespace SVE.Mediatek.View {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/SVE.Mediatek.View;component/errorconnection.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/SVE.Mediatek.View;V1.0.0.0;component/errorconnection.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\ErrorConnection.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

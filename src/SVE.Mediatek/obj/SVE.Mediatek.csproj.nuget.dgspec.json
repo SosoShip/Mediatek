@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\LENOVO\\source\\repos\\SVE.Mediatek\\SVE.Mediatek\\SVE.Mediatek.csproj": {}
+    "C:\\Users\\LENOVO\\OneDrive\\Bureau\\SoSoCned\\E4_Ateliers de professionnalisation\\Atelier 2\\Mediatek\\src\\SVE.Mediatek\\SVE.Mediatek.csproj": {}
   },
   "projects": {
-    "C:\\Users\\LENOVO\\source\\repos\\SVE.Mediatek\\SVE.Mediatek.ViewModel\\SVE.Mediatek.ViewModel.csproj": {
+    "C:\\Users\\LENOVO\\OneDrive\\Bureau\\SoSoCned\\E4_Ateliers de professionnalisation\\Atelier 2\\Mediatek\\src\\SVE.Mediatek.ViewModel\\SVE.Mediatek.ViewModel.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\LENOVO\\source\\repos\\SVE.Mediatek\\SVE.Mediatek.ViewModel\\SVE.Mediatek.ViewModel.csproj",
+        "projectUniqueName": "C:\\Users\\LENOVO\\OneDrive\\Bureau\\SoSoCned\\E4_Ateliers de professionnalisation\\Atelier 2\\Mediatek\\src\\SVE.Mediatek.ViewModel\\SVE.Mediatek.ViewModel.csproj",
         "projectName": "SVE.Mediatek.ViewModel",
-        "projectPath": "C:\\Users\\LENOVO\\source\\repos\\SVE.Mediatek\\SVE.Mediatek.ViewModel\\SVE.Mediatek.ViewModel.csproj",
+        "projectPath": "C:\\Users\\LENOVO\\OneDrive\\Bureau\\SoSoCned\\E4_Ateliers de professionnalisation\\Atelier 2\\Mediatek\\src\\SVE.Mediatek.ViewModel\\SVE.Mediatek.ViewModel.csproj",
         "packagesPath": "C:\\Users\\LENOVO\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\LENOVO\\source\\repos\\SVE.Mediatek\\SVE.Mediatek.ViewModel\\obj\\",
+        "outputPath": "C:\\Users\\LENOVO\\OneDrive\\Bureau\\SoSoCned\\E4_Ateliers de professionnalisation\\Atelier 2\\Mediatek\\src\\SVE.Mediatek.ViewModel\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
@@ -68,14 +68,14 @@
         }
       }
     },
-    "C:\\Users\\LENOVO\\source\\repos\\SVE.Mediatek\\SVE.Mediatek.View\\SVE.Mediatek.View.csproj": {
+    "C:\\Users\\LENOVO\\OneDrive\\Bureau\\SoSoCned\\E4_Ateliers de professionnalisation\\Atelier 2\\Mediatek\\src\\SVE.Mediatek.View\\SVE.Mediatek.View.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\LENOVO\\source\\repos\\SVE.Mediatek\\SVE.Mediatek.View\\SVE.Mediatek.View.csproj",
+        "projectUniqueName": "C:\\Users\\LENOVO\\OneDrive\\Bureau\\SoSoCned\\E4_Ateliers de professionnalisation\\Atelier 2\\Mediatek\\src\\SVE.Mediatek.View\\SVE.Mediatek.View.csproj",
         "projectName": "SVE.Mediatek.View",
-        "projectPath": "C:\\Users\\LENOVO\\source\\repos\\SVE.Mediatek\\SVE.Mediatek.View\\SVE.Mediatek.View.csproj",
+        "projectPath": "C:\\Users\\LENOVO\\OneDrive\\Bureau\\SoSoCned\\E4_Ateliers de professionnalisation\\Atelier 2\\Mediatek\\src\\SVE.Mediatek.View\\SVE.Mediatek.View.csproj",
         "packagesPath": "C:\\Users\\LENOVO\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\LENOVO\\source\\repos\\SVE.Mediatek\\SVE.Mediatek.View\\obj\\",
+        "outputPath": "C:\\Users\\LENOVO\\OneDrive\\Bureau\\SoSoCned\\E4_Ateliers de professionnalisation\\Atelier 2\\Mediatek\\src\\SVE.Mediatek.View\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
@@ -132,14 +132,14 @@
         }
       }
     },
-    "C:\\Users\\LENOVO\\source\\repos\\SVE.Mediatek\\SVE.Mediatek\\SVE.Mediatek.csproj": {
+    "C:\\Users\\LENOVO\\OneDrive\\Bureau\\SoSoCned\\E4_Ateliers de professionnalisation\\Atelier 2\\Mediatek\\src\\SVE.Mediatek\\SVE.Mediatek.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\LENOVO\\source\\repos\\SVE.Mediatek\\SVE.Mediatek\\SVE.Mediatek.csproj",
+        "projectUniqueName": "C:\\Users\\LENOVO\\OneDrive\\Bureau\\SoSoCned\\E4_Ateliers de professionnalisation\\Atelier 2\\Mediatek\\src\\SVE.Mediatek\\SVE.Mediatek.csproj",
         "projectName": "SVE.Mediatek",
-        "projectPath": "C:\\Users\\LENOVO\\source\\repos\\SVE.Mediatek\\SVE.Mediatek\\SVE.Mediatek.csproj",
+        "projectPath": "C:\\Users\\LENOVO\\OneDrive\\Bureau\\SoSoCned\\E4_Ateliers de professionnalisation\\Atelier 2\\Mediatek\\src\\SVE.Mediatek\\SVE.Mediatek.csproj",
         "packagesPath": "C:\\Users\\LENOVO\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\LENOVO\\source\\repos\\SVE.Mediatek\\SVE.Mediatek\\obj\\",
+        "outputPath": "C:\\Users\\LENOVO\\OneDrive\\Bureau\\SoSoCned\\E4_Ateliers de professionnalisation\\Atelier 2\\Mediatek\\src\\SVE.Mediatek\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
@@ -162,11 +162,11 @@
           "net8.0-windows7.0": {
             "targetAlias": "net8.0-windows",
             "projectReferences": {
-              "C:\\Users\\LENOVO\\source\\repos\\SVE.Mediatek\\SVE.Mediatek.ViewModel\\SVE.Mediatek.ViewModel.csproj": {
-                "projectPath": "C:\\Users\\LENOVO\\source\\repos\\SVE.Mediatek\\SVE.Mediatek.ViewModel\\SVE.Mediatek.ViewModel.csproj"
+              "C:\\Users\\LENOVO\\OneDrive\\Bureau\\SoSoCned\\E4_Ateliers de professionnalisation\\Atelier 2\\Mediatek\\src\\SVE.Mediatek.ViewModel\\SVE.Mediatek.ViewModel.csproj": {
+                "projectPath": "C:\\Users\\LENOVO\\OneDrive\\Bureau\\SoSoCned\\E4_Ateliers de professionnalisation\\Atelier 2\\Mediatek\\src\\SVE.Mediatek.ViewModel\\SVE.Mediatek.ViewModel.csproj"
               },
-              "C:\\Users\\LENOVO\\source\\repos\\SVE.Mediatek\\SVE.Mediatek.View\\SVE.Mediatek.View.csproj": {
-                "projectPath": "C:\\Users\\LENOVO\\source\\repos\\SVE.Mediatek\\SVE.Mediatek.View\\SVE.Mediatek.View.csproj"
+              "C:\\Users\\LENOVO\\OneDrive\\Bureau\\SoSoCned\\E4_Ateliers de professionnalisation\\Atelier 2\\Mediatek\\src\\SVE.Mediatek.View\\SVE.Mediatek.View.csproj": {
+                "projectPath": "C:\\Users\\LENOVO\\OneDrive\\Bureau\\SoSoCned\\E4_Ateliers de professionnalisation\\Atelier 2\\Mediatek\\src\\SVE.Mediatek.View\\SVE.Mediatek.View.csproj"
               }
             }
           }

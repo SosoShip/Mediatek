@@ -53,7 +53,7 @@ namespace SVE.Mediatek.View {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/SVE.Mediatek.View;component/errordateabsenceadd.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/SVE.Mediatek.View;V1.0.0.0;component/errordateabsenceadd.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\ErrorDateAbsenceAdd.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);
