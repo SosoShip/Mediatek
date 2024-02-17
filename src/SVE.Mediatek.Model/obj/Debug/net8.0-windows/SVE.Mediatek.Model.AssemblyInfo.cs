@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("SVE.Mediatek.Model")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ef55d49b29583b9dd82b5b416d64de5f834db547")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+0472d67e4f786ea4449424b9ae509adb4b76d1ed")]
 [assembly: System.Reflection.AssemblyProductAttribute("SVE.Mediatek.Model")]
 [assembly: System.Reflection.AssemblyTitleAttribute("SVE.Mediatek.Model")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

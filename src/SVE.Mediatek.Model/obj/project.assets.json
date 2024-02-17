@@ -15,11 +15,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\LENOVO\\OneDrive\\Bureau\\SoSoCned\\E4_Ateliers de professionnalisation\\Atelier 2\\Mediatek\\src\\SVE.Mediatek.Model\\SVE.Mediatek.Model.csproj",
+      "projectUniqueName": "C:\\Digital\\projets\\Mediatek\\src\\SVE.Mediatek.Model\\SVE.Mediatek.Model.csproj",
       "projectName": "SVE.Mediatek.Model",
-      "projectPath": "C:\\Users\\LENOVO\\OneDrive\\Bureau\\SoSoCned\\E4_Ateliers de professionnalisation\\Atelier 2\\Mediatek\\src\\SVE.Mediatek.Model\\SVE.Mediatek.Model.csproj",
+      "projectPath": "C:\\Digital\\projets\\Mediatek\\src\\SVE.Mediatek.Model\\SVE.Mediatek.Model.csproj",
       "packagesPath": "C:\\Users\\LENOVO\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\LENOVO\\OneDrive\\Bureau\\SoSoCned\\E4_Ateliers de professionnalisation\\Atelier 2\\Mediatek\\src\\SVE.Mediatek.Model\\obj\\",
+      "outputPath": "C:\\Digital\\projets\\Mediatek\\src\\SVE.Mediatek.Model\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
@@ -72,7 +72,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files (x86)\\dotnet\\sdk\\8.0.101/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files (x86)\\dotnet\\sdk\\8.0.102/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

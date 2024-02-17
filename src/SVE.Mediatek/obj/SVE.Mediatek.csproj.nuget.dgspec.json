@@ -1,145 +1,81 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\LENOVO\\OneDrive\\Bureau\\SoSoCned\\E4_Ateliers de professionnalisation\\Atelier 2\\Mediatek\\src\\SVE.Mediatek\\SVE.Mediatek.csproj": {}
+    "C:\\Digital\\projets\\Mediatek\\src\\SVE.Mediatek\\SVE.Mediatek.csproj": {}
   },
   "projects": {
-    "C:\\Users\\LENOVO\\OneDrive\\Bureau\\SoSoCned\\E4_Ateliers de professionnalisation\\Atelier 2\\Mediatek\\src\\SVE.Mediatek.ViewModel\\SVE.Mediatek.ViewModel.csproj": {
+    "C:\\Digital\\projets\\Mediatek\\src\\SVE.Mediatek.Model\\SVE.Mediatek.Model.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\LENOVO\\OneDrive\\Bureau\\SoSoCned\\E4_Ateliers de professionnalisation\\Atelier 2\\Mediatek\\src\\SVE.Mediatek.ViewModel\\SVE.Mediatek.ViewModel.csproj",
+        "projectUniqueName": "C:\\Digital\\projets\\Mediatek\\src\\SVE.Mediatek.Model\\SVE.Mediatek.Model.csproj",
+        "projectName": "SVE.Mediatek.Model",
+        "projectPath": "C:\\Digital\\projets\\Mediatek\\src\\SVE.Mediatek.Model\\SVE.Mediatek.Model.csproj",
+        "packagesPath": "C:\\Users\\LENOVO\\.nuget\\packages\\",
+        "outputPath": "C:\\Digital\\projets\\Mediatek\\src\\SVE.Mediatek.Model\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\LENOVO\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0-windows"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0-windows7.0": {
+            "targetAlias": "net8.0-windows",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net8.0-windows7.0": {
+          "targetAlias": "net8.0-windows",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            },
+            "Microsoft.WindowsDesktop.App.WPF": {
+              "privateAssets": "none"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files (x86)\\dotnet\\sdk\\8.0.102/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Digital\\projets\\Mediatek\\src\\SVE.Mediatek.ViewModel\\SVE.Mediatek.ViewModel.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Digital\\projets\\Mediatek\\src\\SVE.Mediatek.ViewModel\\SVE.Mediatek.ViewModel.csproj",
         "projectName": "SVE.Mediatek.ViewModel",
-        "projectPath": "C:\\Users\\LENOVO\\OneDrive\\Bureau\\SoSoCned\\E4_Ateliers de professionnalisation\\Atelier 2\\Mediatek\\src\\SVE.Mediatek.ViewModel\\SVE.Mediatek.ViewModel.csproj",
+        "projectPath": "C:\\Digital\\projets\\Mediatek\\src\\SVE.Mediatek.ViewModel\\SVE.Mediatek.ViewModel.csproj",
         "packagesPath": "C:\\Users\\LENOVO\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\LENOVO\\OneDrive\\Bureau\\SoSoCned\\E4_Ateliers de professionnalisation\\Atelier 2\\Mediatek\\src\\SVE.Mediatek.ViewModel\\obj\\",
-        "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
-          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
-        ],
-        "configFilePaths": [
-          "C:\\Users\\LENOVO\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
-        ],
-        "originalTargetFrameworks": [
-          "net8.0-windows"
-        ],
-        "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "https://api.nuget.org/v3/index.json": {}
-        },
-        "frameworks": {
-          "net8.0-windows7.0": {
-            "targetAlias": "net8.0-windows",
-            "projectReferences": {}
-          }
-        },
-        "warningProperties": {
-          "warnAsError": [
-            "NU1605"
-          ]
-        }
-      },
-      "frameworks": {
-        "net8.0-windows7.0": {
-          "targetAlias": "net8.0-windows",
-          "imports": [
-            "net461",
-            "net462",
-            "net47",
-            "net471",
-            "net472",
-            "net48",
-            "net481"
-          ],
-          "assetTargetFallback": true,
-          "warn": true,
-          "frameworkReferences": {
-            "Microsoft.NETCore.App": {
-              "privateAssets": "all"
-            },
-            "Microsoft.WindowsDesktop.App.WPF": {
-              "privateAssets": "none"
-            }
-          },
-          "runtimeIdentifierGraphPath": "C:\\Program Files (x86)\\dotnet\\sdk\\8.0.101/PortableRuntimeIdentifierGraph.json"
-        }
-      }
-    },
-    "C:\\Users\\LENOVO\\OneDrive\\Bureau\\SoSoCned\\E4_Ateliers de professionnalisation\\Atelier 2\\Mediatek\\src\\SVE.Mediatek.View\\SVE.Mediatek.View.csproj": {
-      "version": "1.0.0",
-      "restore": {
-        "projectUniqueName": "C:\\Users\\LENOVO\\OneDrive\\Bureau\\SoSoCned\\E4_Ateliers de professionnalisation\\Atelier 2\\Mediatek\\src\\SVE.Mediatek.View\\SVE.Mediatek.View.csproj",
-        "projectName": "SVE.Mediatek.View",
-        "projectPath": "C:\\Users\\LENOVO\\OneDrive\\Bureau\\SoSoCned\\E4_Ateliers de professionnalisation\\Atelier 2\\Mediatek\\src\\SVE.Mediatek.View\\SVE.Mediatek.View.csproj",
-        "packagesPath": "C:\\Users\\LENOVO\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\LENOVO\\OneDrive\\Bureau\\SoSoCned\\E4_Ateliers de professionnalisation\\Atelier 2\\Mediatek\\src\\SVE.Mediatek.View\\obj\\",
-        "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
-          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
-        ],
-        "configFilePaths": [
-          "C:\\Users\\LENOVO\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
-        ],
-        "originalTargetFrameworks": [
-          "net8.0-windows"
-        ],
-        "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "https://api.nuget.org/v3/index.json": {}
-        },
-        "frameworks": {
-          "net8.0-windows7.0": {
-            "targetAlias": "net8.0-windows",
-            "projectReferences": {}
-          }
-        },
-        "warningProperties": {
-          "warnAsError": [
-            "NU1605"
-          ]
-        }
-      },
-      "frameworks": {
-        "net8.0-windows7.0": {
-          "targetAlias": "net8.0-windows",
-          "imports": [
-            "net461",
-            "net462",
-            "net47",
-            "net471",
-            "net472",
-            "net48",
-            "net481"
-          ],
-          "assetTargetFallback": true,
-          "warn": true,
-          "frameworkReferences": {
-            "Microsoft.NETCore.App": {
-              "privateAssets": "all"
-            },
-            "Microsoft.WindowsDesktop.App.WPF": {
-              "privateAssets": "none"
-            }
-          },
-          "runtimeIdentifierGraphPath": "C:\\Program Files (x86)\\dotnet\\sdk\\8.0.101/PortableRuntimeIdentifierGraph.json"
-        }
-      }
-    },
-    "C:\\Users\\LENOVO\\OneDrive\\Bureau\\SoSoCned\\E4_Ateliers de professionnalisation\\Atelier 2\\Mediatek\\src\\SVE.Mediatek\\SVE.Mediatek.csproj": {
-      "version": "1.0.0",
-      "restore": {
-        "projectUniqueName": "C:\\Users\\LENOVO\\OneDrive\\Bureau\\SoSoCned\\E4_Ateliers de professionnalisation\\Atelier 2\\Mediatek\\src\\SVE.Mediatek\\SVE.Mediatek.csproj",
-        "projectName": "SVE.Mediatek",
-        "projectPath": "C:\\Users\\LENOVO\\OneDrive\\Bureau\\SoSoCned\\E4_Ateliers de professionnalisation\\Atelier 2\\Mediatek\\src\\SVE.Mediatek\\SVE.Mediatek.csproj",
-        "packagesPath": "C:\\Users\\LENOVO\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\LENOVO\\OneDrive\\Bureau\\SoSoCned\\E4_Ateliers de professionnalisation\\Atelier 2\\Mediatek\\src\\SVE.Mediatek\\obj\\",
+        "outputPath": "C:\\Digital\\projets\\Mediatek\\src\\SVE.Mediatek.ViewModel\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
@@ -162,11 +98,8 @@
           "net8.0-windows7.0": {
             "targetAlias": "net8.0-windows",
             "projectReferences": {
-              "C:\\Users\\LENOVO\\OneDrive\\Bureau\\SoSoCned\\E4_Ateliers de professionnalisation\\Atelier 2\\Mediatek\\src\\SVE.Mediatek.ViewModel\\SVE.Mediatek.ViewModel.csproj": {
-                "projectPath": "C:\\Users\\LENOVO\\OneDrive\\Bureau\\SoSoCned\\E4_Ateliers de professionnalisation\\Atelier 2\\Mediatek\\src\\SVE.Mediatek.ViewModel\\SVE.Mediatek.ViewModel.csproj"
-              },
-              "C:\\Users\\LENOVO\\OneDrive\\Bureau\\SoSoCned\\E4_Ateliers de professionnalisation\\Atelier 2\\Mediatek\\src\\SVE.Mediatek.View\\SVE.Mediatek.View.csproj": {
-                "projectPath": "C:\\Users\\LENOVO\\OneDrive\\Bureau\\SoSoCned\\E4_Ateliers de professionnalisation\\Atelier 2\\Mediatek\\src\\SVE.Mediatek.View\\SVE.Mediatek.View.csproj"
+              "C:\\Digital\\projets\\Mediatek\\src\\SVE.Mediatek.Model\\SVE.Mediatek.Model.csproj": {
+                "projectPath": "C:\\Digital\\projets\\Mediatek\\src\\SVE.Mediatek.Model\\SVE.Mediatek.Model.csproj"
               }
             }
           }
@@ -199,7 +132,142 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files (x86)\\dotnet\\sdk\\8.0.101/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files (x86)\\dotnet\\sdk\\8.0.102/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Digital\\projets\\Mediatek\\src\\SVE.Mediatek.View\\SVE.Mediatek.View.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Digital\\projets\\Mediatek\\src\\SVE.Mediatek.View\\SVE.Mediatek.View.csproj",
+        "projectName": "SVE.Mediatek.View",
+        "projectPath": "C:\\Digital\\projets\\Mediatek\\src\\SVE.Mediatek.View\\SVE.Mediatek.View.csproj",
+        "packagesPath": "C:\\Users\\LENOVO\\.nuget\\packages\\",
+        "outputPath": "C:\\Digital\\projets\\Mediatek\\src\\SVE.Mediatek.View\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\LENOVO\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0-windows"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0-windows7.0": {
+            "targetAlias": "net8.0-windows",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net8.0-windows7.0": {
+          "targetAlias": "net8.0-windows",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            },
+            "Microsoft.WindowsDesktop.App.WPF": {
+              "privateAssets": "none"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files (x86)\\dotnet\\sdk\\8.0.102/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Digital\\projets\\Mediatek\\src\\SVE.Mediatek\\SVE.Mediatek.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Digital\\projets\\Mediatek\\src\\SVE.Mediatek\\SVE.Mediatek.csproj",
+        "projectName": "SVE.Mediatek",
+        "projectPath": "C:\\Digital\\projets\\Mediatek\\src\\SVE.Mediatek\\SVE.Mediatek.csproj",
+        "packagesPath": "C:\\Users\\LENOVO\\.nuget\\packages\\",
+        "outputPath": "C:\\Digital\\projets\\Mediatek\\src\\SVE.Mediatek\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\LENOVO\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0-windows"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0-windows7.0": {
+            "targetAlias": "net8.0-windows",
+            "projectReferences": {
+              "C:\\Digital\\projets\\Mediatek\\src\\SVE.Mediatek.ViewModel\\SVE.Mediatek.ViewModel.csproj": {
+                "projectPath": "C:\\Digital\\projets\\Mediatek\\src\\SVE.Mediatek.ViewModel\\SVE.Mediatek.ViewModel.csproj"
+              },
+              "C:\\Digital\\projets\\Mediatek\\src\\SVE.Mediatek.View\\SVE.Mediatek.View.csproj": {
+                "projectPath": "C:\\Digital\\projets\\Mediatek\\src\\SVE.Mediatek.View\\SVE.Mediatek.View.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net8.0-windows7.0": {
+          "targetAlias": "net8.0-windows",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            },
+            "Microsoft.WindowsDesktop.App.WPF": {
+              "privateAssets": "none"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files (x86)\\dotnet\\sdk\\8.0.102/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace SVE.Mediatek.Model
 {
-    internal class Department
+    public enum Department
     {
+        Reception
     }
 }

@@ -5,8 +5,117 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:SVE.Mediatek.View"
         mc:Ignorable="d"
-        Title="StaffHandler" Height="450" Width="800">
-    <Grid>
+        Title="StaffHandler" 
+        Height="700" 
+        Width="1000"
+        Background="Black">
+    <Window.Resources>
+        <Style TargetType="{x:Type Button}">
+            <Setter Property="HorizontalAlignment" Value="Left"/>
+            <Setter Property="VerticalAlignment" Value="Top"/>
+            <Setter Property="Height" Value="40"/>
+            <Setter Property="Width" Value="150"/>
+            <Setter Property="FontSize" Value="18"/>
+        </Style>
         
+    </Window.Resources>
+
+    <Grid>
+        <Label Content="{Binding LblMediatek}" 
+               HorizontalAlignment="Left" 
+               Margin="500,34,0,0" 
+               VerticalAlignment="Top"
+               FontSize="35"
+               Foreground="DarkTurquoise" 
+               Height="52" 
+               Width="300"/>
+        <Label Content="{Binding LblTitle}" 
+               HorizontalAlignment="Center" 
+               Margin="150,120,0,0" 
+               VerticalAlignment="Top" 
+               FontSize="30"              
+               Foreground="White" 
+               Height="44" 
+               Width="354" 
+               RenderTransformOrigin="0.506,0.567"/>
+
+        <Button Content="{Binding BtnAdd}" 
+                    Margin="60,250,0,0">
+            <Button.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="7"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+
+        <Button Content="{Binding BtnChange}" 
+                Margin="60,340,0,0">
+            <Button.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="7"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+
+        <Button Content="{Binding BtnDel}" 
+                Margin="60,430,0,0">
+            <Button.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="7"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+
+        <Button Content="{Binding BtnAbsence}" 
+                Margin="60,550,0,0">
+            <Button.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="7"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+
+
+        <DataGrid
+            ItemsSource="{Binding StaffList}" 
+            SelectedItem="{Binding SelectedStaff}"
+            Margin="278,205,49,49"          
+            Background="Black"
+            HorizontalGridLinesBrush="White"
+            VerticalGridLinesBrush="White"
+            RowHeaderWidth="0"
+            ColumnWidth="*">
+
+            <DataGrid.ColumnHeaderStyle>
+                <Style TargetType="{x:Type DataGridColumnHeader}">
+                    <Setter Property="Background" Value="Black"/>
+                    <Setter Property="Foreground" Value="DarkTurquoise"/>
+                </Style>
+            </DataGrid.ColumnHeaderStyle>
+
+            <DataGrid.CellStyle>
+                <Style TargetType="{x:Type DataGridCell}">
+                    <Setter Property="Background" Value="Black"/>
+                    <Setter Property="Foreground" Value="White"/>
+                    <Setter Property="BorderBrush" Value="White" />
+                    <Setter Property="BorderThickness" Value="2" />
+                </Style>
+            </DataGrid.CellStyle>
+        </DataGrid>
+
+        <!-- <ListBox ItemsSource="{Binding StaffList}" 
+                 SelectedItem="{Binding SelectedStaff}"
+                 Margin="278,205,50,50"
+                 Background="Black" >
+             <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <Border BorderBrush="White" 
+                            BorderThickness="2" 
+                            Margin="2">
+                        présentation de chaque staff
+                    </Border>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox> -->
     </Grid>
 </Window>

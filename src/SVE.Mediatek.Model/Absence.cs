@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SVE.Mediatek.Model
 {
-    internal class Absence
+    public class Absence
     {
     }
 }
