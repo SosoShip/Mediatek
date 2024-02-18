@@ -1,6 +1,7 @@
 ﻿using System.Configuration;
 using System.Data;
 using System.Windows;
+using SVE.Mediatek.Model;
 using SVE.Mediatek.View;
 using SVE.Mediatek.ViewModel;
 
@@ -21,9 +22,14 @@ namespace SVE.Mediatek
             //// Binding of the connection window's view-viewModel
             //connectionWindow.DataContext = new ConnectionViewModel();
             //connectionWindow.Show();
+
             var StaffHandlerWindow = new StaffHandler();
             StaffHandlerWindow.DataContext = new StaffHandlerViewModel();
             StaffHandlerWindow.Show();
+
+            //var AbsenceHandlerWindow = new AbsenceHandler();
+            //AbsenceHandlerWindow.DataContext = new AbsenceHandlerViewModel("Durand", "Cecile");
+            //AbsenceHandlerWindow.Show();
         }
     }
 

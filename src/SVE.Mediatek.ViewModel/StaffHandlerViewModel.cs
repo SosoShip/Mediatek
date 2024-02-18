@@ -46,6 +46,7 @@ namespace SVE.Mediatek.ViewModel
 
         public ObservableCollection<Staff> GenerateStaffList() 
         {
+            // TODO 
            return  StaffList = [new Staff("Durand", "Cecile", "durantc@gmail.com", "0265847912", Department.Reception)];           
         }
     }
