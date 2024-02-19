@@ -23,13 +23,17 @@ namespace SVE.Mediatek
             //connectionWindow.DataContext = new ConnectionViewModel();
             //connectionWindow.Show();
 
-            var StaffHandlerWindow = new StaffHandler();
-            StaffHandlerWindow.DataContext = new StaffHandlerViewModel();
-            StaffHandlerWindow.Show();
+            //var StaffHandlerWindow = new StaffHandler();
+            //StaffHandlerWindow.DataContext = new StaffHandlerViewModel();
+            //StaffHandlerWindow.Show();
 
             //var AbsenceHandlerWindow = new AbsenceHandler();
             //AbsenceHandlerWindow.DataContext = new AbsenceHandlerViewModel("Durand", "Cecile");
             //AbsenceHandlerWindow.Show();
+
+            var StaffAddWindow = new StaffAdd();
+            StaffAddWindow.DataContext = new StaffAddViewModel();
+            StaffAddWindow.Show();
         }
     }
 
