@@ -16,5 +16,5 @@ TRACE;DEBUG;NET;NET8_0;NETCOREAPP
 1981117430454
 AbscenceAdd.xaml;AbsenceChange.xaml;AbsenceHandler.xaml;Connection.xaml;DelConfirmation.xaml;ErrorConnection.xaml;ErrorDateAbsenceAdd.xaml;ErrorField.xaml;StaffAdd.xaml;StaffChange.xaml;StaffHandler.xaml;
 
-True
+False
 

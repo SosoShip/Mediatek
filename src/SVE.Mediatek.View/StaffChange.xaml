@@ -38,7 +38,6 @@
             <Setter Property="Width" Value="150"/>
             <Setter Property="FontSize" Value="18"/>
         </Style>
-
     </Window.Resources>
     <Grid>
         <Grid.RowDefinitions>

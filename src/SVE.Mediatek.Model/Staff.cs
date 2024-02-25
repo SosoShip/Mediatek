@@ -13,6 +13,7 @@ namespace SVE.Mediatek.Model
         public string Email {  get; set; }
         public string Phone { get; set; }
         public Department Department { get; set; }
+        public List<Reason> ReasonsList { get; set; }
 
         public Staff(string name, string firsName, string email, string phone, Department department)
         {
