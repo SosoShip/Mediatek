@@ -19,7 +19,8 @@ namespace SVE.Mediatek.ViewModel
         public string TbMailValue { get; set; }
         public string BtnValidate { get; set; }
         public string BtnCancel { get; set; }
-        public Department? TbDepartmentValue { get; set; }
+        public List<Department>? DepartmentList { get; set; }
+        public Department? SelectedDepartment { get; set; }
 
         public StaffAddViewModel() 
         {
@@ -30,8 +31,21 @@ namespace SVE.Mediatek.ViewModel
             LblPhone = "Téléphone";
             LblMail = "Mail";
             LblDepartment = "Service";
+            DepartmentList = GenerateDepartmentList();
             BtnValidate = "Valider";
             BtnCancel = "Annuler";
+        }
+
+        /// <summary>
+        /// Generate a list of all departments.
+        /// </summary>
+        /// <returns>List all Department</returns>
+        public List<Department> GenerateDepartmentList()
+        {
+            return Enum.GetNames(typeof(Department))
+                .Select(name => (Department)Enum
+                .Parse(typeof(Department), name))
+                .ToList();
         }
     }
 }

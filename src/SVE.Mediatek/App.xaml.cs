@@ -31,9 +31,13 @@ namespace SVE.Mediatek
             //AbsenceHandlerWindow.DataContext = new AbsenceHandlerViewModel("Durand", "Cecile");
             //AbsenceHandlerWindow.Show();
 
-            var StaffAddWindow = new StaffAdd();
-            StaffAddWindow.DataContext = new StaffAddViewModel();
-            StaffAddWindow.Show();
+            //var StaffAddWindow = new StaffAdd();
+            //StaffAddWindow.DataContext = new StaffAddViewModel();
+            //StaffAddWindow.Show();
+
+            var StaffChangeWindow = new StaffChange();
+            StaffChangeWindow.DataContext = new StaffChangeViewModel(new Staff("Durant", "Alice", "adurant@mediatek.fr", "0612857593", Department.Reception));
+            StaffChangeWindow.Show();
         }
     }
 

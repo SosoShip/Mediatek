@@ -21,6 +21,16 @@
             <Setter Property="BorderThickness" Value="2"/>
             <Setter Property="BorderBrush" Value="White"/>
         </Style>
+        <Style TargetType="{x:Type ComboBox}">
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="Width" Value="150"/>
+            <Setter Property="Height" Value="40"/>
+            <Setter Property="Background" Value="Black"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="BorderThickness" Value="2"/>
+            <Setter Property="BorderBrush" Value="White"/>
+        </Style>
         <Style TargetType="{x:Type Button}">
             <Setter Property="Height" Value="40"/>
             <Setter Property="Width" Value="150"/>
@@ -105,8 +115,9 @@
                 Content="{Binding LblDepartment}"/>
             <TextBox Grid.Column="1"
                 Text ="{Binding TbMailValue, Mode=TwoWay}"/>
-            <TextBox Grid.Column="3"
-                Text ="{Binding TbDepartmentValue, Mode=TwoWay}"/>
+            <ComboBox Grid.Column="3"
+                ItemsSource ="{Binding DepartmentList}"
+                SelectedItem="{Binding SelectedDepartment}"/>
         </Grid>
         <Grid Grid.Row="4">
             <Grid.ColumnDefinitions>

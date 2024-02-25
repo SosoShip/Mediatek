@@ -8,6 +8,8 @@ namespace SVE.Mediatek.Model
 {
     public enum Department
     {
-        Reception
+        Reception,
+        Comptabilité,
+        Secretariat
     }
 }
