@@ -49,7 +49,7 @@ namespace SVE.Mediatek.ViewModel
         public ObservableCollection<Absence> GenerateAbsenceList()
         {
             // TODO 
-            return AbsenceList = [new Absence("01/02/2024", "05/02/2024", Reason.RRT)];
+            return AbsenceList = [new Absence(new DateOnly(2024, 02, 25), new DateOnly(2024, 02, 26), Reason.RRT)];
         }
     }
 }

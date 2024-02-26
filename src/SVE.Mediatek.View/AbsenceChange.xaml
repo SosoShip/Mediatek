@@ -5,8 +5,156 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:SVE.Mediatek.View"
         mc:Ignorable="d"
-        Title="AbsenceChange" Height="450" Width="800">
+        Title="AbsenceChange" 
+        Height="700" 
+        Width="1000"
+        Background="Black">
+    <!--type description-->
+    <Window.Resources>
+        <Style TargetType="{x:Type TextBox}">
+            <Setter Property="TextWrapping" Value="Wrap"/>
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="Width" Value="150"/>
+            <Setter Property="Height" Value="40"/>
+            <Setter Property="Background" Value="Black"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="BorderThickness" Value="2"/>
+            <Setter Property="BorderBrush" Value="White"/>
+            <Setter Property="FontSize" Value="18"/>
+        </Style>
+        <Style TargetType="{x:Type ComboBox}">
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="Width" Value="150"/>
+            <Setter Property="Height" Value="40"/>
+            <Setter Property="Background" Value="Black"/>
+            <Setter Property="Foreground" Value="Black"/>
+            <Setter Property="BorderThickness" Value="2"/>
+            <Setter Property="BorderBrush" Value="White"/>
+            <Setter Property="FontSize" Value="18"/>
+        </Style>
+        <Style TargetType="{x:Type Button}">
+            <Setter Property="Height" Value="40"/>
+            <Setter Property="Width" Value="150"/>
+            <Setter Property="FontSize" Value="18"/>
+        </Style>
+    </Window.Resources>
     <Grid>
-        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="1.5*"/>
+            <RowDefinition Height="0.5*"/>
+        </Grid.RowDefinitions>
+        <!--titles definition-->
+        <Label Grid.Row="0"
+          Content="{Binding LblMediatek}"
+          HorizontalAlignment="Center"                
+          VerticalAlignment="Bottom"
+          FontSize="35"
+          Foreground="DarkTurquoise"/>
+
+        <Label Grid.Row="1"
+         Content="{Binding LblTitle}"
+         HorizontalAlignment="Center"
+         VerticalAlignment="Center" 
+         FontSize="30"              
+         Foreground="White"/>
+
+        <Grid Grid.Row="2">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="2*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="1">
+                <Grid.ColumnDefinitions >
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="2*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Border Grid.Column="1"
+                     BorderBrush="DarkTurquoise"
+                     BorderThickness="2"/>
+                <Label Grid.Column="1"
+                    Content="{Binding LblAbsenceOf}"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Center" 
+                    FontSize="20"              
+                    Foreground="White"/>
+            </Grid>
+        </Grid>
+        <!--Absence date selection-->
+        <Grid Grid.Row="3">
+            <Grid.Resources>
+                <Style TargetType="{x:Type Label}">
+                    <Setter Property="HorizontalAlignment" Value="Center"/>
+                    <Setter Property="VerticalAlignment" Value="Center"/>
+                    <Setter Property="FontSize" Value="15"/>
+                    <Setter Property="Foreground" Value="White"/>
+                </Style>
+            </Grid.Resources>
+            <Grid.ColumnDefinitions >
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Label Grid.Column="0"
+                Content="{Binding LblBeginDate}"/>
+            <Label Grid.Column="2"
+                Content="{Binding LblEndDate}"/>
+            <TextBox Grid.Column="1"
+                  Text="{Binding TbBeginDate}"/>
+            <TextBox Grid.Column="3"
+                  Text="{Binding TBEndDate}"/>
+        </Grid>
+        <!--Absence Reason selection-->
+        <Grid Grid.Row="4">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="2*"/>
+            </Grid.ColumnDefinitions>
+            <Label Grid.Column="0"
+                Content="{Binding LblReason}"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center"
+                FontSize="15"
+                Foreground="White"/>
+            <ComboBox Grid.Column="1"
+                   ItemsSource="{Binding ReasonList}"
+                   SelectedItem="{Binding SelectedReason}"/>
+        </Grid>
+        <!--Validate or cancel the selection-->
+        <Grid Grid.Row="5">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="2*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Button Grid.Column="1"
+             Content="{Binding BtnValidate}"
+             Command="{Binding ValidateCommand}">
+                <Button.Resources>
+                    <Style TargetType="{x:Type Border}">
+                        <Setter Property="CornerRadius" Value="7"/>
+                    </Style>
+                </Button.Resources>
+            </Button>
+            <Button Grid.Column="2"
+             Content="{Binding BtnCancel}"
+             Command="{Binding CancelCommand}">
+                <Button.Resources>
+                    <Style TargetType="{x:Type Border}">
+                        <Setter Property="CornerRadius" Value="7"/>
+                    </Style>
+                </Button.Resources>
+            </Button>
+        </Grid>
     </Grid>
 </Window>
