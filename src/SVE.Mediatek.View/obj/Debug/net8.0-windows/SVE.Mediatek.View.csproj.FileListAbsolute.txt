@@ -43,7 +43,6 @@ C:\Digital\projets\Mediatek\src\SVE.Mediatek.View\obj\Debug\net8.0-windows\Absen
 C:\Digital\projets\Mediatek\src\SVE.Mediatek.View\obj\Debug\net8.0-windows\Connection.g.cs
 C:\Digital\projets\Mediatek\src\SVE.Mediatek.View\obj\Debug\net8.0-windows\DelConfirmation.g.cs
 C:\Digital\projets\Mediatek\src\SVE.Mediatek.View\obj\Debug\net8.0-windows\ErrorConnection.g.cs
-C:\Digital\projets\Mediatek\src\SVE.Mediatek.View\obj\Debug\net8.0-windows\ErrorDateAbsenceAdd.g.cs
 C:\Digital\projets\Mediatek\src\SVE.Mediatek.View\obj\Debug\net8.0-windows\StaffAdd.g.cs
 C:\Digital\projets\Mediatek\src\SVE.Mediatek.View\obj\Debug\net8.0-windows\StaffChange.g.cs
 C:\Digital\projets\Mediatek\src\SVE.Mediatek.View\obj\Debug\net8.0-windows\StaffHandler.g.cs
@@ -55,7 +54,6 @@ C:\Digital\projets\Mediatek\src\SVE.Mediatek.View\obj\Debug\net8.0-windows\Absen
 C:\Digital\projets\Mediatek\src\SVE.Mediatek.View\obj\Debug\net8.0-windows\Connection.baml
 C:\Digital\projets\Mediatek\src\SVE.Mediatek.View\obj\Debug\net8.0-windows\DelConfirmation.baml
 C:\Digital\projets\Mediatek\src\SVE.Mediatek.View\obj\Debug\net8.0-windows\ErrorConnection.baml
-C:\Digital\projets\Mediatek\src\SVE.Mediatek.View\obj\Debug\net8.0-windows\ErrorDateAbsenceAdd.baml
 C:\Digital\projets\Mediatek\src\SVE.Mediatek.View\obj\Debug\net8.0-windows\StaffAdd.baml
 C:\Digital\projets\Mediatek\src\SVE.Mediatek.View\obj\Debug\net8.0-windows\StaffChange.baml
 C:\Digital\projets\Mediatek\src\SVE.Mediatek.View\obj\Debug\net8.0-windows\StaffHandler.baml
@@ -71,3 +69,5 @@ C:\Digital\projets\Mediatek\src\SVE.Mediatek.View\obj\Debug\net8.0-windows\SVE.M
 C:\Digital\projets\Mediatek\src\SVE.Mediatek.View\obj\Debug\net8.0-windows\ref\SVE.Mediatek.View.dll
 C:\Digital\projets\Mediatek\src\SVE.Mediatek.View\obj\Debug\net8.0-windows\ErrorField.g.cs
 C:\Digital\projets\Mediatek\src\SVE.Mediatek.View\obj\Debug\net8.0-windows\ErrorField.baml
+C:\Digital\projets\Mediatek\src\SVE.Mediatek.View\obj\Debug\net8.0-windows\ErrorDate.g.cs
+C:\Digital\projets\Mediatek\src\SVE.Mediatek.View\obj\Debug\net8.0-windows\ErrorDate.baml

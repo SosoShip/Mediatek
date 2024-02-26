@@ -15,11 +15,11 @@ using System.Windows.Shapes;
 namespace SVE.Mediatek.View
 {
     /// <summary>
-    /// Logique d'interaction pour Window1.xaml
+    /// Logique d'interaction pour ErrorConnection.xaml
     /// </summary>
-    public partial class Window1 : Window
+    public partial class ErrorConnection : Window
     {
-        public Window1()
+        public ErrorConnection()
         {
             InitializeComponent();
         }

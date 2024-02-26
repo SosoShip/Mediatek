@@ -44,11 +44,27 @@ namespace SVE.Mediatek
             //AbsenceAddWindow.DataContext = new AbsenceAddViewModel(new Staff("Durant", "Alice", "adurant@mediatek.fr", "0612857593", Department.Reception));
             //AbsenceAddWindow.Show();
 
-            var AbsenceChangeWindow = new AbsenceChange();
-            AbsenceChangeWindow.DataContext = new AbsenceChangeViewModel(
-                new Staff("Durant", "Alice", "adurant@mediatek.fr", "0612857593", Department.Reception),
-                new Absence(new DateOnly(2024,02,25), new DateOnly(2024, 02, 26), Reason.Maladie));
-            AbsenceChangeWindow.Show();
+            //var AbsenceChangeWindow = new AbsenceChange();
+            //AbsenceChangeWindow.DataContext = new AbsenceChangeViewModel(
+            //    new Staff("Durant", "Alice", "adurant@mediatek.fr", "0612857593", Department.Reception),
+            //    new Absence(new DateOnly(2024,02,25), new DateOnly(2024, 02, 26), Reason.Maladie));
+            //AbsenceChangeWindow.Show();
+
+            var DelConfirmationWindow = new DelConfirmation();
+            DelConfirmationWindow.DataContext = new DelConfirmationViewModel();
+            DelConfirmationWindow.Show();
+
+            //var ErrorFieldWindow = new ErrorFieldAbsenceAdd();
+            //ErrorFieldWindow.DataContext = new ErrorFieldViemModel();
+            //ErrorFieldWindow.Show();
+
+            //var ErrorDateWindow = new ErrorDate();
+            //ErrorDateWindow.DataContext = new ErrorDateViewModel();
+            //ErrorDateWindow.Show();
+
+            //var ErrorConnectionWindow = new ErrorConnection();
+            //ErrorConnectionWindow.DataContext = new ErrorConnectionViewModel();
+            //ErrorConnectionWindow.Show();
         }
     }
 

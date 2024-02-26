@@ -20,7 +20,7 @@
     <Compile Update="ErrorConnection.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="ErrorDateAbsenceAdd.xaml.cs">
+    <Compile Update="ErrorDate.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="ErrorField.xaml.cs">
@@ -55,7 +55,7 @@
     <Page Update="ErrorConnection.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="ErrorDateAbsenceAdd.xaml">
+    <Page Update="ErrorDate.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="ErrorField.xaml">
