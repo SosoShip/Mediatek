@@ -9,77 +9,90 @@
         Height="560" 
         Width="800" 
         Background="Black">
-    <Grid RenderTransformOrigin="0.501,0.489">
-        <Label Content="{Binding LblMediatek}" 
-               HorizontalAlignment="Left" 
-               Margin="305,34,0,0" 
-               VerticalAlignment="Top"
-               FontSize="35"
-               Foreground="DarkTurquoise" 
-               Height="52" 
-               Width="300"/>
-        <Label Content="{Binding LblTitle}" 
-               HorizontalAlignment="Center" 
-               Margin="0,120,0,0" 
-               VerticalAlignment="Top" 
-               FontSize="30"              
-               Foreground="White" 
-               Height="44" 
-               Width="354" 
-               RenderTransformOrigin="0.506,0.567"/>
-        <Label Content="{Binding LblInformation}" 
-               HorizontalAlignment="Left" 
-               Margin="305,178,0,0" 
-               VerticalAlignment="Top" 
-               FontSize="12"              
-               Foreground="White"
-               Height="24"
-               Width="272"
-               RenderTransformOrigin="0.5,0.686"/>
-        <Label Content="{Binding LblMail}" 
-               HorizontalAlignment="Left" 
-               Margin="250,215,0,0" 
-               VerticalAlignment="Top"
-               FontSize="15"              
-               Foreground="White"
-               Width="149"/>
-        <TextBox Name="tbLogin"
-                 Text="{Binding TbLoginValue, Mode=TwoWay}"
-                 HorizontalAlignment="Left" 
-                 Margin="250,255,0,0" 
-                 TextWrapping="Wrap" 
-                 VerticalAlignment="Top" 
-                 Width="250" 
-                 Height="40"
-                 Background="Black"
-                 Foreground="White"
-                 BorderBrush="White"
-                 BorderThickness="2"/>
-        <Label Content="{Binding LblPassword}" 
-               HorizontalAlignment="Left" 
-               Margin="250,310,0,0" 
-               VerticalAlignment="Top"
-               FontSize="15"              
-               Foreground="White"
-               Width="149"/>
-        <TextBox Name="tbPassword"
-                 Text="{Binding TbPasswordValue}"
-                 HorizontalAlignment="Left" 
-                 Margin="250,350,0,0" 
-                 TextWrapping="Wrap" 
-                 VerticalAlignment="Top" 
-                 Width="250" 
-                 Height="40"
-                 Background="Black"
-                 BorderBrush="White"
-                 BorderThickness="2"/>
-        <Button Content="{Binding BtnValidate}" 
-                Command="{Binding ConnectionCommand}"
-                HorizontalAlignment="Left" 
-                Margin="290,430,0,0" 
-                VerticalAlignment="Top" 
-                Height="40" 
-                Width="160"/>
-        
+    <Window.Resources>
+    <Style TargetType="{x:Type TextBox}">
+        <Setter Property="TextWrapping" Value="Wrap"/>
+        <Setter Property="HorizontalAlignment" Value="Center"/>
+        <Setter Property="VerticalAlignment" Value="Center"/>
+        <Setter Property="Width" Value="250"/>
+        <Setter Property="Height" Value="40"/>
+        <Setter Property="Background" Value="Black"/>
+        <Setter Property="Foreground" Value="White"/>
+        <Setter Property="BorderThickness" Value="2"/>
+        <Setter Property="BorderBrush" Value="White"/>
+        <Setter Property="FontSize" Value="18"/>
+    </Style>
+        <Style TargetType="{x:Type Button}">
+        <Setter Property="Height" Value="40"/>
+        <Setter Property="Width" Value="160"/>
+        <Setter Property="FontSize" Value="18"/>
+        <Setter Property="HorizontalAlignment" Value="Center"/>
+        <Setter Property="VerticalAlignment" Value="Center"/>
+        </Style>
+    </Window.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="1.5*"/>
+            <RowDefinition Height="0.5*"/>
+            <RowDefinition Height="0.8*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="0.8*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="1.2*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0">
+            <Label Content="{Binding LblMediatek}" 
+            HorizontalAlignment="Center" 
+            VerticalAlignment="Center"
+            FontSize="35"
+            Foreground="DarkTurquoise" />
+        </Grid>
+        <Grid Grid.Row="1">
+            <Label Content="{Binding LblTitle}" 
+            HorizontalAlignment="Center"  
+            VerticalAlignment="Center" 
+            FontSize="30"              
+            Foreground="White"/>
+        </Grid>
+        <Grid Grid.Row="2">
+            <Label Content="{Binding LblInformation}" 
+            HorizontalAlignment="Center"  
+            VerticalAlignment="Center" 
+            FontSize="12"              
+            Foreground="White"/>
+        </Grid>
+        <Grid Grid.Row="3">
+            <Label Content="{Binding LblMail}" 
+            HorizontalAlignment="Center"  
+            VerticalAlignment="Bottom"
+            FontSize="15"              
+            Foreground="White"/>
+        </Grid>
+        <Grid Grid.Row="4">
+            <TextBox Name="tbLogin"
+         Text="{Binding TbLoginValue, Mode=TwoWay}"/>
+        </Grid>
+        <Grid Grid.Row="5">
+            <Label Content="{Binding LblPassword}" 
+            HorizontalAlignment="Center"  
+            VerticalAlignment="Bottom"
+            FontSize="15"              
+            Foreground="White"/>
+        </Grid>
+        <Grid Grid.Row="6">
+            <TextBox Name="tbPassword"
+            Text="{Binding TbPasswordValue}"/>
+        </Grid>
+        <Button Grid.Row="7"
+            Content="{Binding BtnValidate}" 
+            Command="{Binding ConnectionCommand}" >
+            <Button.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="7"/>
+                </Style>
+            </Button.Resources>
+        </Button>
     </Grid>
 </Window>

@@ -18,10 +18,10 @@ namespace SVE.Mediatek
         protected override void OnStartup(StartupEventArgs e)
         {           
             base.OnStartup(e);
-            //var connectionWindow = new Connection();
-            //// Binding of the connection window's view-viewModel
-            //connectionWindow.DataContext = new ConnectionViewModel();
-            //connectionWindow.Show();
+            var connectionWindow = new Connection();
+            // Binding of the connection window's view-viewModel
+            connectionWindow.DataContext = new ConnectionViewModel();
+            connectionWindow.Show();
 
             //var StaffHandlerWindow = new StaffHandler();
             //StaffHandlerWindow.DataContext = new StaffHandlerViewModel();
@@ -50,9 +50,9 @@ namespace SVE.Mediatek
             //    new Absence(new DateOnly(2024,02,25), new DateOnly(2024, 02, 26), Reason.Maladie));
             //AbsenceChangeWindow.Show();
 
-            var DelConfirmationWindow = new DelConfirmation();
-            DelConfirmationWindow.DataContext = new DelConfirmationViewModel();
-            DelConfirmationWindow.Show();
+            //var DelConfirmationWindow = new DelConfirmation();
+            //DelConfirmationWindow.DataContext = new DelConfirmationViewModel();
+            //DelConfirmationWindow.Show();
 
             //var ErrorFieldWindow = new ErrorFieldAbsenceAdd();
             //ErrorFieldWindow.DataContext = new ErrorFieldViemModel();
