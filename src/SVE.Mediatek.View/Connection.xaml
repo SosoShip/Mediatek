@@ -9,6 +9,7 @@
         Height="560" 
         Width="800" 
         Background="Black">
+    <!--type description-->
     <Window.Resources>
     <Style TargetType="{x:Type TextBox}">
         <Setter Property="TextWrapping" Value="Wrap"/>
@@ -42,6 +43,7 @@
             <RowDefinition Height="1.2*"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
+        <!--titles definition-->
         <Grid Grid.Row="0">
             <Label Content="{Binding LblMediatek}" 
             HorizontalAlignment="Center" 
@@ -63,6 +65,7 @@
             FontSize="12"              
             Foreground="White"/>
         </Grid>
+        <!--connections information-->
         <Grid Grid.Row="3">
             <Label Content="{Binding LblMail}" 
             HorizontalAlignment="Center"  
@@ -85,6 +88,7 @@
             <TextBox Name="tbPassword"
             Text="{Binding TbPasswordValue}"/>
         </Grid>
+        <!--connection validate-->
         <Button Grid.Row="7"
             Content="{Binding BtnValidate}" 
             Command="{Binding ConnectionCommand}" >

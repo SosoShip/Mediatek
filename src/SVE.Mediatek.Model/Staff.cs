@@ -8,12 +8,18 @@ namespace SVE.Mediatek.Model
 {
     public class Staff
     {
+        private string tbNameValue;
+        private string tbFirstNameValue;
+        private string tbMailValue;
+        private string tbPhoneValue;
+        private Department? selectedDepartment;
+
         public string Name { get; set; }
         public string FirsName { get; set; }
         public string Email {  get; set; }
         public string Phone { get; set; }
         public Department Department { get; set; }
-        public List<Reason> ReasonsList { get; set; }
+        public List<Absence> AbsenceList { get; set; }
 
         public Staff(string name, string firsName, string email, string phone, Department department)
         {
@@ -22,6 +28,7 @@ namespace SVE.Mediatek.Model
             Email = email;
             Phone = phone;
             Department = department;
+            AbsenceList = new List<Absence>();
         }
     }
 }

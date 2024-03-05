@@ -9,6 +9,8 @@
         Height="700" 
         Width="1000"
         Background="Black">
+    
+    <!--Button description-->
     <Window.Resources>
         <Style TargetType="{x:Type Button}">
             <Setter Property="Height" Value="40"/>
@@ -34,9 +36,11 @@
                 <RowDefinition Height="0.3*"/>
             </Grid.RowDefinitions>
 
+            <!--Staff management button-->
             <Button Grid.Row="1"
             VerticalAlignment="Center"
-            Content="{Binding BtnAdd}">
+            Content="{Binding BtnAdd}"
+            Command="{Binding BtnAddCommand}">
                 <Button.Resources>
                     <Style TargetType="{x:Type Border}">
                         <Setter Property="CornerRadius" Value="7"/>
@@ -45,7 +49,8 @@
             </Button>
 
             <Button Grid.Row="2"          
-            Content="{Binding BtnChange}">
+            Content="{Binding BtnChange}"
+            Command="{Binding BtnChangeCommand}">
                 <Button.Resources>
                     <Style TargetType="{x:Type Border}">
                         <Setter Property="CornerRadius" Value="7"/>
@@ -54,7 +59,8 @@
             </Button>
 
             <Button Grid.Row="3" 
-            Content="{Binding BtnDel}">
+            Content="{Binding BtnDel}"
+            Command="{Binding BtnDelCommand}">
                 <Button.Resources>
                     <Style TargetType="{x:Type Border}">
                         <Setter Property="CornerRadius" Value="7"/>
@@ -63,7 +69,8 @@
             </Button>
 
             <Button Grid.Row="4" 
-            Content="{Binding BtnReturn}">
+            Content="{Binding BtnAbsence}"
+            Command="{Binding BtnAbsenceCommand}">
                 <Button.Resources>
                     <Style TargetType="{x:Type Border}">
                         <Setter Property="CornerRadius" Value="7"/>
@@ -79,6 +86,7 @@
                 <RowDefinition Height="4*"/>
                 <RowDefinition Height="0.3*"/>
             </Grid.RowDefinitions>
+            <!--Titles definition-->
             <Label Grid.Row="0"
                Content="{Binding LblMediatek}"
                HorizontalAlignment="Center"                
@@ -92,6 +100,7 @@
                FontSize="30"              
                Foreground="White" />
 
+            <!--Staff List-->
             <DataGrid Grid.Row="2"
                 ItemsSource="{Binding StaffList}" 
                 SelectedItem="{Binding SelectedStaff}"

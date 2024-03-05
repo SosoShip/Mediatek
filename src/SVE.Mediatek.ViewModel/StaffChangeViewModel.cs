@@ -4,12 +4,15 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Input;
 
 namespace SVE.Mediatek.ViewModel
 {
     public class StaffChangeViewModel
     {
+        public Staff SelectedStaff { get; set; }
         public string LblMediatek { get; set; }
         public string LblTitle { get; set; }
         public string LblName { get; set; }
@@ -22,12 +25,16 @@ namespace SVE.Mediatek.ViewModel
         public string TbMailValue { get; set; }     
         public String LblDepartment { get; set; }
         public List<Department>? DepartmentList { get; set; }
-        public Department? SelectedDepartment { get; set; }
+        public Department SelectedDepartment { get; set; }
         public string BtnValidate { get; set; }
         public string BtnCancel { get; set; }
+        public ICommand? ValidateCommand { get; set; }
+        public ICommand? CancelCommand { get; set; }
 
         public StaffChangeViewModel(Staff staff)
         {
+            SelectedStaff = staff;
+
             LblMediatek = "MEDIATEK";
             LblTitle = "MODIFIER UN PERSONNEL";
 
@@ -45,6 +52,8 @@ namespace SVE.Mediatek.ViewModel
 
             BtnValidate = "Valider";
             BtnCancel = "Annuler";
+
+            ValidateCommand = new CommandHandler() { CommandExecutte = (arg) => ModifyStaff() };
         }
 
         /// <summary>
@@ -57,6 +66,33 @@ namespace SVE.Mediatek.ViewModel
                 .Select(name => (Department)Enum
                 .Parse(typeof(Department), name))
                 .ToList();
+        }
+
+        public void ModifyStaff()
+        {
+            //Field completion check           
+            if (string.IsNullOrEmpty(TbNameValue) ||
+                string.IsNullOrEmpty(TbFirstNameValue) ||
+                string.IsNullOrEmpty(TbPhoneValue) ||
+                string.IsNullOrEmpty(TbMailValue))
+            {
+                // TODO -> appel View errorFiel (ou messageBox?) mais this reste ouverte
+            }
+            else
+            {
+                if (MessageBox.Show("Voulez vous enregistrer les modifications?",
+                        "",
+                        MessageBoxButton.OK,
+                        MessageBoxImage.Question)
+                        == MessageBoxResult.OK)
+                {
+                    var modifiedStaff = new Staff(TbNameValue, TbFirstNameValue, TbMailValue, TbPhoneValue, SelectedDepartment);
+                    SelectedStaff = modifiedStaff;
+                    // TODO endregistrer dans la DB staff
+                    // Todo puis Affichage AbscenceHandler -> verif maj modif staff
+
+                }
+            }
         }
     }
 }

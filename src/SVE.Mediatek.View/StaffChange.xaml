@@ -9,6 +9,8 @@
         Height="700" 
         Width="1000"
         Background="Black">
+
+    <!--Types description-->
     <Window.Resources>
         <Style TargetType="{x:Type TextBox}">
             <Setter Property="TextWrapping" Value="Wrap"/>
@@ -39,6 +41,7 @@
             <Setter Property="FontSize" Value="18"/>
         </Style>
     </Window.Resources>
+    
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>
@@ -48,6 +51,7 @@
             <RowDefinition Height="1.5*"/>
         </Grid.RowDefinitions>
 
+        <!--Titles definition-->
         <Label Grid.Row="0"
             Content="{Binding LblMediatek}"
             HorizontalAlignment="Center"                
@@ -72,6 +76,7 @@
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="0.5*"/>
             </Grid.ColumnDefinitions>
+            <!--Label description-->
             <Grid.Resources>
                 <Style TargetType="{x:Type Label}">
                     <Setter Property="HorizontalAlignment" Value="Center"/>
@@ -80,6 +85,8 @@
                     <Setter Property="Foreground" Value="White"/>
                 </Style>
             </Grid.Resources>
+            
+            <!--Staff properties-->
             <Label Grid.Column="0"
                    Content="{Binding LblName}"/>
             <Label Grid.Column="2"
@@ -102,6 +109,7 @@
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="0.2*"/>
             </Grid.ColumnDefinitions>
+            <!--Label description-->
             <Grid.Resources>
                 <Style TargetType="{x:Type Label}">
                     <Setter Property="HorizontalAlignment" Value="Center"/>
@@ -110,6 +118,8 @@
                     <Setter Property="Foreground" Value="White"/>
                 </Style>
             </Grid.Resources>
+
+            <!--Staff properties-->
             <Label Grid.Column="0"
                 Content="{Binding LblMail}"/>
             <Label Grid.Column="2"
@@ -120,6 +130,8 @@
                 ItemsSource ="{Binding DepartmentList}"
                 SelectedItem="{Binding SelectedDepartment}"/>
         </Grid>
+
+        <!--Confirmation to change staff-->
         <Grid Grid.Row="4">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"/>

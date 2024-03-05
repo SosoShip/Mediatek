@@ -9,6 +9,7 @@
         Height="350" 
         Width="600"
         Background="Black">
+    <!--Button description-->
     <Window.Resources>
         <Style TargetType="{x:Type Button}">
             <Setter Property="Height" Value="30"/>
@@ -23,6 +24,7 @@
             <RowDefinition Height="*"/>
             <RowDefinition Height="0.5*"/>
         </Grid.RowDefinitions>
+        <!--Titles definition-->
         <Grid Grid.Row="1">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"/>
@@ -39,6 +41,7 @@
                     BorderBrush="DarkTurquoise"
                     BorderThickness="0,2,0,2"/>
         </Grid>
+        <!--Confirmation of deletion button-->
         <Grid Grid.Row="2">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"/>

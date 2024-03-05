@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:SVE.Mediatek.View"
         mc:Ignorable="d"
         Title="ErrorConnection" 
-                Height="350" 
+        Height="350" 
         Width="600"
         Background="Black">
     <Grid>
@@ -21,15 +21,16 @@
                 <ColumnDefinition Width="1.2*"/>
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
+            <!--Titles definition-->
             <Label Grid.Column="1"
-           Content="{Binding LblMessage}"
-           HorizontalAlignment="Center"
-           VerticalAlignment="Center" 
-           FontSize="14"              
-           Foreground="White"/>
+                Content="{Binding LblMessage}"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center" 
+                FontSize="14"              
+                Foreground="White"/>
             <Border Grid.Column="1"
-            BorderBrush="DarkTurquoise"
-            BorderThickness="0,2,0,2"/>
+                BorderBrush="DarkTurquoise"
+                BorderThickness="0,2,0,2"/>
         </Grid>
     </Grid>
 </Window>

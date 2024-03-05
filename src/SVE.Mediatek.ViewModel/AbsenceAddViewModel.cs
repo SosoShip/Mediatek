@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Input;
 
 namespace SVE.Mediatek.ViewModel
 {
@@ -14,16 +15,21 @@ namespace SVE.Mediatek.ViewModel
         public string LblAbsenceOf { get; set; }
         public string LblDateStart { get; set; }
         public string LblDateEnd { get; set; }
-        public string TBDateStart { get; set; }
-        public string TBDateEnd { get; set;}
+        public DateOnly? TBDateStart { get; set; }
+        public DateOnly? TBDateEnd { get; set;}
         public string LblReason { get; set; }
         public List<Reason> ReasonList { get; set; }
-        public Reason SelectedReason { get; set; }
+        public Reason? SelectedReason { get; set; }
         public string BtnValidate { get; set; }
+        public ICommand ValidateCommand { get; set; }
         public string BtnCancel { get; set; }
+        public ICommand CancelCommand { get; set; }
+        public Staff SelectedStaff { get; set; }
 
         public AbsenceAddViewModel(Staff staff) 
         {
+            SelectedStaff = staff;
+
             LblMediatek = "MEDIATEK";
             LblTitle = "MODIFIER UN PERSONNEL";
             LblAbsenceOf = $"Absence de {staff.Name} {staff.FirsName}";
@@ -31,9 +37,12 @@ namespace SVE.Mediatek.ViewModel
             LblDateStart = "Date de début";
             LblDateEnd = "Date de fin";
             LblReason = "Motif";
-            ReasonList = GenerateReasonList();
+            ReasonList = GenerateReasonList(); 
             BtnValidate = "Valider";
             BtnCancel = "Annuler";
+
+            ValidateCommand = new CommandHandler() { CommandExecutte = (arg) => ValidateAddAbsence()};           
+            CancelCommand = new CommandHandler() { CommandExecutte = (arg) => ReturnToAbsenceHandler() };
         }
 
         /// <summary>
@@ -46,6 +55,44 @@ namespace SVE.Mediatek.ViewModel
                 .Select(name => (Reason)Enum
                 .Parse(typeof(Reason), name))
                 .ToList();
+        }
+
+        /// <summary>
+        /// Validate the addition of an absence
+        /// </summary>
+        public void ValidateAddAbsence()
+        {
+            //TODO voir comment vérifier le format de date
+            if (TBDateStart is null || 
+                TBDateEnd is null || 
+                SelectedReason is null) 
+            {
+                // TODO -> appel View errorFiel(ou messageBox?) mais this reste ouverte
+            }
+            else
+            {
+                if (TBDateStart > TBDateEnd) 
+                {
+                    // TODO -> appel View errorDaten (ou messageBox?) mais this reste ouvert
+                }
+                else
+                {
+                    SelectedStaff.AbsenceList.Add(new Absence(TBDateStart.Value, TBDateEnd.Value, SelectedReason.Value)); 
+                    // TODO Ajouter l'absence à la DB
+                    // puis maj classe absence
+                    // puis appel View AbsenceHandler
+                    // puis fermeture this
+                }
+            }
+        }
+
+        /// <summary>
+        /// Closes the absence add window and opens the absence manager window.
+        /// </summary>
+        public void ReturnToAbsenceHandler()
+        {
+            // TODO appel View AbsenceHandler
+            // Fermeture this
         }
     }
 }

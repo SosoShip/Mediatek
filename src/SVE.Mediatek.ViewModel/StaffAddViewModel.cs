@@ -4,6 +4,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
+using System.Windows.Input;
 
 namespace SVE.Mediatek.ViewModel
 {
@@ -16,11 +18,16 @@ namespace SVE.Mediatek.ViewModel
         public string LblPhone { get; set; }
         public string LblMail { get; set; }
         public string LblDepartment { get; set; }
-        public string TbMailValue { get; set; }
+        public string? TbNameValue { get; set; }
+        public string? TbFirstNameValue { get; set; }
+        public string? TbMailValue { get; set; }
+        public string? TbPhoneValue { get; set; }
         public string BtnValidate { get; set; }
         public string BtnCancel { get; set; }
-        public List<Department>? DepartmentList { get; set; }
-        public Department? SelectedDepartment { get; set; }
+        public List<Department> DepartmentList { get; set; }
+        public Department SelectedDepartment { get; set; }
+        public ICommand ValidateCommand { get; set; }
+        public ICommand CancelCommand { get; set; }
 
         public StaffAddViewModel() 
         {
@@ -34,6 +41,9 @@ namespace SVE.Mediatek.ViewModel
             DepartmentList = GenerateDepartmentList();
             BtnValidate = "Valider";
             BtnCancel = "Annuler";
+
+            ValidateCommand = new CommandHandler() { CommandExecutte = (arg) => ValidateAddStaff() };
+            CancelCommand = new CommandHandler() { CommandExecutte = (arg) => ReturnToStaffHandler() };
         }
 
         /// <summary>
@@ -46,6 +56,44 @@ namespace SVE.Mediatek.ViewModel
                 .Select(name => (Department)Enum
                 .Parse(typeof(Department), name))
                 .ToList();
+        }
+
+        /// <summary>
+        /// Validate the addition of a staff
+        /// </summary>
+        public void ValidateAddStaff()
+        {
+            //Field completion check           
+            if (string.IsNullOrEmpty(TbNameValue) ||
+                string.IsNullOrEmpty(TbFirstNameValue) ||
+                string.IsNullOrEmpty(TbPhoneValue) ||
+                string.IsNullOrEmpty(TbMailValue))
+            {
+                // TODO -> appel View errorFiel (ou messageBox?) mais this reste ouverte
+            }
+            else
+            {
+                if (MessageBox.Show("Voulez vous enregistrer le nouveau personnel?",
+                        "",
+                        MessageBoxButton.OK,
+                        MessageBoxImage.Question)
+                        == MessageBoxResult.OK)
+                {
+                    var newStaff = new Staff(TbNameValue, TbFirstNameValue, TbMailValue, TbPhoneValue, SelectedDepartment);
+                    // TODO endregistrer dans la DB staff
+                    // Todo puis Affichage AbscenceHandler -> verif maj modif staff
+
+                }
+            }
+        }
+
+        /// <summary>
+        /// Closes the staff add window and opens the staff manager window.
+        /// </summary>
+        public void ReturnToStaffHandler()
+        {
+            // TODO appel View StaffHandler
+            // Fermeture this
         }
     }
 }

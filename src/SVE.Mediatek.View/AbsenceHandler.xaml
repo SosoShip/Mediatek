@@ -9,6 +9,7 @@
         Height="700" 
         Width="1000"
         Background="Black">
+    <!--Button description-->
     <Window.Resources>
         <Style TargetType="{x:Type Button}">
             <Setter Property="Height" Value="40"/>
@@ -33,10 +34,12 @@
                 <RowDefinition Height="*"/>
                 <RowDefinition Height="0.3*"/>
             </Grid.RowDefinitions>
-            
+
+            <!--Absence management button-->
             <Button Grid.Row="1"
             VerticalAlignment="Center"
-            Content="{Binding BtnAdd}">
+            Content="{Binding BtnAdd}"
+            Command="{Binding AddAbsenceCommand}">
                 <Button.Resources>
                     <Style TargetType="{x:Type Border}">
                         <Setter Property="CornerRadius" Value="7"/>
@@ -45,7 +48,8 @@
             </Button>
 
             <Button Grid.Row="2"          
-            Content="{Binding BtnChange}">
+            Content="{Binding BtnChange}"
+            Command="{Binding ChangeAbsenceCommand}">
                 <Button.Resources>
                     <Style TargetType="{x:Type Border}">
                         <Setter Property="CornerRadius" Value="7"/>
@@ -54,7 +58,8 @@
             </Button>
 
             <Button Grid.Row="3" 
-            Content="{Binding BtnDel}">
+            Content="{Binding BtnDel}"
+            Command="{Binding DelAbsenceCommand}">
                 <Button.Resources>
                     <Style TargetType="{x:Type Border}">
                         <Setter Property="CornerRadius" Value="7"/>
@@ -62,8 +67,10 @@
                 </Button.Resources>
             </Button>
 
+            <!--Return to the previous page-->
             <Button Grid.Row="4" 
-            Content="{Binding BtnReturn}">
+            Content="{Binding BtnReturn}"
+            Command="{Binding ReturnAbsenceCommand}">
                 <Button.Resources>
                     <Style TargetType="{x:Type Border}">
                         <Setter Property="CornerRadius" Value="7"/>
@@ -80,6 +87,7 @@
                 <RowDefinition Height="4*"/>
                 <RowDefinition Height="0.3*"/>
             </Grid.RowDefinitions>
+            <!--Titles definition-->
             <Label Grid.Row="0"
                Content="{Binding LblMediatek}"
                HorizontalAlignment="Center"                
@@ -103,6 +111,7 @@
                 BorderBrush="White"
                 BorderThickness="2"/>
 
+            <!--Absence List-->
             <DataGrid Grid.Row="3"
                 ItemsSource="{Binding AbsenceList}" 
                 SelectedItem="{Binding SelectedAbsence}"
@@ -110,7 +119,7 @@
                 Background="Black"
                 RowHeaderWidth="0"
                 ColumnWidth="*">
-                
+
                 <DataGrid.ColumnHeaderStyle>
                     <Style TargetType="{x:Type DataGridColumnHeader}">
                         <Setter Property="Background" Value="Black"/>
@@ -127,7 +136,6 @@
                     </Style>
                 </DataGrid.CellStyle>
             </DataGrid>
-            
         </Grid>
     </Grid>
 </Window>

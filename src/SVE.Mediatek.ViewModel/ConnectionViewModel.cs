@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -9,7 +10,7 @@ using SVE.Mediatek.Model;
 
 namespace SVE.Mediatek.ViewModel
 {
-    public class ConnectionViewModel
+    public class ConnectionViewModel 
     {
         public string LblMediatek { get; set; }
         public string LblTitle { get; set; }
@@ -31,18 +32,18 @@ namespace SVE.Mediatek.ViewModel
             LblMail = "EMAIL";
             LblPassword = "MOT DE PASSE";
             BtnValidate = "Se connecter";
-            TbLoginValue = string.Empty; // TODO new string ou ""?
+            TbLoginValue = string.Empty; 
             TbPasswordValue = string.Empty;
             //Click on the Validate Connection button
             ConnectionCommand = new CommandHandler() { CommandExecutte = (Arg) => DisplayViewStaffHandler () };
-        }
+        }       
 
+        /// <summary>
+        /// Validate a connection
+        /// </summary>
         public void DisplayViewStaffHandler()
-        {            
-            var loginValue = TbLoginValue;
-            var passwordValue = TbPasswordValue;
-
-            if (string.IsNullOrEmpty(loginValue) && string.IsNullOrEmpty(passwordValue))
+        {                       
+            if (string.IsNullOrEmpty(TbLoginValue) || string.IsNullOrEmpty(TbPasswordValue))
             {
                 // TODO affichage de ErrorField
             }
@@ -51,7 +52,7 @@ namespace SVE.Mediatek.ViewModel
                 // TODO recuperer le login et PW du manager 
                 //Manager = new Manager(); est ce que je créé un nouveau manager comme dans habilitation pour ensuite verifier si log pwd identique
                 //ou je recup les données de la DB et je vérifie dierct dans le if?
-                if (loginValue == Manager.Login &&  passwordValue == Manager.Password) 
+                if (TbLoginValue == Manager.Login && TbPasswordValue == Manager.Password) 
                 {
                     // TODO affichage StaffHandler
                     // comment afficher le staffHandler sans connaitre ni la vue ni le chapeau?
