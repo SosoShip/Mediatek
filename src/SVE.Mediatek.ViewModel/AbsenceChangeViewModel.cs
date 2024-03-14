@@ -12,8 +12,7 @@ using System.Windows.Media.Animation;
 namespace SVE.Mediatek.ViewModel
 {
     public class AbsenceChangeViewModel 
-    {
-       
+    {      
         public Staff SelectedStaff { get; set; }//TODO besoin du staff?
         public Absence Absence { get; set; }
         public string LblMediatek { get; set; }
@@ -32,6 +31,7 @@ namespace SVE.Mediatek.ViewModel
        
         public ICommand? ValidateCommand { get; set; }
         public ICommand? CancelCommand { get; set; }
+        public Action ShowAbsenceAction { get; set; }
 
         public AbsenceChangeViewModel(Staff staff, Absence absence)
         {
@@ -52,8 +52,8 @@ namespace SVE.Mediatek.ViewModel
             BtnValidate = "Valider";
             BtnCancel = "Annuler";
 
-            ValidateCommand = new CommandHandler() { CommandExecutte = (arg) => ModifyAbsence() };
-            CancelCommand = new CommandHandler() { CommandExecutte = (arg) => ReturnToAbsenceHandler() };
+            ValidateCommand = new CommandHandler() { CommandExecute = (arg) => ModifyAbsence() };
+            CancelCommand = new CommandHandler() { CommandExecute = (arg) => ReturnToAbsenceHandler() };
         }
 
         /// <summary>
@@ -99,8 +99,7 @@ namespace SVE.Mediatek.ViewModel
                         var modifiedAbscence = new Absence(TbBeginDate.Value, TBEndDate.Value, SelectedReason.Value);
                         Absence = modifiedAbscence;
                         // TODO endregistrer dans la DB staff.Absence
-                        // Todo puis Affichage AbscenceHandler -> verif maj new abs
-                        
+                        ShowAbsenceAction();
                     }
                     
                 }
@@ -113,8 +112,7 @@ namespace SVE.Mediatek.ViewModel
         /// </summary>
         public void ReturnToAbsenceHandler()
         {
-            // TODO appel View AbsenceHandler
-            // Fermeture this
+            ShowAbsenceAction();
         }
     }
 }

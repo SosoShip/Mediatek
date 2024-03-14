@@ -28,6 +28,7 @@ namespace SVE.Mediatek.ViewModel
         public Department SelectedDepartment { get; set; }
         public ICommand ValidateCommand { get; set; }
         public ICommand CancelCommand { get; set; }
+        public Action ShowStaffAction { get; set; }
 
         public StaffAddViewModel() 
         {
@@ -42,8 +43,8 @@ namespace SVE.Mediatek.ViewModel
             BtnValidate = "Valider";
             BtnCancel = "Annuler";
 
-            ValidateCommand = new CommandHandler() { CommandExecutte = (arg) => ValidateAddStaff() };
-            CancelCommand = new CommandHandler() { CommandExecutte = (arg) => ReturnToStaffHandler() };
+            ValidateCommand = new CommandHandler() { CommandExecute = (arg) => ValidateAddStaff() };
+            CancelCommand = new CommandHandler() { CommandExecute = (arg) => ReturnToStaffHandler() };
         }
 
         /// <summary>
@@ -81,8 +82,8 @@ namespace SVE.Mediatek.ViewModel
                 {
                     var newStaff = new Staff(TbNameValue, TbFirstNameValue, TbMailValue, TbPhoneValue, SelectedDepartment);
                     // TODO endregistrer dans la DB staff
-                    // Todo puis Affichage AbscenceHandler -> verif maj modif staff
-
+                    // Todo puis mise a jour tableau gestion perso -> verif maj modif staff, normalement ok
+                    ShowStaffAction();
                 }
             }
         }
@@ -92,8 +93,7 @@ namespace SVE.Mediatek.ViewModel
         /// </summary>
         public void ReturnToStaffHandler()
         {
-            // TODO appel View StaffHandler
-            // Fermeture this
+            ShowStaffAction();
         }
     }
 }

@@ -1,5 +1,6 @@
 ﻿using System.Configuration;
 using System.Data;
+using System.Security.Policy;
 using System.Windows;
 using SVE.Mediatek.Model;
 using SVE.Mediatek.View;
@@ -20,51 +21,66 @@ namespace SVE.Mediatek
             base.OnStartup(e);
             var connectionWindow = new Connection();
             // Binding of the connection window's view-viewModel
-            connectionWindow.DataContext = new ConnectionViewModel();
+            connectionWindow.DataContext = new ConnectionViewModel { ShowStaffAction = () => ShowStaff(connectionWindow) };
             connectionWindow.Show();
+        }
 
-            //var StaffHandlerWindow = new StaffHandler();
-            //StaffHandlerWindow.DataContext = new StaffHandlerViewModel();
-            //StaffHandlerWindow.Show();
+        public void ShowStaff(Window previousWindow)
+        {
+            var StaffHandlerWindow = new StaffHandler();
+            StaffHandlerWindow.DataContext = new StaffHandlerViewModel 
+            { 
+                ShowAddStaffAction = () => ShowAddStaff(StaffHandlerWindow),
+                ShowChangeStaffAction = (staff) => ShowChangeStaff(staff, StaffHandlerWindow),
+                ShowAbsenceAction = (staff) => ShowAbsence(staff, StaffHandlerWindow)
+            };
+            StaffHandlerWindow.Show();
+            previousWindow.Close();
+        }
 
-            //var AbsenceHandlerWindow = new AbsenceHandler();
-            //AbsenceHandlerWindow.DataContext = new AbsenceHandlerViewModel("Durand", "Cecile");
-            //AbsenceHandlerWindow.Show();
+        public void ShowAddStaff(Window staffHandler)
+        {
+            var StaffAddWindow = new StaffAdd();
+            StaffAddWindow.DataContext = new StaffAddViewModel { ShowStaffAction = () => ShowStaff(StaffAddWindow) };
+            StaffAddWindow.Show();
+            staffHandler.Close();
+        }
 
-            //var StaffAddWindow = new StaffAdd();
-            //StaffAddWindow.DataContext = new StaffAddViewModel();
-            //StaffAddWindow.Show();
+        public void ShowChangeStaff(Staff staff, Window staffHandler)
+        {
+            var staffchangewindow = new StaffChange();
+            staffchangewindow.DataContext = new StaffChangeViewModel(staff) { ShowStaffAction = () => ShowStaff(staffchangewindow) };
+            staffchangewindow.Show();
+            staffHandler.Close();
+        }
 
-            //var StaffChangeWindow = new StaffChange();
-            //StaffChangeWindow.DataContext = new StaffChangeViewModel(new Staff("Durant", "Alice", "adurant@mediatek.fr", "0612857593", Department.Reception));
-            //StaffChangeWindow.Show();
+        public void ShowAbsence(Staff staff, Window previousWindow)
+        {
+            var AbsenceHandlerWindow = new AbsenceHandler();
+            AbsenceHandlerWindow.DataContext = new AbsenceHandlerViewModel(staff)
+            {
+                ShowStaffAction = () => ShowStaff(AbsenceHandlerWindow),
+                ShowAddAbsenceAction = () => ShowAddAbsence(staff, AbsenceHandlerWindow),
+                ShowChangeAbsenceAction = (selectedAbsence) => ShowChangeAbsence(staff, selectedAbsence, AbsenceHandlerWindow)
+            };
+            AbsenceHandlerWindow.Show();
+            previousWindow.Close();
+        }
 
+        public void ShowAddAbsence(Staff staff, Window absenceHandler)
+        {
+            var AbsenceAddWindow = new AbscenceAdd();
+            AbsenceAddWindow.DataContext = new AbsenceAddViewModel(staff) { ShowAbsenceAction = () => ShowAbsence(staff, AbsenceAddWindow)};
+            AbsenceAddWindow.Show();
+            absenceHandler.Close();
+        }
 
-            //var AbsenceAddWindow = new AbscenceAdd();
-            //AbsenceAddWindow.DataContext = new AbsenceAddViewModel(new Staff("Durant", "Alice", "adurant@mediatek.fr", "0612857593", Department.Reception));
-            //AbsenceAddWindow.Show();
-
-            //var AbsenceChangeWindow = new AbsenceChange();
-            //AbsenceChangeWindow.DataContext = new AbsenceChangeViewModel(
-            //    new Staff("Durant", "Alice", "adurant@mediatek.fr", "0612857593", Department.Reception),
-            //    new Absence(new DateOnly(2024,02,25), new DateOnly(2024, 02, 26), Reason.Maladie));
-            //AbsenceChangeWindow.Show();
-
-            //var DelConfirmationWindow = new DelConfirmation();
-            //DelConfirmationWindow.DataContext = new DelConfirmationViewModel();
-            //DelConfirmationWindow.Show();
-
-            //var ErrorFieldWindow = new ErrorFieldAbsenceAdd();
-            //ErrorFieldWindow.DataContext = new ErrorFieldViemModel();
-            //ErrorFieldWindow.Show();
-
-            //var ErrorDateWindow = new ErrorDate();
-            //ErrorDateWindow.DataContext = new ErrorDateViewModel();
-            //ErrorDateWindow.Show();
-
-            //var ErrorConnectionWindow = new ErrorConnection();
-            //ErrorConnectionWindow.DataContext = new ErrorConnectionViewModel();
-            //ErrorConnectionWindow.Show();
+        public void ShowChangeAbsence(Staff staff, Absence absence, Window absenceHandler)
+        {
+            var AbsenceChangeWindow = new AbsenceChange();
+            AbsenceChangeWindow.DataContext = new AbsenceChangeViewModel(staff, absence) { ShowAbsenceAction = () => ShowAbsence(staff, AbsenceChangeWindow)};
+            AbsenceChangeWindow.Show();
+            absenceHandler.Close();
         }
     }
 

@@ -20,11 +20,15 @@ namespace SVE.Mediatek.ViewModel
         public string BtnDel { get; set; }
         public string BtnReturn { get; set; }
         public ObservableCollection<Absence> AbsenceList { get; set; }
+        public Absence? SelectedAbsence { get; set; }
         public ICommand? AddAbsenceCommand { get; set; }
         public ICommand? ChangeAbsenceCommand { get; set; }
         public ICommand? DelAbsenceCommand { get; set; }
         public ICommand? ReturnAbsenceCommand { get; set; }
         public Staff SelectedSaff { get; set; }
+        public Action ShowStaffAction { get; set; }
+        public Action ShowAddAbsenceAction { get; set; }
+        public Action<Absence> ShowChangeAbsenceAction { get; set; }
 
         public AbsenceHandlerViewModel(Staff staff)
         {
@@ -38,11 +42,12 @@ namespace SVE.Mediatek.ViewModel
             BtnDel = "Supprimer";
             BtnReturn = "Retour";
             AbsenceList = GetAbsenceList();
+            SelectedAbsence = new Absence(new DateOnly(2024, 02, 25), new DateOnly(2024, 02, 26), Reason.RRT); //TODO ligne select
             // Draw button command
-            AddAbsenceCommand = new CommandHandler() { CommandExecutte = (arg) => DisplayAddAbsence() };
-            ChangeAbsenceCommand = new CommandHandler() { CommandExecutte = (arg) => DisplayChangeAbsence() };
-            DelAbsenceCommand = new CommandHandler() { CommandExecutte = (arg) => DelAnAbsence() };
-            ReturnAbsenceCommand = new CommandHandler() { CommandExecutte = (Arg) => DisplayReturnAbsence() };
+            AddAbsenceCommand = new CommandHandler() { CommandExecute = (arg) => DisplayAddAbsence() };
+            ChangeAbsenceCommand = new CommandHandler() { CommandExecute = (arg) => DisplayChangeAbsence() };
+            DelAbsenceCommand = new CommandHandler() { CommandExecute = (arg) => DelAnAbsence() };
+            ReturnAbsenceCommand = new CommandHandler() { CommandExecute = (Arg) => DisplayStaff() };
             // View update
             RaisePropertyChanged(nameof(AbsenceList));
         }
@@ -73,14 +78,16 @@ namespace SVE.Mediatek.ViewModel
         /// </summary>
         public void DisplayAddAbsence()
         {
-
+            ShowAddAbsenceAction();
         }
 
         /// <summary>
         /// Display the absence change window
         /// </summary>
         public void DisplayChangeAbsence() 
-        { 
+        {
+            // TODO CanExecute absence select
+            ShowChangeAbsenceAction(SelectedAbsence);
         }
 
         /// <summary>
@@ -88,15 +95,18 @@ namespace SVE.Mediatek.ViewModel
         /// </summary>
         public void DelAnAbsence()
         {
+            // TODO CanExecute absence select
             // Afficher confirmation suppression
+            // enregistrer dans la db
+            ShowStaffAction();
         }
 
         /// <summary>
         /// Display the staff handler window
         /// </summary>
-        public void DisplayReturnAbsence()
+        public void DisplayStaff()
         {
-
+            ShowStaffAction();
         }
     }
 }

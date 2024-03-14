@@ -24,9 +24,14 @@ namespace SVE.Mediatek.ViewModel
         public ICommand? BtnAbsenceCommand { get; set; }
         public ObservableCollection<Staff> StaffList { get; set; }
         public Staff? SelectedSaff { get; set; }
+        public Action ShowAddStaffAction { get; set; }
+        public Action<Staff> ShowChangeStaffAction { get; set; }
+        public Action<Staff> ShowAbsenceAction { get; set; }
 
         public StaffHandlerViewModel() 
         {
+            SelectedSaff = new Staff("Dupond", "Alicia", "adupond@mediatek.fr", "0286545231", Department.Comptabilité); //TODO A remplacer par la ligne select
+
             //Displaying properties
             LblMediatek = "MEDIATEK";
             LblTitle = "GESTION DU PERSONNEL";
@@ -34,11 +39,16 @@ namespace SVE.Mediatek.ViewModel
             BtnChange = "Modifier";
             BtnDel = "Supprimer";
             BtnAbsence = "Absence";
-            //Button command
-            BtnAddCommand = new CommandHandler() { CommandExecutte = (arg) => DisplayAddStaff() };
-            BtnChangeCommand = new CommandHandler() { CommandExecutte = (arg) => DisplayChangeStaff() };
-            BtnDelCommand = new CommandHandler() { CommandExecutte = (arg) => deleteStaff() };
-            BtnAbsenceCommand = new CommandHandler() { CommandExecutte = (arg) => DisplayAbsenceHandler() };
+            //Buttons command
+            BtnAddCommand = new CommandHandler() { CommandExecute = (arg) => DisplayAddStaff() }; 
+
+            BtnChangeCommand = new CommandHandler() 
+            {
+                CommandExecute = (arg) => DisplayChangeStaff(),
+                CommandCanExecute = (arg) => false
+            }; 
+            BtnDelCommand = new CommandHandler() { CommandExecute = (arg) => deleteStaff() };
+            BtnAbsenceCommand = new CommandHandler() { CommandExecute = (arg) => DisplayAbsenceHandler() };
 
             StaffList = GenerateStaffList();
             RaisePropertyChanged(nameof(StaffList));
@@ -61,7 +71,7 @@ namespace SVE.Mediatek.ViewModel
         public ObservableCollection<Staff> GenerateStaffList() 
         {
             // TODO récuperer la liste du personnel dans la DB
-           return  StaffList = [new Staff("Durand", "Cecile", "durantc@gmail.com", "0265847912", Department.Reception)];           
+           return  StaffList = [new Staff("Durand", "Cecile", "durantc@gmail.com", "0265847912", Department.Reception)];
         }
 
         /// <summary>
@@ -69,7 +79,7 @@ namespace SVE.Mediatek.ViewModel
         /// </summary>
         public void DisplayAddStaff()
         {
-
+            ShowAddStaffAction();
         }
 
         /// <summary>
@@ -77,7 +87,7 @@ namespace SVE.Mediatek.ViewModel
         /// </summary>
         public void DisplayChangeStaff()
         {
-
+            ShowChangeStaffAction(SelectedSaff);
         }
 
         /// <summary>
@@ -85,7 +95,7 @@ namespace SVE.Mediatek.ViewModel
         /// </summary>
         public void deleteStaff() 
         {
-            // demander confirmation suppression
+            // demander confirmation suppression puis supprimer
         }
 
         /// <summary>
@@ -93,7 +103,7 @@ namespace SVE.Mediatek.ViewModel
         /// </summary>
         public void DisplayAbsenceHandler()
         {
-
+            ShowAbsenceAction(SelectedSaff);
         }
     }
 }

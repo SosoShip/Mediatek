@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET8_0;NETCOREAPP
 
-11874382350
+7353000703
 
-14390962027
-1981117430454
-AbscenceAdd.xaml;AbsenceChange.xaml;AbsenceHandler.xaml;Connection.xaml;DelConfirmation.xaml;ErrorConnection.xaml;ErrorDate.xaml;ErrorField.xaml;StaffAdd.xaml;StaffChange.xaml;StaffHandler.xaml;
+10-223468178
+198-1418571446
+AbscenceAdd.xaml;AbsenceChange.xaml;AbsenceHandler.xaml;Connection.xaml;StaffAdd.xaml;StaffChange.xaml;StaffHandler.xaml;
 
-True
+False
 

@@ -14,18 +14,6 @@
     <Compile Update="Connection.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="DelConfirmation.xaml.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Update="ErrorConnection.xaml.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Update="ErrorDate.xaml.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Update="ErrorField.xaml.cs">
-      <SubType>Code</SubType>
-    </Compile>
     <Compile Update="StaffAdd.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -47,18 +35,6 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Connection.xaml">
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Update="DelConfirmation.xaml">
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Update="ErrorConnection.xaml">
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Update="ErrorDate.xaml">
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Update="ErrorField.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="StaffAdd.xaml">

@@ -22,6 +22,7 @@ namespace SVE.Mediatek.ViewModel
         public string TbPasswordValue { get; set; }
         public Manager? Manager { get; set; }
         public ICommand ConnectionCommand { get; set; }
+        public Action ShowStaffAction { get; set; }
 
         public ConnectionViewModel() 
         {
@@ -35,14 +36,16 @@ namespace SVE.Mediatek.ViewModel
             TbLoginValue = string.Empty; 
             TbPasswordValue = string.Empty;
             //Click on the Validate Connection button
-            ConnectionCommand = new CommandHandler() { CommandExecutte = (Arg) => DisplayViewStaffHandler () };
+            ConnectionCommand = new CommandHandler() { CommandExecute = (Arg) => DisplayViewStaffHandler()};
+
         }       
 
         /// <summary>
         /// Validate a connection
         /// </summary>
         public void DisplayViewStaffHandler()
-        {                       
+        {
+            ShowStaffAction(); // TODO a retirer!!!!!
             if (string.IsNullOrEmpty(TbLoginValue) || string.IsNullOrEmpty(TbPasswordValue))
             {
                 // TODO affichage de ErrorField
@@ -54,8 +57,7 @@ namespace SVE.Mediatek.ViewModel
                 //ou je recup les données de la DB et je vérifie dierct dans le if?
                 if (TbLoginValue == Manager.Login && TbPasswordValue == Manager.Password) 
                 {
-                    // TODO affichage StaffHandler
-                    // comment afficher le staffHandler sans connaitre ni la vue ni le chapeau?
+                    ShowStaffAction(); 
                 }
                 else
                 {

@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
+using System.Windows.Xps;
 
 namespace SVE.Mediatek.ViewModel
 {
@@ -25,6 +26,7 @@ namespace SVE.Mediatek.ViewModel
         public string BtnCancel { get; set; }
         public ICommand CancelCommand { get; set; }
         public Staff SelectedStaff { get; set; }
+        public Action ShowAbsenceAction { get; set; }
 
         public AbsenceAddViewModel(Staff staff) 
         {
@@ -41,8 +43,8 @@ namespace SVE.Mediatek.ViewModel
             BtnValidate = "Valider";
             BtnCancel = "Annuler";
 
-            ValidateCommand = new CommandHandler() { CommandExecutte = (arg) => ValidateAddAbsence()};           
-            CancelCommand = new CommandHandler() { CommandExecutte = (arg) => ReturnToAbsenceHandler() };
+            ValidateCommand = new CommandHandler() { CommandExecute = (arg) => ValidateAddAbsence()};           
+            CancelCommand = new CommandHandler() { CommandExecute = (arg) => ReturnToAbsenceHandler() };
         }
 
         /// <summary>
@@ -75,15 +77,15 @@ namespace SVE.Mediatek.ViewModel
                 {
                     // TODO -> appel View errorDaten (ou messageBox?) mais this reste ouvert
                 }
+                // TODO si date existe deja -> alerte 
                 else
                 {
-                    SelectedStaff.AbsenceList.Add(new Absence(TBDateStart.Value, TBDateEnd.Value, SelectedReason.Value)); 
+                    SelectedStaff.AbsenceList.Add(new Absence(TBDateStart.Value, TBDateEnd.Value, SelectedReason.Value));
                     // TODO Ajouter l'absence à la DB
                     // puis maj classe absence
-                    // puis appel View AbsenceHandler
-                    // puis fermeture this
+                    ShowAbsenceAction();
                 }
-            }
+            }// => => TODO remplacer par switch??
         }
 
         /// <summary>
@@ -91,8 +93,7 @@ namespace SVE.Mediatek.ViewModel
         /// </summary>
         public void ReturnToAbsenceHandler()
         {
-            // TODO appel View AbsenceHandler
-            // Fermeture this
+            ShowAbsenceAction();
         }
     }
 }

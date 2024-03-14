@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading.Channels;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -30,6 +31,7 @@ namespace SVE.Mediatek.ViewModel
         public string BtnCancel { get; set; }
         public ICommand? ValidateCommand { get; set; }
         public ICommand? CancelCommand { get; set; }
+        public Action ShowStaffAction { get; set; }
 
         public StaffChangeViewModel(Staff staff)
         {
@@ -53,7 +55,8 @@ namespace SVE.Mediatek.ViewModel
             BtnValidate = "Valider";
             BtnCancel = "Annuler";
 
-            ValidateCommand = new CommandHandler() { CommandExecutte = (arg) => ModifyStaff() };
+            ValidateCommand = new CommandHandler() { CommandExecute = (arg) => ModifyStaff() };
+            CancelCommand = new CommandHandler() { CommandExecute = (arg)=> ReturnToStaffHandler() };
         }
 
         /// <summary>
@@ -68,6 +71,9 @@ namespace SVE.Mediatek.ViewModel
                 .ToList();
         }
 
+        /// <summary>
+        /// Recording staff changes and returning to the staff management window.
+        /// </summary>
         public void ModifyStaff()
         {
             //Field completion check           
@@ -86,13 +92,25 @@ namespace SVE.Mediatek.ViewModel
                         MessageBoxImage.Question)
                         == MessageBoxResult.OK)
                 {
-                    var modifiedStaff = new Staff(TbNameValue, TbFirstNameValue, TbMailValue, TbPhoneValue, SelectedDepartment);
-                    SelectedStaff = modifiedStaff;
+                    //Recording staff changes
+                    SelectedStaff.Name = TbNameValue;
+                    SelectedStaff.FirsName = TbFirstNameValue;
+                    SelectedStaff.Email = TbMailValue;
+                    SelectedStaff.Phone = TbPhoneValue;
+                    SelectedStaff.Department = SelectedDepartment;
                     // TODO endregistrer dans la DB staff
-                    // Todo puis Affichage AbscenceHandler -> verif maj modif staff
 
+                    ShowStaffAction();
                 }
             }
+        }
+
+        /// <summary>
+        /// Closes the staff add window and opens the staff manager window.
+        /// </summary>
+        public void ReturnToStaffHandler()
+        {
+            ShowStaffAction();
         }
     }
 }
