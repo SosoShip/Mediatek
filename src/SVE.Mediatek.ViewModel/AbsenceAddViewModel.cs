@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Input;
 using System.Windows.Xps;
 
@@ -65,27 +66,30 @@ namespace SVE.Mediatek.ViewModel
         public void ValidateAddAbsence()
         {
             //TODO voir comment vérifier le format de date
+            //Field completion check 
             if (TBDateStart is null || 
                 TBDateEnd is null || 
                 SelectedReason is null) 
             {
-                // TODO -> appel View errorFiel(ou messageBox?) mais this reste ouverte
+                MessageBox.Show("Veuillez remplir tous les champs");
             }
             else
             {
+                //Date consistency
                 if (TBDateStart > TBDateEnd) 
                 {
-                    // TODO -> appel View errorDaten (ou messageBox?) mais this reste ouvert
+                    MessageBox.Show("La date de début est antérieure à la date de fin");
                 }
-                // TODO si date existe deja -> alerte 
                 else
                 {
+                    //TODO if (les champs existent déja dans la dDB) {MessageBox.Show("L'absence est déjà enregistrée");}
+
+                    //Saving modifications
                     SelectedStaff.AbsenceList.Add(new Absence(TBDateStart.Value, TBDateEnd.Value, SelectedReason.Value));
                     // TODO Ajouter l'absence à la DB
-                    // puis maj classe absence
                     ShowAbsenceAction();
                 }
-            }// => => TODO remplacer par switch??
+            }
         }
 
         /// <summary>

@@ -70,7 +70,7 @@ namespace SVE.Mediatek.ViewModel
                 string.IsNullOrEmpty(TbPhoneValue) ||
                 string.IsNullOrEmpty(TbMailValue))
             {
-                // TODO -> appel View errorFiel (ou messageBox?) mais this reste ouverte
+                MessageBox.Show("Veuillez remplir tous les champs");
             }
             else
             {

@@ -1,11 +1,13 @@
 ﻿using SVE.Mediatek.Model;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Input;
 
 namespace SVE.Mediatek.ViewModel
@@ -41,7 +43,6 @@ namespace SVE.Mediatek.ViewModel
             BtnAbsence = "Absence";
             //Buttons command
             BtnAddCommand = new CommandHandler() { CommandExecute = (arg) => DisplayAddStaff() }; 
-
             BtnChangeCommand = new CommandHandler() 
             {
                 CommandExecute = (arg) => DisplayChangeStaff(),
@@ -49,7 +50,7 @@ namespace SVE.Mediatek.ViewModel
             }; 
             BtnDelCommand = new CommandHandler() { CommandExecute = (arg) => deleteStaff() };
             BtnAbsenceCommand = new CommandHandler() { CommandExecute = (arg) => DisplayAbsenceHandler() };
-
+            // Array Staff
             StaffList = GenerateStaffList();
             RaisePropertyChanged(nameof(StaffList));
         }
@@ -95,7 +96,14 @@ namespace SVE.Mediatek.ViewModel
         /// </summary>
         public void deleteStaff() 
         {
-            // demander confirmation suppression puis supprimer
+            if (MessageBox.Show($"Voulez vous vraiment supprimer {SelectedSaff}?",
+                "Supression d'un collaborateur",
+                MessageBoxButton.YesNo)
+                == MessageBoxResult.Yes)
+            {
+                // TODO suprimer le staff
+            }
+            
         }
 
         /// <summary>

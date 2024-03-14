@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
 using SVE.Mediatek.Model;
@@ -46,10 +47,11 @@ namespace SVE.Mediatek.ViewModel
         public void DisplayViewStaffHandler()
         {
             ShowStaffAction(); // TODO a retirer!!!!!
-            if (string.IsNullOrEmpty(TbLoginValue) || string.IsNullOrEmpty(TbPasswordValue))
-            {
-                // TODO affichage de ErrorField
+            if (string.IsNullOrEmpty(TbLoginValue) || string.IsNullOrEmpty(TbPasswordValue)) 
+            { 
+                MessageBox.Show("Veuillez remplir tous les champs"); 
             }
+           
             else
             {
                 // TODO recuperer le login et PW du manager 
@@ -61,7 +63,7 @@ namespace SVE.Mediatek.ViewModel
                 }
                 else
                 {
-                    // TODO affichage de ErrorConnection
+                    MessageBox.Show("Login ou mot de passe incorrect");
                 }
             }           
         }

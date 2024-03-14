@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Input;
 using System.Windows.Media.Animation;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace SVE.Mediatek.ViewModel
 {
@@ -78,18 +79,22 @@ namespace SVE.Mediatek.ViewModel
                 TBEndDate is null ||
                 SelectedReason is null)
             //TODO voir comment vérifier le format de date
-            {
-                // TODO -> appel View errorFiel (ou messageBox?) mais this reste ouverte
+            {   
+                MessageBox.Show("Veuillez remplir tous les champs");
             }
             else
             {
-                if (TbBeginDate > TBEndDate)
-                {
-                    // TODO -> appel View errorDate(ou messageBox?) mais this reste ouvert
+                //Date consistency
+                if (TbBeginDate > TBEndDate) 
+                { 
+                    MessageBox.Show("La date de début est antérieure à la date de fin"); 
                 }
-                //Saving modifications
+                
                 else
                 {
+                    //TODO if (les champs existent déja dans la dDB) {MessageBox.Show("L'absence est déjà enregistrée");}
+
+                    //Saving modifications
                     if (MessageBox.Show("Voulez vous confirmer les modifications?",
                         "",
                         MessageBoxButton.OK,

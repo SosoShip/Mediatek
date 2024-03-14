@@ -6,6 +6,7 @@ using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Input;
 
 namespace SVE.Mediatek.ViewModel
@@ -96,9 +97,14 @@ namespace SVE.Mediatek.ViewModel
         public void DelAnAbsence()
         {
             // TODO CanExecute absence select
-            // Afficher confirmation suppression
-            // enregistrer dans la db
-            ShowStaffAction();
+            if (MessageBox.Show($"Voulez vous supprimer l'absence de {SelectedSaff}?",
+                "Supression d'une abscence",
+                MessageBoxButton.YesNo)
+                == MessageBoxResult.Yes)
+            {
+                // TODO enregistrer dans la db 
+                RaisePropertyChanged(nameof(AbsenceList));
+            }           
         }
 
         /// <summary>
