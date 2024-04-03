@@ -17,8 +17,8 @@ namespace SVE.Mediatek.ViewModel
         public string LblAbsenceOf { get; set; }
         public string LblDateStart { get; set; }
         public string LblDateEnd { get; set; }
-        public DateOnly? TBDateStart { get; set; }
-        public DateOnly? TBDateEnd { get; set;}
+        public DateOnly? TBDateStartValue { get; set; }
+        public DateOnly? TBDateEndValue { get; set;}
         public string LblReason { get; set; }
         public List<Reason> ReasonList { get; set; }
         public Reason? SelectedReason { get; set; }
@@ -67,8 +67,8 @@ namespace SVE.Mediatek.ViewModel
         {
             //TODO voir comment vérifier le format de date
             //Field completion check 
-            if (TBDateStart is null || 
-                TBDateEnd is null || 
+            if (TBDateStartValue is null || 
+                TBDateEndValue is null || 
                 SelectedReason is null) 
             {
                 MessageBox.Show("Veuillez remplir tous les champs");
@@ -76,7 +76,7 @@ namespace SVE.Mediatek.ViewModel
             else
             {
                 //Date consistency
-                if (TBDateStart > TBDateEnd) 
+                if (TBDateStartValue > TBDateEndValue) 
                 {
                     MessageBox.Show("La date de début est antérieure à la date de fin");
                 }
@@ -85,7 +85,7 @@ namespace SVE.Mediatek.ViewModel
                     //TODO if (les champs existent déja dans la dDB) {MessageBox.Show("L'absence est déjà enregistrée");}
 
                     //Saving modifications
-                    SelectedStaff.AbsenceList.Add(new Absence(TBDateStart.Value, TBDateEnd.Value, SelectedReason.Value));
+                    SelectedStaff.AbsenceList.Add(new Absence(TBDateStartValue.Value, TBDateEndValue.Value, SelectedReason.Value));
                     // TODO Ajouter l'absence à la DB
                     ShowAbsenceAction();
                 }

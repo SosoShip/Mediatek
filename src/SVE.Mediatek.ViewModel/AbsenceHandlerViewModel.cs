@@ -21,7 +21,16 @@ namespace SVE.Mediatek.ViewModel
         public string BtnDel { get; set; }
         public string BtnReturn { get; set; }
         public ObservableCollection<Absence> AbsenceList { get; set; }
-        public Absence? SelectedAbsence { get; set; }
+        private Absence? _selectedAbsence;
+        public Absence? SelectedAbsence
+        {
+            get { return _selectedAbsence; }
+            set
+            {
+                _selectedAbsence = value;
+                RaisePropertyChanged(nameof(SelectedAbsence));
+            }
+        }
         public ICommand? AddAbsenceCommand { get; set; }
         public ICommand? ChangeAbsenceCommand { get; set; }
         public ICommand? DelAbsenceCommand { get; set; }
@@ -43,11 +52,18 @@ namespace SVE.Mediatek.ViewModel
             BtnDel = "Supprimer";
             BtnReturn = "Retour";
             AbsenceList = GetAbsenceList();
-            SelectedAbsence = new Absence(new DateOnly(2024, 02, 25), new DateOnly(2024, 02, 26), Reason.RRT); //TODO ligne select
             // Draw button command
             AddAbsenceCommand = new CommandHandler() { CommandExecute = (arg) => DisplayAddAbsence() };
-            ChangeAbsenceCommand = new CommandHandler() { CommandExecute = (arg) => DisplayChangeAbsence() };
-            DelAbsenceCommand = new CommandHandler() { CommandExecute = (arg) => DelAnAbsence() };
+            ChangeAbsenceCommand = new CommandHandler() 
+            { 
+                CommandExecute = (arg) => DisplayChangeAbsence(),                
+                CommandCanExecute = (arg) => CanExecuteAbsenceCommand()
+            };
+            DelAbsenceCommand = new CommandHandler() 
+            { 
+                CommandExecute = (arg) => DelAnAbsence(),
+                CommandCanExecute = (arg) => CanExecuteAbsenceCommand()
+            };
             ReturnAbsenceCommand = new CommandHandler() { CommandExecute = (Arg) => DisplayStaff() };
             // View update
             RaisePropertyChanged(nameof(AbsenceList));
@@ -113,6 +129,19 @@ namespace SVE.Mediatek.ViewModel
         public void DisplayStaff()
         {
             ShowStaffAction();
+        }
+
+        /// <summary>
+        /// Determines whether the staff command can be executed.
+        /// </summary>
+        /// <returns>True if the staff command can be executed; otherwise, false.</returns>        
+        public bool CanExecuteAbsenceCommand()
+        {
+            if (SelectedAbsence == null)
+            {
+                return false;
+            }
+            return true;
         }
     }
 }

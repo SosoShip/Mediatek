@@ -86,7 +86,7 @@
         </Grid>
         <Grid Grid.Row="6">
             <TextBox Name="tbPassword"
-            Text="{Binding TbPasswordValue}"/>
+            Text="{Binding TbPasswordValue, Mode=TwoWay}"/>
         </Grid>
         <!--connection validate-->
         <Button Grid.Row="7"

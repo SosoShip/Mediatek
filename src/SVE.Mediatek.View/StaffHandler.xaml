@@ -103,7 +103,7 @@
             <!--Staff List-->
             <DataGrid Grid.Row="2"
                 ItemsSource="{Binding StaffList}" 
-                SelectedItem="{Binding SelectedStaff}"
+                SelectedItem="{Binding SelectedStaff, Mode=TwoWay}"
                 Margin="15,15,15,15"         
                 Background="Black"
                 RowHeaderWidth="0"

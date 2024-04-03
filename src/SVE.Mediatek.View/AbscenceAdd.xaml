@@ -109,9 +109,9 @@
             <Label Grid.Column="2"
                    Content="{Binding LblDateEnd}"/>
             <TextBox Grid.Column="1"
-                     Text="{Binding TBDateStart}"/>
+                     Text="{Binding TBDateStartValue, Mode=TwoWay}"/>
             <TextBox Grid.Column="3"
-                     Text="{Binding TBDateEnd}"/>
+                     Text="{Binding TBDateEndValue, Mode=TwoWay}"/>
         </Grid>
         <!--Absence Reason selection-->
         <Grid Grid.Row="4">
