@@ -14,8 +14,8 @@ namespace SVE.Mediatek.ViewModel
 {
     public class AbsenceChangeViewModel 
     {      
-        public Staff SelectedStaff { get; set; }//TODO besoin du staff?
-        public Absence Absence { get; set; }
+        public StaffModel SelectedStaff { get; set; }//TODO besoin du staff?
+        public AbsenceModel Absence { get; set; }
         public string LblMediatek { get; set; }
         public string LblTitle { get; set; }
         public string LblAbsenceOf { get; set; }
@@ -27,14 +27,14 @@ namespace SVE.Mediatek.ViewModel
 
         public DateOnly? TbBeginDate { get; set; }
         public DateOnly? TBEndDate { get; set; }     
-        public List<Reason> ReasonList { get; set; }
-        public Reason? SelectedReason { get; set; }
+        public List<ReasonModel> ReasonList { get; set; }
+        public ReasonModel? SelectedReason { get; set; }
        
         public ICommand? ValidateCommand { get; set; }
         public ICommand? CancelCommand { get; set; }
         public Action ShowAbsenceAction { get; set; }
 
-        public AbsenceChangeViewModel(Staff staff, Absence absence)
+        public AbsenceChangeViewModel(StaffModel staff, AbsenceModel absence)
         {
             SelectedStaff = staff;
             Absence = absence;
@@ -61,11 +61,11 @@ namespace SVE.Mediatek.ViewModel
         /// Generate a list of all departments.
         /// </summary>
         /// <returns>List all Department</returns>
-        public List<Reason> GenerateReasonList()
+        public List<ReasonModel> GenerateReasonList()
         {
-            return Enum.GetNames(typeof(Reason))
-                .Select(name => (Reason)Enum
-                .Parse(typeof(Reason), name))
+            return Enum.GetNames(typeof(ReasonModel))
+                .Select(name => (ReasonModel)Enum
+                .Parse(typeof(ReasonModel), name))
                 .ToList();
         }
 
@@ -101,7 +101,7 @@ namespace SVE.Mediatek.ViewModel
                         MessageBoxImage.Question) 
                         == MessageBoxResult.OK)
                     {
-                        var modifiedAbscence = new Absence(TbBeginDate.Value, TBEndDate.Value, SelectedReason.Value);
+                        var modifiedAbscence = new AbsenceModel(TbBeginDate.Value, TBEndDate.Value, SelectedReason.Value);
                         Absence = modifiedAbscence;
                         // TODO endregistrer dans la DB staff.Absence
                         ShowAbsenceAction();

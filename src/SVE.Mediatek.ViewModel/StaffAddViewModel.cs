@@ -24,8 +24,8 @@ namespace SVE.Mediatek.ViewModel
         public string? TbPhoneValue { get; set; }
         public string BtnValidate { get; set; }
         public string BtnCancel { get; set; }
-        public List<Department> DepartmentList { get; set; }
-        public Department SelectedDepartment { get; set; }
+        public List<DepartmentModel> DepartmentList { get; set; }
+        public DepartmentModel SelectedDepartment { get; set; }
         public ICommand ValidateCommand { get; set; }
         public ICommand CancelCommand { get; set; }
         public Action ShowStaffAction { get; set; }
@@ -51,11 +51,11 @@ namespace SVE.Mediatek.ViewModel
         /// Generate a list of all departments.
         /// </summary>
         /// <returns>List all Department</returns>
-        public List<Department> GenerateDepartmentList()
+        public List<DepartmentModel> GenerateDepartmentList()
         {
-            return Enum.GetNames(typeof(Department))
-                .Select(name => (Department)Enum
-                .Parse(typeof(Department), name))
+            return Enum.GetNames(typeof(DepartmentModel))
+                .Select(name => (DepartmentModel)Enum
+                .Parse(typeof(DepartmentModel), name))
                 .ToList();
         }
 
@@ -80,7 +80,7 @@ namespace SVE.Mediatek.ViewModel
                         MessageBoxImage.Question)
                         == MessageBoxResult.OK)
                 {
-                    var newStaff = new Staff(TbNameValue, TbFirstNameValue, TbMailValue, TbPhoneValue, SelectedDepartment);
+                    var newStaff = new StaffModel(TbNameValue, TbFirstNameValue, TbMailValue, TbPhoneValue, SelectedDepartment);
                     // TODO endregistrer dans la DB staff
                     // Todo puis mise a jour tableau gestion perso -> verif maj modif staff, normalement ok
                     ShowStaffAction();

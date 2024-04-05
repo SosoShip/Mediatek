@@ -20,16 +20,16 @@ namespace SVE.Mediatek.ViewModel
         public DateOnly? TBDateStartValue { get; set; }
         public DateOnly? TBDateEndValue { get; set;}
         public string LblReason { get; set; }
-        public List<Reason> ReasonList { get; set; }
-        public Reason? SelectedReason { get; set; }
+        public List<ReasonModel> ReasonList { get; set; }
+        public ReasonModel? SelectedReason { get; set; }
         public string BtnValidate { get; set; }
         public ICommand ValidateCommand { get; set; }
         public string BtnCancel { get; set; }
         public ICommand CancelCommand { get; set; }
-        public Staff SelectedStaff { get; set; }
+        public StaffModel SelectedStaff { get; set; }
         public Action ShowAbsenceAction { get; set; }
 
-        public AbsenceAddViewModel(Staff staff) 
+        public AbsenceAddViewModel(StaffModel staff) 
         {
             SelectedStaff = staff;
 
@@ -52,11 +52,11 @@ namespace SVE.Mediatek.ViewModel
         /// Generate a list of all departments.
         /// </summary>
         /// <returns>List all Department</returns>
-        public List<Reason> GenerateReasonList()
+        public List<ReasonModel> GenerateReasonList()
         {
-            return Enum.GetNames(typeof(Reason))
-                .Select(name => (Reason)Enum
-                .Parse(typeof(Reason), name))
+            return Enum.GetNames(typeof(ReasonModel))
+                .Select(name => (ReasonModel)Enum
+                .Parse(typeof(ReasonModel), name))
                 .ToList();
         }
 
@@ -85,7 +85,7 @@ namespace SVE.Mediatek.ViewModel
                     //TODO if (les champs existent déja dans la dDB) {MessageBox.Show("L'absence est déjà enregistrée");}
 
                     //Saving modifications
-                    SelectedStaff.AbsenceList.Add(new Absence(TBDateStartValue.Value, TBDateEndValue.Value, SelectedReason.Value));
+                    SelectedStaff.AbsenceList.Add(new AbsenceModel(TBDateStartValue.Value, TBDateEndValue.Value, SelectedReason.Value));
                     // TODO Ajouter l'absence à la DB
                     ShowAbsenceAction();
                 }

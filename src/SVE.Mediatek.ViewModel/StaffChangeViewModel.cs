@@ -13,7 +13,7 @@ namespace SVE.Mediatek.ViewModel
 {
     public class StaffChangeViewModel
     {
-        public Staff SelectedStaff { get; set; }
+        public StaffModel SelectedStaff { get; set; }
         public string LblMediatek { get; set; }
         public string LblTitle { get; set; }
         public string LblName { get; set; }
@@ -25,15 +25,15 @@ namespace SVE.Mediatek.ViewModel
         public string LblMail { get; set; }
         public string TbMailValue { get; set; }     
         public String LblDepartment { get; set; }
-        public List<Department>? DepartmentList { get; set; }
-        public Department SelectedDepartment { get; set; }
+        public List<DepartmentModel>? DepartmentList { get; set; }
+        public DepartmentModel SelectedDepartment { get; set; }
         public string BtnValidate { get; set; }
         public string BtnCancel { get; set; }
         public ICommand? ValidateCommand { get; set; }
         public ICommand? CancelCommand { get; set; }
         public Action ShowStaffAction { get; set; }
 
-        public StaffChangeViewModel(Staff staff)
+        public StaffChangeViewModel(StaffModel staff)
         {
             SelectedStaff = staff;
 
@@ -63,11 +63,11 @@ namespace SVE.Mediatek.ViewModel
         /// Generate a list of all departments.
         /// </summary>
         /// <returns>List all Department</returns>
-        public List<Department> GenerateDepartmentList()
+        public List<DepartmentModel> GenerateDepartmentList()
         {
-            return Enum.GetNames(typeof(Department))
-                .Select(name => (Department)Enum
-                .Parse(typeof(Department), name))
+            return Enum.GetNames(typeof(DepartmentModel))
+                .Select(name => (DepartmentModel)Enum
+                .Parse(typeof(DepartmentModel), name))
                 .ToList();
         }
 

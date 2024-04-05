@@ -9,6 +9,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\SVE.Mediatek.DAL\SVE.Mediatek.DAL.csproj" />
     <ProjectReference Include="..\SVE.Mediatek.ViewModel\SVE.Mediatek.ViewModel.csproj" />
     <ProjectReference Include="..\SVE.Mediatek.View\SVE.Mediatek.View.csproj" />
   </ItemGroup>

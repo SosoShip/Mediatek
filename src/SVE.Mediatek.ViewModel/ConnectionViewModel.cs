@@ -21,7 +21,7 @@ namespace SVE.Mediatek.ViewModel
         public string BtnValidate { get; set; }
         public string TbLoginValue { get; set; }
         public string TbPasswordValue { get; set; }
-        public Manager? Manager { get; set; }
+        public ManagerModel? Manager { get; set; }
         public ICommand ConnectionCommand { get; set; }
         public Action ShowStaffAction { get; set; }
 

@@ -33,9 +33,9 @@ namespace SVE.Mediatek.ViewModel
         //}
         public ICommand? BtnDelCommand {  get; set; }
         public ICommand? BtnAbsenceCommand { get; set; }
-        public ObservableCollection<Staff> StaffList { get; set; }
-        private Staff? _selectedStaff;
-        public Staff? SelectedStaff
+        public ObservableCollection<StaffModel> StaffList { get; set; }
+        private StaffModel? _selectedStaff;
+        public StaffModel? SelectedStaff
         {
             get { return _selectedStaff; }
             set
@@ -45,8 +45,8 @@ namespace SVE.Mediatek.ViewModel
             }
         }
         public Action ShowAddStaffAction { get; set; }
-        public Action<Staff> ShowChangeStaffAction { get; set; }
-        public Action<Staff> ShowAbsenceAction { get; set; }
+        public Action<StaffModel> ShowChangeStaffAction { get; set; }
+        public Action<StaffModel> ShowAbsenceAction { get; set; }
 
         public StaffHandlerViewModel() 
         {
@@ -93,11 +93,11 @@ namespace SVE.Mediatek.ViewModel
         /// Retrieves a list of staff from the database and returns it as an ObservableCollection.
         /// </summary>
         /// <returns></returns>ObservableCollection<Staff></returns>
-        public ObservableCollection<Staff> GenerateStaffList() 
+        public ObservableCollection<StaffModel> GenerateStaffList() 
         {
             // TODO récuperer la liste du personnel dans la DB
-           return  StaffList = [new Staff("Durand", "Cecile", "durantc@gmail.com", "0265847912", Department.Reception),
-           new Staff("lejoie", "Vincent", "Vincent@gmail.com", "0265847912", Department.Reception)];
+           return  StaffList = [new StaffModel("Durand", "Cecile", "durantc@gmail.com", "0265847912", DepartmentModel.Reception),
+           new StaffModel("lejoie", "Vincent", "Vincent@gmail.com", "0265847912", DepartmentModel.Reception)];
         }
 
         /// <summary>

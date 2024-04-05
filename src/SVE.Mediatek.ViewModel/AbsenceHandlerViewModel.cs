@@ -20,9 +20,9 @@ namespace SVE.Mediatek.ViewModel
         public string BtnChange { get; set; }
         public string BtnDel { get; set; }
         public string BtnReturn { get; set; }
-        public ObservableCollection<Absence> AbsenceList { get; set; }
-        private Absence? _selectedAbsence;
-        public Absence? SelectedAbsence
+        public ObservableCollection<AbsenceModel> AbsenceList { get; set; }
+        private AbsenceModel? _selectedAbsence;
+        public AbsenceModel? SelectedAbsence
         {
             get { return _selectedAbsence; }
             set
@@ -35,12 +35,12 @@ namespace SVE.Mediatek.ViewModel
         public ICommand? ChangeAbsenceCommand { get; set; }
         public ICommand? DelAbsenceCommand { get; set; }
         public ICommand? ReturnAbsenceCommand { get; set; }
-        public Staff SelectedSaff { get; set; }
+        public StaffModel SelectedSaff { get; set; }
         public Action ShowStaffAction { get; set; }
         public Action ShowAddAbsenceAction { get; set; }
-        public Action<Absence> ShowChangeAbsenceAction { get; set; }
+        public Action<AbsenceModel> ShowChangeAbsenceAction { get; set; }
 
-        public AbsenceHandlerViewModel(Staff staff)
+        public AbsenceHandlerViewModel(StaffModel staff)
         {
             //Displaying properties
             SelectedSaff = staff;
@@ -84,10 +84,10 @@ namespace SVE.Mediatek.ViewModel
         /// Retrieves a list of absences from the database and returns it as an ObservableCollection.
         /// </summary>
         /// <returns></returns>ObservableCollection<Absence></returns>
-        public ObservableCollection<Absence> GetAbsenceList()
+        public ObservableCollection<AbsenceModel> GetAbsenceList()
         {
             // TODO récupere la liste des absences de la DB
-            return new ObservableCollection<Absence>([new Absence(new DateOnly(2024, 02, 25), new DateOnly(2024, 02, 26), Reason.RRT)]);           
+            return new ObservableCollection<AbsenceModel>([new AbsenceModel(new DateOnly(2024, 02, 25), new DateOnly(2024, 02, 26), ReasonModel.RRT)]);           
         }
 
         /// <summary>
