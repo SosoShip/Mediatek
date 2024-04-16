@@ -18,9 +18,7 @@ namespace SVE.Mediatek
         /// Opens the login window.
         /// </summary>
         protected override void OnStartup(StartupEventArgs e)
-        {  
-            
-
+        {
             base.OnStartup(e);
             var connectionWindow = new Connection();
             // Binding of the connection window's view-viewModel

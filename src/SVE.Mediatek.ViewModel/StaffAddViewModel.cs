@@ -1,4 +1,5 @@
 ﻿using SVE.Mediatek.Model;
+using SVE.Mediatek.DAL;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -6,6 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Input;
+using SVE.Mediatek.DAL.Repository;
 
 namespace SVE.Mediatek.ViewModel
 {
@@ -81,6 +83,7 @@ namespace SVE.Mediatek.ViewModel
                         == MessageBoxResult.OK)
                 {
                     var newStaff = new StaffModel(TbNameValue, TbFirstNameValue, TbMailValue, TbPhoneValue, SelectedDepartment);
+                    
                     // TODO endregistrer dans la DB staff
                     // Todo puis mise a jour tableau gestion perso -> verif maj modif staff, normalement ok
                     ShowStaffAction();

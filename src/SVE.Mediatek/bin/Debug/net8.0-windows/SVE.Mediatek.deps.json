@@ -556,6 +556,7 @@
       },
       "SVE.Mediatek.ViewModel/1.0.0": {
         "dependencies": {
+          "SVE.Mediatek.DAL": "1.0.0",
           "SVE.Mediatek.Model": "1.0.0"
         },
         "runtime": {

@@ -57,7 +57,7 @@ namespace SVE.Mediatek.ViewModel
                 // TODO recuperer le login et PW du manager 
                 //Manager = new Manager(); est ce que je créé un nouveau manager comme dans habilitation pour ensuite verifier si log pwd identique
                 //ou je recup les données de la DB et je vérifie dierct dans le if?
-                if (TbLoginValue == Manager.Login && TbPasswordValue == Manager.Password) 
+                if (TbLoginValue == Manager.Email && TbPasswordValue == Manager.Password) 
                 {
                     ShowStaffAction(); 
                 }

@@ -81,7 +81,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files (x86)\\dotnet\\sdk\\8.0.103/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files (x86)\\dotnet\\sdk\\8.0.104/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
@@ -145,7 +145,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files (x86)\\dotnet\\sdk\\8.0.103/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files (x86)\\dotnet\\sdk\\8.0.104/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
@@ -179,6 +179,9 @@
           "net8.0-windows7.0": {
             "targetAlias": "net8.0-windows",
             "projectReferences": {
+              "C:\\Digital\\projets\\Mediatek\\src\\SVE.Mediatek.DAL\\SVE.Mediatek.DAL.csproj": {
+                "projectPath": "C:\\Digital\\projets\\Mediatek\\src\\SVE.Mediatek.DAL\\SVE.Mediatek.DAL.csproj"
+              },
               "C:\\Digital\\projets\\Mediatek\\src\\SVE.Mediatek.Model\\SVE.Mediatek.Model.csproj": {
                 "projectPath": "C:\\Digital\\projets\\Mediatek\\src\\SVE.Mediatek.Model\\SVE.Mediatek.Model.csproj"
               }
@@ -213,7 +216,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files (x86)\\dotnet\\sdk\\8.0.103/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files (x86)\\dotnet\\sdk\\8.0.104/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
@@ -277,7 +280,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files (x86)\\dotnet\\sdk\\8.0.103/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files (x86)\\dotnet\\sdk\\8.0.104/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
@@ -351,7 +354,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files (x86)\\dotnet\\sdk\\8.0.103/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files (x86)\\dotnet\\sdk\\8.0.104/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
