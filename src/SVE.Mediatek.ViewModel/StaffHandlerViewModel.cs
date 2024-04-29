@@ -1,4 +1,6 @@
-﻿using SVE.Mediatek.Model;
+﻿using SVE.Mediatek.DAL.Entities;
+using SVE.Mediatek.DAL.Repository;
+using SVE.Mediatek.Model;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -47,9 +49,11 @@ namespace SVE.Mediatek.ViewModel
         public Action ShowAddStaffAction { get; set; }
         public Action<StaffModel> ShowChangeStaffAction { get; set; }
         public Action<StaffModel> ShowAbsenceAction { get; set; }
+        public IRepository<StaffEntity> StaffRepository { get; set; }
 
-        public StaffHandlerViewModel() 
+        public StaffHandlerViewModel(IRepository<StaffEntity> staffRepository) 
         {
+            StaffRepository = staffRepository;
             //Displaying properties
             LblMediatek = "MEDIATEK";
             LblTitle = "GESTION DU PERSONNEL";
@@ -95,8 +99,8 @@ namespace SVE.Mediatek.ViewModel
         /// <returns></returns>ObservableCollection<Staff></returns>
         public ObservableCollection<StaffModel> GenerateStaffList() 
         {
-            // TODO récuperer la liste du personnel dans la DB
-           return  StaffList = [new StaffModel("Durand", "Cecile", "durantc@gmail.com", "0265847912", DepartmentModel.Reception),
+            // TODO récuperer la liste du personnel dans la DB -> utiliser StaffRepository
+            return StaffList = [new StaffModel("Durand", "Cecile", "durantc@gmail.com", "0265847912", DepartmentModel.Reception),
            new StaffModel("lejoie", "Vincent", "Vincent@gmail.com", "0265847912", DepartmentModel.Reception)];
         }
 

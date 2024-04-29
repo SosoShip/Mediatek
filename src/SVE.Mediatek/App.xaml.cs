@@ -6,6 +6,12 @@ using SVE.Mediatek.Model;
 using SVE.Mediatek.View;
 using SVE.Mediatek.ViewModel;
 using SVE.Mediatek.DAL;
+using Microsoft.Extensions.DependencyInjection;
+using SVE.Mediatek.DAL.Repository;
+using SVE.Mediatek.Dal;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
+using SVE.Mediatek.DAL.Entities;
 
 namespace SVE.Mediatek
 {
@@ -14,6 +20,39 @@ namespace SVE.Mediatek
     /// </summary>
     public partial class App : Application
     {
+        public IServiceProvider Services { get; }
+
+        public App()
+        {
+            Services = ConfigureServices();
+        }
+
+
+        /// <summary>
+        /// Adding and configuring services
+        /// </summary>
+        /// <returns>Services's Collection : ViewModel, StaffRepository and AbsenceRepository</returns>
+        private static IServiceProvider ConfigureServices()
+        {
+            var services = new ServiceCollection();
+
+            //Register the DbContext with the dependency injection service.
+            //Each instance of a Repository will automatically inject an instance
+            //of mediatekContext into the constructor.
+            services.AddDbContext<MediatekContext>(options =>
+                options.UseSqlServer("Data Source=.\\" +
+                "SQLEXPRESS;Initial Catalog=Mediatek;Integrated Security=true;TrustServerCertificate=true;"));
+            //TODO, a la place de l'url, utiliser : Configuration.GetConnectionString("DefaultConnection") 
+            // + penser a implementer l'interface IConfiguration
+
+            // Adding services :
+            services.AddSingleton<StaffHandlerViewModel>();
+            services.AddSingleton<IRepository<StaffEntity>, StaffRepository>();
+            services.AddSingleton<IRepository<AbsenceEntity>, AbsenceRepository>();
+
+            return services.BuildServiceProvider();
+        }
+
         /// <summary>
         /// Opens the login window.
         /// </summary>
@@ -29,16 +68,19 @@ namespace SVE.Mediatek
         public void ShowStaff(Window previousWindow)
         {
             var StaffHandlerWindow = new StaffHandler();
-            StaffHandlerWindow.DataContext = new StaffHandlerViewModel 
-            { 
-                ShowAddStaffAction = () => ShowAddStaff(StaffHandlerWindow),
-                ShowChangeStaffAction = (staff) => ShowChangeStaff(staff, StaffHandlerWindow),
-                ShowAbsenceAction = (staff) => ShowAbsence(staff, StaffHandlerWindow)
-            };
+
+            // Initialization of StaffHandlerViewModel
+            var viewModel = Services.GetService<StaffHandlerViewModel>();
+            viewModel.ShowAddStaffAction = () => ShowAddStaff(StaffHandlerWindow);
+            viewModel.ShowChangeStaffAction = (staff) => ShowChangeStaff(staff, StaffHandlerWindow);
+            viewModel.ShowAbsenceAction = (staff) => ShowAbsence(staff, StaffHandlerWindow);
+           
+            // Call of StaffHandlerViewModel
+            StaffHandlerWindow.DataContext = viewModel;
             StaffHandlerWindow.Show();
             previousWindow.Close();
         }
-
+        
         public void ShowAddStaff(Window staffHandler)
         {
             var StaffAddWindow = new StaffAdd();
