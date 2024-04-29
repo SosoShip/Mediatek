@@ -1,0 +1,15 @@
+C:\Digital\projets\Mediatek\src\SVE.Mediatek.DAL\bin\Debug\net8.0\SVE.Mediatek.DAL.deps.json
+C:\Digital\projets\Mediatek\src\SVE.Mediatek.DAL\bin\Debug\net8.0\SVE.Mediatek.DAL.runtimeconfig.json
+C:\Digital\projets\Mediatek\src\SVE.Mediatek.DAL\bin\Debug\net8.0\SVE.Mediatek.DAL.dll
+C:\Digital\projets\Mediatek\src\SVE.Mediatek.DAL\bin\Debug\net8.0\SVE.Mediatek.DAL.pdb
+C:\Digital\projets\Mediatek\src\SVE.Mediatek.DAL\obj\Debug\net8.0\SVE.Mediatek.DAL.csproj.AssemblyReference.cache
+C:\Digital\projets\Mediatek\src\SVE.Mediatek.DAL\obj\Debug\net8.0\SVE.Mediatek.DAL.GeneratedMSBuildEditorConfig.editorconfig
+C:\Digital\projets\Mediatek\src\SVE.Mediatek.DAL\obj\Debug\net8.0\SVE.Mediatek.DAL.AssemblyInfoInputs.cache
+C:\Digital\projets\Mediatek\src\SVE.Mediatek.DAL\obj\Debug\net8.0\SVE.Mediatek.DAL.AssemblyInfo.cs
+C:\Digital\projets\Mediatek\src\SVE.Mediatek.DAL\obj\Debug\net8.0\SVE.Mediatek.DAL.csproj.CoreCompileInputs.cache
+C:\Digital\projets\Mediatek\src\SVE.Mediatek.DAL\obj\Debug\net8.0\SVE.Mediatek.DAL.sourcelink.json
+C:\Digital\projets\Mediatek\src\SVE.Mediatek.DAL\obj\Debug\net8.0\SVE.Mediatek.DAL.dll
+C:\Digital\projets\Mediatek\src\SVE.Mediatek.DAL\obj\Debug\net8.0\refint\SVE.Mediatek.DAL.dll
+C:\Digital\projets\Mediatek\src\SVE.Mediatek.DAL\obj\Debug\net8.0\SVE.Mediatek.DAL.pdb
+C:\Digital\projets\Mediatek\src\SVE.Mediatek.DAL\obj\Debug\net8.0\SVE.Mediatek.DAL.genruntimeconfig.cache
+C:\Digital\projets\Mediatek\src\SVE.Mediatek.DAL\obj\Debug\net8.0\ref\SVE.Mediatek.DAL.dll
