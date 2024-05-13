@@ -1,4 +1,6 @@
-﻿namespace SVE.Mediatek.DAL.Repository
+﻿using SVE.Mediatek.DAL.Entities;
+
+namespace SVE.Mediatek.DAL.Repository
 {
     public interface IRepository<TEntity> where TEntity : class
     {

@@ -94,10 +94,6 @@ namespace SVE.Mediatek.DAL.Migrations
                 {
                     b.HasBaseType("SVE.Mediatek.DAL.Entities.StaffEntity");
 
-                    b.Property<string>("Login")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<string>("Password")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");

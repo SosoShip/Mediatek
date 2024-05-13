@@ -12,7 +12,7 @@ namespace SVE.Mediatek.DAL.Repository
     /// <summary>
     /// Absence management from the DataBase
     /// </summary>
-    public class AbsenceRepository : Repository<AbsenceEntity>, IRepository<AbsenceEntity>
+    public class AbsenceRepository : Repository<AbsenceEntity>, IAbsenceRepository
     {
         /// <summary>
         /// Constructor that initializes the DbContext instance.
@@ -23,54 +23,36 @@ namespace SVE.Mediatek.DAL.Repository
         }
 
         /// <summary>
-        /// Retrieves an absence by its id from the database.
+        /// Adds a new entity to the database with id of staff.
         /// </summary>
-        /// <param name="id"></param>
+        /// <param name="absenceEntity"></param>
+        /// <param name="staffId"></param>
         /// <returns></returns>
-        public async Task<AbsenceEntity> GetAbsence(int id)
+        public async Task AddAbsence(int staffId, AbsenceEntity absenceEntity)
         {
-            return await base.Get(id);
+            // Find the corresponding staff
+            var staff = await Context.Staffs.FindAsync(staffId);
+            if (staff == null) throw new Exception("Staff not found");
+
+            // Add staff' absence
+            staff.AbsenceList.Add(absenceEntity);
+
+            await Context.SaveChangesAsync();
         }
 
         /// <summary>
-        /// Retrieves all absences from the database.
+        /// Verification that the absence dates have already been saved.
         /// </summary>
-        /// <param name="id"></param>
+        /// <param name="beginDate"></param>
+        /// <param name="endDate"></param>
         /// <returns></returns>
-        public async Task<IEnumerable<AbsenceEntity>> GetAllAbsence()
+        public async Task<bool> IsAbsenceDateExistsAsync(DateOnly beginDate, DateOnly endDate)
         {
-            return await base.GetAll();
-        }
+            var isBeginDate = await Context.Absence.AnyAsync(a => a.BeginDate == beginDate);
+            var isEndDate = await Context.Absence.AnyAsync(b => b.EndDate == endDate);
 
-        /// <summary>
-        /// Adds a new absence to the database.
-        /// </summary>
-        /// <param name="abscenceEntity"></param>
-        /// <returns></returns>
-        public async Task AddAbsence(AbsenceEntity abscenceEntity)
-        {
-            await base.Add(abscenceEntity);
-        }
-
-        
-        /// <summary>
-        /// Updates an existing absence in the database
-        /// </summary>
-        /// <param name="abscenceEntity"></param>
-        /// <returns></returns>
-        public async Task UpdateAbsence(AbsenceEntity abscenceEntity)
-        {
-            await base.Update(abscenceEntity);
-        }
-
-        /// <summary>
-        /// Deletes a absence from the database by its id.
-        /// </summary>
-        /// <param name="id"></param>
-        /// <returns></returns>
-        public async Task DeleteAbsence(int id)
-        {
-            await base.Delete(id);
+            if (!isBeginDate && !isEndDate) return false;
+            return true;
         }
     }
 }

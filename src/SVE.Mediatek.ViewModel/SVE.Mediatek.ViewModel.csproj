@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>net8.0-windows</TargetFramework>
@@ -10,6 +10,10 @@
   <ItemGroup>
     <ProjectReference Include="..\SVE.Mediatek.DAL\SVE.Mediatek.DAL.csproj" />
     <ProjectReference Include="..\SVE.Mediatek.Model\SVE.Mediatek.Model.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="13.0.1" />
   </ItemGroup>
 
 </Project>

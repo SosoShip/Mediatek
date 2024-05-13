@@ -8,14 +8,11 @@ namespace SVE.Mediatek.DAL.Entities
 {
     public class ManagerEntity : StaffEntity
     {
-        public string Login { get; set; }
-        public string Password { get; set; }
+        public required string Password { get; set; }
 
-        public ManagerEntity(string name, string firsName, string email, string phone, DepartmentEntity department, string login, string password)
-        : base(name, firsName, email, phone, department)
+        public ManagerEntity()
         {         
-            Login = "pouet"; //TODO Login = mail et passwod = sha2machin
-            Password = "password";
+           // Password = "password";//TODO Login = mail et passwod = sha2machin
         }
     }
 }

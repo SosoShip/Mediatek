@@ -9,7 +9,7 @@ namespace SVE.Mediatek.DAL.IntegrationTest
 {
     public class StaffRepositoryTest
     {
-        private StaffRepository _staffRepository;
+        private IRepository<StaffEntity> _staffRepository;
         private MediatekContext _context;
 
         [SetUp]
@@ -19,7 +19,7 @@ namespace SVE.Mediatek.DAL.IntegrationTest
                 .UseInMemoryDatabase(databaseName: "TestDatabase") // Creation of an in-memory database
                 .Options;
             _context = new MediatekContext(options);
-            _staffRepository = new StaffRepository(_context);
+            _staffRepository = new Repository<StaffEntity>(_context);
         }
       
         [TearDown]
@@ -34,15 +34,17 @@ namespace SVE.Mediatek.DAL.IntegrationTest
         public void TestAddStaff()
         { 
             // Arrange
-            var staff = new StaffEntity(
-                "Alicia", 
-                "Durant", 
-                "adurant@mediatek.com", 
-                "0256357891", 
-                DepartmentEntity.Documentation);
+            var staff = new StaffEntity
+            {
+                FirsName = "Alice",
+                Name = "Smith",
+                Email = "asmith@mediatek.com",
+                Phone = "0123456789",
+                Department = Department.Documentation
+            };
 
             // Act
-            _staffRepository.AddStaff(staff);
+            _ = _staffRepository.Add(staff);
 
             // Assert
             _context.Staffs.Should().Contain(staff);
@@ -52,14 +54,28 @@ namespace SVE.Mediatek.DAL.IntegrationTest
         public async Task TestGetStafff()
         {
             // Arrange
-            var staff1 = new StaffEntity("Alice", "Smith", "asmith@mediatek.com", "0123456789", DepartmentEntity.Documentation);
-            var staff2 = new StaffEntity("Bob", "Johnson", "bjohnson@mediatek.com", "9876543210", DepartmentEntity.Comptabilité);
+            var staff1 = new StaffEntity 
+            { 
+                FirsName = "Alice", 
+                Name = "Smith", 
+                Email = "asmith@mediatek.com", 
+                Phone = "0123456789", 
+                Department =  Department.Documentation 
+            };
+            var staff2 = new StaffEntity
+            { 
+                FirsName = "Bob", 
+                Name = "Johnson", 
+                Email = "bjohnson@mediatek.com", 
+                Phone = "9876543210", 
+                Department =  Department.Comptabilité 
+            };
 
-            _staffRepository.AddStaff(staff1);
-            _staffRepository.AddStaff(staff2);
+            _ = _staffRepository.Add(staff1);
+            _ = _staffRepository.Add(staff2);
 
             // Act
-            var theStaff = await _staffRepository.GetStaff(staff1.Id);
+            var theStaff = await _staffRepository.Get(staff1.Id);
 
             // Assert
             theStaff.Should().Be(staff1);
@@ -70,14 +86,28 @@ namespace SVE.Mediatek.DAL.IntegrationTest
         {
 
             // Arrange
-            var staff1 = new StaffEntity("Alice", "Smith", "asmith@mediatek.com", "0123456789", DepartmentEntity.Documentation);
-            var staff2 = new StaffEntity("Bob", "Johnson", "bjohnson@mediatek.com", "9876543210", DepartmentEntity.Comptabilité);
+            var staff1 = new StaffEntity
+            {
+                FirsName = "Alice",
+                Name = "Smith",
+                Email = "asmith@mediatek.com",
+                Phone = "0123456789",
+                Department = Department.Documentation
+            };
+            var staff2 = new StaffEntity
+            {
+                FirsName = "Bob",
+                Name = "Johnson",
+                Email = "bjohnson@mediatek.com",
+                Phone = "9876543210",
+                Department = Department.Comptabilité
+            };
 
-            _staffRepository.AddStaff(staff1);
-            _staffRepository.AddStaff(staff2);
+            _ = _staffRepository.Add(staff1);
+            _ = _staffRepository.Add(staff2);
 
             // Act
-            var theStaffs = await _staffRepository.GetAllStaff();
+            var theStaffs = await _staffRepository.GetAll();
 
             // Assert
             theStaffs.Should().HaveCount(2);
@@ -88,14 +118,28 @@ namespace SVE.Mediatek.DAL.IntegrationTest
         public void TestDeleteStaff()
         {
             // Arrange
-            var staff1 = new StaffEntity("Alice", "Smith", "asmith@mediatek.com", "0123456789", DepartmentEntity.Documentation);
-            var staff2 = new StaffEntity("Bob", "Johnson", "bjohnson@mediatek.com", "9876543210", DepartmentEntity.Comptabilité);
+            var staff1 = new StaffEntity
+            {
+                FirsName = "Alice",
+                Name = "Smith",
+                Email = "asmith@mediatek.com",
+                Phone = "0123456789",
+                Department = Department.Documentation
+            };
+            var staff2 = new StaffEntity
+            {
+                FirsName = "Bob",
+                Name = "Johnson",
+                Email = "bjohnson@mediatek.com",
+                Phone = "9876543210",
+                Department = Department.Comptabilité
+            };
 
-            _staffRepository.AddStaff(staff1);
-            _staffRepository.AddStaff(staff2);
+            _ = _staffRepository.Add(staff1);
+            _ = _staffRepository.Add(staff2);
 
             // Act
-            _staffRepository.DeleteStaff(staff2.Id);
+            _ = _staffRepository.Delete(staff2.Id);
 
             // Assert
             _context.Should().NotBe(staff2);
@@ -105,17 +149,24 @@ namespace SVE.Mediatek.DAL.IntegrationTest
         public void TestUpdateStaff()
         {
             // Arrange
-            var staff = new StaffEntity("Alice", "Smith", "asmith@mediatek.com", "0123456789", DepartmentEntity.Documentation);
-            _staffRepository.AddStaff(staff);
+            var staff = new StaffEntity
+            {
+                FirsName = "Alice",
+                Name = "Smith",
+                Email = "asmith@mediatek.com",
+                Phone = "0123456789",
+                Department = Department.Documentation
+            };
+            _ = _staffRepository.Add(staff);
 
             // Act
             staff.Name = "Alice";
             staff.FirsName = "Smith";
             staff.Email = "asmith@mediatek.com";
             staff.Phone = "0725987413";
-            staff.Department = DepartmentEntity.Documentation;
+            staff.Department = Department.Documentation;
 
-            _staffRepository.UpdateStaff(staff); 
+            _ = _staffRepository.Update(staff); 
 
             // Assert
             var staffInDatabase = _context.Staffs.Find(staff.Id);

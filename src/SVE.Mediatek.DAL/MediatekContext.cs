@@ -25,6 +25,10 @@ namespace SVE.Mediatek.Dal
             base.Dispose();
         }
 
+        //public MediatekContext()
+        //{
+        //}
+
         /// <summary>
         /// The constructor parameter DbContextOptions carries the configuration options for the DbContext, 
         /// here the connection string to connect to the SQL Server database. 
@@ -34,6 +38,17 @@ namespace SVE.Mediatek.Dal
         /// <param name="options"></param>
         public MediatekContext(DbContextOptions<MediatekContext> options) : base(options)
         {
+        }
+
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+            //if (optionsBuilder.IsConfigured)
+            //{
+            //    base.OnConfiguring(optionsBuilder);
+            //    return;
+            //}
+            optionsBuilder.UseSqlServer("Data Source=.\\" +
+                "SQLEXPRESS;Initial Catalog=Mediatek;Integrated Security=true;TrustServerCertificate=true;");   
         }
     }
 }

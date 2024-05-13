@@ -52,14 +52,14 @@
         </Grid.RowDefinitions>
         <!--titles definition-->
         <Label Grid.Row="0"
-          Content="{Binding LblMediatek}"
+          Content="MEDIATEK"
           HorizontalAlignment="Center"                
           VerticalAlignment="Bottom"
           FontSize="35"
           Foreground="DarkTurquoise"/>
 
         <Label Grid.Row="1"
-         Content="{Binding LblTitle}"
+         Content="MODIFIER UNE ABSENCE"
          HorizontalAlignment="Center"
          VerticalAlignment="Center" 
          FontSize="30"              
@@ -105,9 +105,9 @@
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
             <Label Grid.Column="0"
-                Content="{Binding LblBeginDate}"/>
+                Content="Date de début"/>
             <Label Grid.Column="2"
-                Content="{Binding LblEndDate}"/>
+                Content="Date de fin"/>
             <TextBox Grid.Column="1"
                   Text="{Binding TbBeginDate}"/>
             <TextBox Grid.Column="3"
@@ -121,14 +121,15 @@
                 <ColumnDefinition Width="2*"/>
             </Grid.ColumnDefinitions>
             <Label Grid.Column="0"
-                Content="{Binding LblReason}"
+                Content="Motif"
                 HorizontalAlignment="Center"
                 VerticalAlignment="Center"
                 FontSize="15"
                 Foreground="White"/>
             <ComboBox Grid.Column="1"
                    ItemsSource="{Binding ReasonList}"
-                   SelectedItem="{Binding SelectedReason}"/>
+                   SelectedItem="{Binding SelectedReason}"
+                   Foreground="Black"/>
         </Grid>
         <!--Validate or cancel the selection-->
         <Grid Grid.Row="5">
@@ -138,7 +139,7 @@
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
             <Button Grid.Column="1"
-             Content="{Binding BtnValidate}"
+             Content="Valider"
              Command="{Binding ValidateCommand}">
                 <Button.Resources>
                     <Style TargetType="{x:Type Border}">
@@ -147,7 +148,7 @@
                 </Button.Resources>
             </Button>
             <Button Grid.Column="2"
-             Content="{Binding BtnCancel}"
+             Content="Annuler"
              Command="{Binding CancelCommand}">
                 <Button.Resources>
                     <Style TargetType="{x:Type Border}">

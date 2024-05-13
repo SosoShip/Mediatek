@@ -33,13 +33,24 @@ namespace SVE.Mediatek.DAL.IntegrationTest
         public void TestAddAbsence()
         {
             // Arrange
-            var absence = new AbsenceEntity(
-                new DateOnly(2024, 02, 25), 
-                new DateOnly(2024, 02, 26),
-                ReasonEntity.RRT);
+            var absence = new AbsenceEntity
+            {
+                BeginDate = new DateOnly(2024, 02, 25),
+                EndDate = new DateOnly(2024, 02, 26),
+                Reason = Reason.RRT
+            };
+            var staff = new StaffEntity
+            {
+                FirsName = "Alice",
+                Name = "Smith",
+                Email = "asmith@mediatek.com",
+                Phone = "0123456789",
+                Department = Department.Documentation
+            };
+
 
             // Act
-            _abscenceRepository.AddAbsence(absence);
+            _abscenceRepository.AddAbsence(staff.Id, absence);
 
             // Assert
             _context.Absence.Should().Contain(absence);
@@ -49,20 +60,34 @@ namespace SVE.Mediatek.DAL.IntegrationTest
         public async Task TestGetAbsence()
         {
             // Arrange
-            var absence1 = new AbsenceEntity(
-                 new DateOnly(2024, 02, 25),
-                 new DateOnly(2024, 02, 26),
-                 ReasonEntity.RRT);
-            var absence2 = new AbsenceEntity(
-                 new DateOnly(2024, 05, 24),
-                 new DateOnly(2024, 05, 28),
-                 ReasonEntity.Maladie);
+            var absence1 = new AbsenceEntity
+            {
+                BeginDate = new DateOnly(2024, 02, 25),
+                EndDate = new DateOnly(2024, 02, 26),
+                Reason = Reason.RRT
+            };
 
-            _abscenceRepository.AddAbsence(absence1);
-            _abscenceRepository.AddAbsence(absence2);
+            var absence2 = new AbsenceEntity
+                 {
+                BeginDate = new DateOnly(2024, 05, 25),
+                EndDate = new DateOnly(2024, 05, 26),
+                Reason = Reason.Maladie
+            };
+
+            var staff = new StaffEntity
+            {
+                FirsName = "Alice",
+                Name = "Smith",
+                Email = "asmith@mediatek.com",
+                Phone = "0123456789",
+                Department = Department.Documentation
+            };
+
+            _abscenceRepository.AddAbsence(staff.Id, absence1);
+            _abscenceRepository.AddAbsence(staff.Id, absence2);
 
             // Act
-            var theAbsence = await _abscenceRepository.GetAbsence(absence1.Id);
+            var theAbsence = await _abscenceRepository.Get(absence1.Id);
 
             // Assert
             theAbsence.Should().Be(absence1);
@@ -73,20 +98,34 @@ namespace SVE.Mediatek.DAL.IntegrationTest
         {
 
             // Arrange
-            var absence1 = new AbsenceEntity(
-                new DateOnly(2024, 02, 25),
-                new DateOnly(2024, 02, 26),
-                ReasonEntity.RRT);
-            var absence2 = new AbsenceEntity(
-                 new DateOnly(2024, 05, 24),
-                 new DateOnly(2024, 05, 28),
-                 ReasonEntity.Maladie);
+            var absence1 = new AbsenceEntity
+            {
+                BeginDate = new DateOnly(2024, 02, 25),
+                EndDate = new DateOnly(2024, 02, 26),
+                Reason = Reason.RRT
+            };
 
-            _abscenceRepository.AddAbsence(absence1);
-            _abscenceRepository.AddAbsence(absence2);
+            var absence2 = new AbsenceEntity
+            {
+                BeginDate = new DateOnly(2024, 05, 25),
+                EndDate = new DateOnly(2024, 05, 26),
+                Reason = Reason.Maladie
+            };
+            var staff = new StaffEntity
+            {
+                FirsName = "Alice",
+                Name = "Smith",
+                Email = "asmith@mediatek.com",
+                Phone = "0123456789",
+                Department = Department.Documentation
+            };
+
+
+            _abscenceRepository.AddAbsence(staff.Id, absence1);
+            _abscenceRepository.AddAbsence(staff.Id, absence2);
 
             // Act
-            var theStaffs = await _abscenceRepository.GetAllAbsence();
+            var theStaffs = await _abscenceRepository.GetAll();
 
             // Assert
             theStaffs.Should().HaveCount(2);
@@ -97,20 +136,34 @@ namespace SVE.Mediatek.DAL.IntegrationTest
         public void TestDeleteAbsence()
         {
             // Arrange
-            var absence1 = new AbsenceEntity(
-                new DateOnly(2024, 02, 25),
-                new DateOnly(2024, 02, 26),
-                ReasonEntity.RRT);
-            var absence2 = new AbsenceEntity(
-                 new DateOnly(2024, 05, 24),
-                 new DateOnly(2024, 05, 28),
-                 ReasonEntity.Maladie);
+            var absence1 = new AbsenceEntity
+            {
+                BeginDate = new DateOnly(2024, 02, 25),
+                EndDate = new DateOnly(2024, 02, 26),
+                Reason = Reason.RRT
+            };
 
-            _abscenceRepository.AddAbsence(absence1);
-            _abscenceRepository.AddAbsence(absence2);
+            var absence2 = new AbsenceEntity
+            {
+                BeginDate = new DateOnly(2024, 05, 25),
+                EndDate = new DateOnly(2024, 05, 26),
+                Reason = Reason.Maladie
+            };
+            var staff = new StaffEntity
+            {
+                FirsName = "Alice",
+                Name = "Smith",
+                Email = "asmith@mediatek.com",
+                Phone = "0123456789",
+                Department = Department.Documentation
+            };
+
+
+            _abscenceRepository.AddAbsence(staff.Id, absence1);
+            _abscenceRepository.AddAbsence(staff.Id, absence2);
 
             // Act
-            _abscenceRepository.DeleteAbsence(absence2.Id);
+            _abscenceRepository.Delete(absence2.Id);
 
             // Assert
             _context.Should().NotBe(absence2);
@@ -120,20 +173,30 @@ namespace SVE.Mediatek.DAL.IntegrationTest
         public void TestUpdateAbsence()
         {
             // Arrange
-            var absence = new AbsenceEntity(
-                new DateOnly(2024, 02, 25),
-                new DateOnly(2024, 02, 26),
-                ReasonEntity.RRT);
-            _abscenceRepository.AddAbsence(absence);
+            var absence = new AbsenceEntity
+            {
+                BeginDate = new DateOnly(2024, 02, 25),
+                EndDate = new DateOnly(2024, 02, 26),
+                Reason = Reason.RRT
+            };
+            var staff = new StaffEntity
+            {
+                FirsName = "Alice",
+                Name = "Smith",
+                Email = "asmith@mediatek.com",
+                Phone = "0123456789",
+                Department = Department.Documentation
+            };
 
+            _abscenceRepository.AddAbsence(staff.Id, absence);
 
 
             // Act
             new DateOnly(2024, 02, 25);
             new DateOnly(2024, 02, 26);
-            absence.Reason = ReasonEntity.Famille;
+            absence.Reason = Reason.Famille;
 
-            _abscenceRepository.UpdateAbsence(absence);
+            _abscenceRepository.Update(absence);
 
             // Assert
             var absenceInDatabase = _context.Absence.Find(absence.Id);

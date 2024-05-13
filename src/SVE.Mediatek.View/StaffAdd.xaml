@@ -51,14 +51,14 @@
 
         <!--Titles definition-->
         <Label Grid.Row="0"
-            Content="{Binding LblMediatek}"
+            Content="MEDIATEK"
             HorizontalAlignment="Center"                
             VerticalAlignment="Bottom"
             FontSize="35"
             Foreground="DarkTurquoise"/>
 
         <Label Grid.Row="1"
-               Content="{Binding LblTitle}"
+               Content="AJOUTER UN PERSONNEL"
                HorizontalAlignment="Center"
                VerticalAlignment="Center" 
                FontSize="30"              
@@ -86,11 +86,11 @@
 
             <!--Staff properties-->
             <Label Grid.Column="0"
-                   Content="{Binding LblName}"/>
+                   Content="Nom"/>
             <Label Grid.Column="2"
-                   Content="{Binding LblFirstName}"/>
+                   Content="Prénom"/>
             <Label Grid.Column="4"
-                   Content="{Binding LblPhone}"/>
+                   Content="Téléphone"/>
             <TextBox Grid.Column="1"
                    Text ="{Binding TbNameValue, Mode=TwoWay}"/>
             <TextBox Grid.Column="3"
@@ -118,14 +118,15 @@
             </Grid.Resources>
             <!--Staff properties-->
             <Label Grid.Column="0"
-                Content="{Binding LblMail}"/>
+                Content="Mail"/>
             <Label Grid.Column="2"
-                Content="{Binding LblDepartment}"/>
+                Content="Service"/>
             <TextBox Grid.Column="1"
                 Text ="{Binding TbMailValue, Mode=TwoWay}"/>
             <ComboBox Grid.Column="3"
                 ItemsSource ="{Binding DepartmentList}"
-                SelectedItem="{Binding SelectedDepartment}"/>
+                SelectedItem="{Binding SelectedDepartment}"
+                Foreground="Black"/>
         </Grid>
 
         <!--Confirmation to add staff-->
@@ -136,7 +137,7 @@
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
             <Button Grid.Column="1"
-                Content="{Binding BtnValidate}"
+                Content="Valider"
                 Command="{Binding ValidateCommand}">
                 <Button.Resources>
                     <Style TargetType="{x:Type Border}">
@@ -145,7 +146,7 @@
                 </Button.Resources>
             </Button>
             <Button Grid.Column="2"
-                Content="{Binding BtnCancel}"
+                Content="Annuler"
                 Command="{Binding CancelCommand}">
                 <Button.Resources>
                     <Style TargetType="{x:Type Border}">

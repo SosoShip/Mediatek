@@ -13,7 +13,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SVE.Mediatek.Model", "SVE.M
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SVE.Mediatek.DAL", "SVE.Mediatek.DAL\SVE.Mediatek.DAL.csproj", "{05AAB175-AEA4-4DB7-A527-B8E8A4607F3E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SVE.Mediatek.DAL.IntegrationTest", "SVE.Mediatek.DAL.IntegrationTest\SVE.Mediatek.DAL.IntegrationTest.csproj", "{4FB44F71-2D78-424D-9794-03A9A8C24727}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SVE.Mediatek.DAL.IntegrationTest", "SVE.Mediatek.DAL.IntegrationTest\SVE.Mediatek.DAL.IntegrationTest.csproj", "{4FB44F71-2D78-424D-9794-03A9A8C24727}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

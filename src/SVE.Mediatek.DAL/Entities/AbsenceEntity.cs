@@ -8,15 +8,12 @@ namespace SVE.Mediatek.DAL.Entities
 {
     public class AbsenceEntity : EntityBase
     {
-        public DateOnly BeginDate { get; set; }
-        public DateOnly EndDate { get; set; }
-        public ReasonEntity Reason { get; set; }
+        public required DateOnly BeginDate { get; set; }
+        public required DateOnly EndDate { get; set; }
+        public required Reason Reason { get; set; }
 
-        public AbsenceEntity(DateOnly beginDate, DateOnly endDate, ReasonEntity reason) 
+        public AbsenceEntity() 
         {
-            BeginDate = beginDate;
-            EndDate = endDate;
-            Reason = reason;
         }
     }
 }

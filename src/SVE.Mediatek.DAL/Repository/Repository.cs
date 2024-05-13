@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using SVE.Mediatek.Dal;
+using SVE.Mediatek.DAL.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,7 +13,7 @@ namespace SVE.Mediatek.DAL.Repository
     /// Entity managment from DataBase
     /// </summary>
     /// <typeparam name="TEntity"></typeparam>
-    public abstract class Repository<TEntity> : IRepository<TEntity> where TEntity : class
+    public class Repository<TEntity> : IRepository<TEntity> where TEntity : class
     {
         // DbContext instance for database session
         protected readonly MediatekContext Context;
@@ -60,6 +61,8 @@ namespace SVE.Mediatek.DAL.Repository
         /// <returns></returns>
         public async Task Update(TEntity entity)
         {
+            //erease context memory
+            Context.ChangeTracker.Clear();
             Context.Set<TEntity>().Update(entity);
             await Context.SaveChangesAsync();
         }

@@ -45,21 +45,21 @@
         </Grid.RowDefinitions>
         <!--titles definition-->
         <Grid Grid.Row="0">
-            <Label Content="{Binding LblMediatek}" 
+            <Label Content="MEDIATEK" 
             HorizontalAlignment="Center" 
             VerticalAlignment="Center"
             FontSize="35"
             Foreground="DarkTurquoise" />
         </Grid>
         <Grid Grid.Row="1">
-            <Label Content="{Binding LblTitle}" 
+            <Label Content="GESTION DU PERSONNEL" 
             HorizontalAlignment="Center"  
             VerticalAlignment="Center" 
             FontSize="30"              
             Foreground="White"/>
         </Grid>
         <Grid Grid.Row="2">
-            <Label Content="{Binding LblInformation}" 
+            <Label Content="Se connecter pour continer"
             HorizontalAlignment="Center"  
             VerticalAlignment="Center" 
             FontSize="12"              
@@ -67,7 +67,7 @@
         </Grid>
         <!--connections information-->
         <Grid Grid.Row="3">
-            <Label Content="{Binding LblMail}" 
+            <Label Content="EMAIL"
             HorizontalAlignment="Center"  
             VerticalAlignment="Bottom"
             FontSize="15"              
@@ -78,7 +78,7 @@
          Text="{Binding TbLoginValue, Mode=TwoWay}"/>
         </Grid>
         <Grid Grid.Row="5">
-            <Label Content="{Binding LblPassword}" 
+            <Label Content="MOT DE PASSE"
             HorizontalAlignment="Center"  
             VerticalAlignment="Bottom"
             FontSize="15"              
@@ -90,7 +90,7 @@
         </Grid>
         <!--connection validate-->
         <Button Grid.Row="7"
-            Content="{Binding BtnValidate}" 
+            Content="Se connecter"
             Command="{Binding ConnectionCommand}" >
             <Button.Resources>
                 <Style TargetType="{x:Type Border}">
