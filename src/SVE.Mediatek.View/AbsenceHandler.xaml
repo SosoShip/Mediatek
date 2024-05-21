@@ -87,6 +87,7 @@
                 <RowDefinition Height="4*"/>
                 <RowDefinition Height="0.3*"/>
             </Grid.RowDefinitions>
+
             <!--Titles definition-->
             <Label Grid.Row="0"
                Content="MEDIATEK"
@@ -115,26 +116,80 @@
             <DataGrid Grid.Row="3"
                 ItemsSource="{Binding AbsenceList}" 
                 SelectedItem="{Binding SelectedAbsence, Mode=TwoWay}"
-                Margin="15,15,15,15"         
+                Margin="15,15,15,15" 
+                BorderThickness="1"
+                BorderBrush="White" 
                 Background="Black"
                 RowHeaderWidth="0"
-                ColumnWidth="*">
+                ColumnWidth="*"
+                IsReadOnly="True"
+                AutoGenerateColumns="False">
+
+                <DataGrid.Resources>
+                    <Style x:Key="CenteredCellStyle" TargetType="DataGridCell">
+                        <Setter Property="HorizontalAlignment" Value="Center"/>
+                        <Setter Property="VerticalAlignment" Value="Center"/>
+                    </Style>
+                </DataGrid.Resources>
+
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Date du début" Binding="{Binding BeginDate}">
+                        <DataGridTextColumn.ElementStyle>
+                            <Style TargetType="TextBlock">
+                                <Setter Property="HorizontalAlignment" Value="Center"/>
+                            </Style>
+                        </DataGridTextColumn.ElementStyle>
+                    </DataGridTextColumn>
+                    <DataGridTextColumn Header="Date de fin" Binding="{Binding EndDate}">
+                        <DataGridTextColumn.ElementStyle>
+                            <Style TargetType="TextBlock">
+                                <Setter Property="HorizontalAlignment" Value="Center"/>
+                            </Style>
+                        </DataGridTextColumn.ElementStyle>
+                    </DataGridTextColumn>
+                    <DataGridTextColumn Header="Motif" Binding="{Binding Reason}">
+                        <DataGridTextColumn.ElementStyle>
+                            <Style TargetType="TextBlock">
+                                <Setter Property="HorizontalAlignment" Value="Center"/>
+                            </Style>
+                        </DataGridTextColumn.ElementStyle>
+                    </DataGridTextColumn>
+                </DataGrid.Columns>
 
                 <DataGrid.ColumnHeaderStyle>
                     <Style TargetType="{x:Type DataGridColumnHeader}">
                         <Setter Property="Background" Value="Black"/>
                         <Setter Property="Foreground" Value="DarkTurquoise"/>
                         <Setter Property="BorderBrush" Value="White" />
-                        <Setter Property="BorderThickness" Value="1" />
+                        <Setter Property="BorderThickness" Value="0" />
+                        <Setter Property="HorizontalContentAlignment" Value="Center"/>
                     </Style>
                 </DataGrid.ColumnHeaderStyle>
 
-                <DataGrid.CellStyle>
-                    <Style TargetType="{x:Type DataGridCell}">
+                <DataGrid.RowStyle>
+                    <Style TargetType="DataGridRow">
                         <Setter Property="Background" Value="Black"/>
-                        <Setter Property="Foreground" Value="White"/>
+                        <Style.Triggers>
+                            <Trigger Property="IsSelected" Value="True">
+                                <Setter Property="Background" Value="LightBlue"/>
+                            </Trigger>
+                        </Style.Triggers>
+                        <Style.Resources>
+                            <!-- Override default cell style -->
+                            <Style TargetType="DataGridCell">
+                                <Setter Property="Background" Value="Transparent"/>
+                                <Setter Property="Foreground" Value="White"/>
+                                <Style.Triggers>
+                                    <Trigger Property="IsSelected" Value="True">
+                                        <Setter Property="Background" Value="LightBlue"/>
+                                        <Setter Property="Foreground" Value="Black"/>
+                                    </Trigger>
+                                </Style.Triggers>
+                            </Style>
+                        </Style.Resources>
                     </Style>
-                </DataGrid.CellStyle>
+                </DataGrid.RowStyle>
+
             </DataGrid>
         </Grid>
     </Grid>

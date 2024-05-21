@@ -9,10 +9,10 @@ namespace SVE.Mediatek.DAL.Entities
     public class ManagerEntity : StaffEntity
     {
         public required string Password { get; set; }
+        public required string Salt { get; set; }
 
         public ManagerEntity()
         {         
-           // Password = "password";//TODO Login = mail et passwod = sha2machin
         }
     }
 }

@@ -23,6 +23,17 @@
         <Setter Property="BorderBrush" Value="White"/>
         <Setter Property="FontSize" Value="18"/>
     </Style>
+    <Style TargetType="{x:Type PasswordBox}">
+        <Setter Property="HorizontalAlignment" Value="Center"/>
+        <Setter Property="VerticalAlignment" Value="Center"/>
+        <Setter Property="Width" Value="250"/>
+        <Setter Property="Height" Value="40"/>
+        <Setter Property="Background" Value="Black"/>
+        <Setter Property="Foreground" Value="White"/>
+        <Setter Property="BorderThickness" Value="2"/>
+        <Setter Property="BorderBrush" Value="White"/>
+        <Setter Property="FontSize" Value="18"/>
+    </Style>
         <Style TargetType="{x:Type Button}">
         <Setter Property="Height" Value="40"/>
         <Setter Property="Width" Value="160"/>
@@ -85,8 +96,11 @@
             Foreground="White"/>
         </Grid>
         <Grid Grid.Row="6">
-            <TextBox Name="tbPassword"
-            Text="{Binding TbPasswordValue, Mode=TwoWay}"/>
+            <!--<TextBox Name="tbPassword"
+            Text="{Binding TbPasswordValue, Mode=TwoWay}"/>-->
+            <PasswordBox
+                PasswordChar="*"
+                PasswordChanged="PasswordBox_PasswordChanged"/>
         </Grid>
         <!--connection validate-->
         <Button Grid.Row="7"

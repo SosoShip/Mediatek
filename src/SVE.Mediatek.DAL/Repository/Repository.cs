@@ -25,10 +25,10 @@ namespace SVE.Mediatek.DAL.Repository
         }
 
         /// <summary>
-        /// Retrieves a entitie from the database.
+        /// Retrieves a entity from the database.
         /// </summary>
         /// <param name="id"></param>
-        /// <returns></returns>
+        /// <returns>entity</returns>
         public async Task<TEntity> Get(int id)
         {
             return await Context.Set<TEntity>().FindAsync(id);
@@ -37,10 +37,10 @@ namespace SVE.Mediatek.DAL.Repository
         /// <summary>
         /// Retrieves all entities from the database.
         /// </summary>
-        /// <returns></returns>
-        public async Task<IEnumerable<TEntity>> GetAll()
+        /// <returns>Queryable of all entities</returns>
+        public IQueryable<TEntity> GetAll()
         {
-            return await Context.Set<TEntity>().ToListAsync();
+            return Context.Set<TEntity>().AsQueryable<TEntity>();
         }
 
         /// <summary>

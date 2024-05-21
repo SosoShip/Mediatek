@@ -177,3 +177,10 @@ C:\Digital\projets\Mediatek\src\SVE.Mediatek\obj\Debug\net8.0-windows\refint\SVE
 C:\Digital\projets\Mediatek\src\SVE.Mediatek\obj\Debug\net8.0-windows\SVE.Mediatek.pdb
 C:\Digital\projets\Mediatek\src\SVE.Mediatek\obj\Debug\net8.0-windows\SVE.Mediatek.genruntimeconfig.cache
 C:\Digital\projets\Mediatek\src\SVE.Mediatek\obj\Debug\net8.0-windows\ref\SVE.Mediatek.dll
+C:\Digital\projets\Mediatek\src\SVE.Mediatek\bin\Debug\net8.0-windows\Microsoft.Extensions.Configuration.dll
+C:\Digital\projets\Mediatek\src\SVE.Mediatek\bin\Debug\net8.0-windows\Microsoft.Extensions.Configuration.FileExtensions.dll
+C:\Digital\projets\Mediatek\src\SVE.Mediatek\bin\Debug\net8.0-windows\Microsoft.Extensions.Configuration.Json.dll
+C:\Digital\projets\Mediatek\src\SVE.Mediatek\bin\Debug\net8.0-windows\Microsoft.Extensions.Configuration.UserSecrets.dll
+C:\Digital\projets\Mediatek\src\SVE.Mediatek\bin\Debug\net8.0-windows\Microsoft.Extensions.FileProviders.Abstractions.dll
+C:\Digital\projets\Mediatek\src\SVE.Mediatek\bin\Debug\net8.0-windows\Microsoft.Extensions.FileProviders.Physical.dll
+C:\Digital\projets\Mediatek\src\SVE.Mediatek\bin\Debug\net8.0-windows\Microsoft.Extensions.FileSystemGlobbing.dll

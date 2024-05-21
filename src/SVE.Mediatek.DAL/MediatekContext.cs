@@ -25,9 +25,9 @@ namespace SVE.Mediatek.Dal
             base.Dispose();
         }
 
-        //public MediatekContext()
-        //{
-        //}
+        public MediatekContext()
+        {
+        }
 
         /// <summary>
         /// The constructor parameter DbContextOptions carries the configuration options for the DbContext, 
@@ -39,6 +39,7 @@ namespace SVE.Mediatek.Dal
         public MediatekContext(DbContextOptions<MediatekContext> options) : base(options)
         {
         }
+
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {

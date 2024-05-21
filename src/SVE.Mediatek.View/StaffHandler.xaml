@@ -106,26 +106,89 @@
                 SelectedItem="{Binding SelectedStaff, Mode=TwoWay}"
                 Margin="15,15,15,15"         
                 Background="Black"
+                BorderThickness="1"
+                BorderBrush="White"      
                 RowHeaderWidth="0"
-                ColumnWidth="*">
+                ColumnWidth="*"
+                IsReadOnly="True"
+                AutoGenerateColumns="False"
+                SelectionUnit="FullRow">
+
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Nom" Binding="{Binding Name}">
+                        <DataGridTextColumn.ElementStyle>
+                            <Style TargetType="TextBlock">
+                                <Setter Property="HorizontalAlignment" Value="Center"/>
+                            </Style>
+                        </DataGridTextColumn.ElementStyle>
+                    </DataGridTextColumn>
+                    
+                    <DataGridTextColumn Header="Prénom" Binding="{Binding FirsName}">
+                        <DataGridTextColumn.ElementStyle>
+                            <Style TargetType="TextBlock">
+                                <Setter Property="HorizontalAlignment" Value="Center"/>
+                            </Style>
+                        </DataGridTextColumn.ElementStyle>
+                    </DataGridTextColumn>
+
+                    <DataGridTextColumn Header="Mail" Binding="{Binding Email}">
+                        <DataGridTextColumn.ElementStyle>
+                            <Style TargetType="TextBlock">
+                                <Setter Property="HorizontalAlignment" Value="Center"/>
+                            </Style>
+                        </DataGridTextColumn.ElementStyle>
+                    </DataGridTextColumn>
+                    <DataGridTextColumn Header="Téléphone" Binding="{Binding Phone}">
+                        <DataGridTextColumn.ElementStyle>
+                            <Style TargetType="TextBlock">
+                                <Setter Property="HorizontalAlignment" Value="Center"/>
+                            </Style>
+                        </DataGridTextColumn.ElementStyle>
+                    </DataGridTextColumn>
+                    <DataGridTextColumn Header="Département" Binding="{Binding Department}">
+                        <DataGridTextColumn.ElementStyle>
+                            <Style TargetType="TextBlock">
+                                <Setter Property="HorizontalAlignment" Value="Center"/>
+                            </Style>
+                        </DataGridTextColumn.ElementStyle>
+                    </DataGridTextColumn>
+                </DataGrid.Columns>
 
                 <DataGrid.ColumnHeaderStyle>
                     <Style TargetType="{x:Type DataGridColumnHeader}">
                         <Setter Property="Background" Value="Black"/>
                         <Setter Property="Foreground" Value="DarkTurquoise"/>
                         <Setter Property="BorderBrush" Value="White" />
-                        <Setter Property="BorderThickness" Value="1" />
+                        <Setter Property="BorderThickness" Value="0" />
+                        <Setter Property="HorizontalContentAlignment" Value="Center"/>
                     </Style>
                 </DataGrid.ColumnHeaderStyle>
 
-                <DataGrid.CellStyle>
-                    <Style TargetType="{x:Type DataGridCell}">
+                <DataGrid.RowStyle>
+                    <Style TargetType="DataGridRow">
                         <Setter Property="Background" Value="Black"/>
-                        <Setter Property="Foreground" Value="White"/>
+                        <Style.Triggers>
+                            <Trigger Property="IsSelected" Value="True">
+                                <Setter Property="Background" Value="LightBlue"/>
+                            </Trigger>
+                        </Style.Triggers>
+                        <Style.Resources>
+                            <!-- Override default cell style -->
+                            <Style TargetType="DataGridCell">
+                                <Setter Property="Background" Value="Transparent"/>
+                                <Setter Property="Foreground" Value="White"/>
+                                <Style.Triggers>
+                                    <Trigger Property="IsSelected" Value="True">
+                                        <Setter Property="Background" Value="LightBlue"/>
+                                        <Setter Property="Foreground" Value="Black"/>
+                                    </Trigger>
+                                </Style.Triggers>
+                            </Style>
+                        </Style.Resources>
                     </Style>
-                </DataGrid.CellStyle>
-            </DataGrid>
+                </DataGrid.RowStyle>
 
+            </DataGrid>
         </Grid>
     </Grid>
 </Window>

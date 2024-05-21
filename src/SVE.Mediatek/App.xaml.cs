@@ -14,6 +14,9 @@ using Microsoft.Extensions.Configuration;
 using SVE.Mediatek.DAL.Entities;
 using SVE.Mediatek.ViewModel.ViewModels;
 using SVE.Mediatek.ViewModel.Mappers;
+using System;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
+
 
 namespace SVE.Mediatek
 {
@@ -55,11 +58,15 @@ namespace SVE.Mediatek
             services.AddSingleton<AbsenceAddViewModel>();
             services.AddSingleton<AbsenceChangeViewModel>();
             services.AddSingleton<AbsenceHandlerViewModel>();
+            // Adding services : ManagerInitializer :
+            services.AddSingleton<ManagerInitializer>();
             // Adding services : Repositories :
             services.AddSingleton<IRepository<StaffEntity>, Repository<StaffEntity>>();
             services.AddSingleton<IAbsenceRepository, AbsenceRepository>();
+            services.AddSingleton<IManagerRepository<ManagerEntity>, ManagerRepository>();
             // Adding services : Mappers :
             services.AddAutoMapper(configuration => configuration.AddProfile<MappingProfile>());
+            
 
             return services.BuildServiceProvider();
         }
@@ -70,6 +77,12 @@ namespace SVE.Mediatek
         protected override void OnStartup(StartupEventArgs e)
         {
             base.OnStartup(e);
+
+            // Initialization of a manager
+            // In this school app, this manager will remain for life, cannot resign or be replaced.
+            var newManager = Services.GetService<ManagerInitializer>();
+            newManager.InitializeManager(); 
+
             var connectionWindow = new Connection();
 
             // Initialization of ConnectionViewModel and Binding of the connection window's view-viewModel

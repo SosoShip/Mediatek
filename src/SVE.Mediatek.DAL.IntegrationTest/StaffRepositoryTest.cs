@@ -107,7 +107,7 @@ namespace SVE.Mediatek.DAL.IntegrationTest
             _ = _staffRepository.Add(staff2);
 
             // Act
-            var theStaffs = await _staffRepository.GetAll();
+            var theStaffs = _staffRepository.GetAll();
 
             // Assert
             theStaffs.Should().HaveCount(2);

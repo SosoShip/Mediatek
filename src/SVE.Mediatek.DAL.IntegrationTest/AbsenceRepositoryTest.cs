@@ -125,11 +125,11 @@ namespace SVE.Mediatek.DAL.IntegrationTest
             _abscenceRepository.AddAbsence(staff.Id, absence2);
 
             // Act
-            var theStaffs = await _abscenceRepository.GetAll();
+            var theAbsence = _abscenceRepository.GetAll();
 
             // Assert
-            theStaffs.Should().HaveCount(2);
-            theStaffs.Should().Contain(new[] { absence1, absence2 });
+            theAbsence.Should().HaveCount(2);
+            theAbsence.Should().Contain(new[] { absence1, absence2 });
         }
 
         [Test]
