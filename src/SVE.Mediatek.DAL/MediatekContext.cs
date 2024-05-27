@@ -17,7 +17,6 @@ namespace SVE.Mediatek.Dal
         public DbSet<StaffEntity> Staffs { get; set; }
         public DbSet<ManagerEntity> Manager { get; set; }
         public DbSet<AbsenceEntity> Absence { get; set; }
-        public string Connection { get; set; }
 
         // TODO override dispose et test evec using et non
         public override void Dispose()
@@ -38,18 +37,6 @@ namespace SVE.Mediatek.Dal
         /// <param name="options"></param>
         public MediatekContext(DbContextOptions<MediatekContext> options) : base(options)
         {
-        }
-
-
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        {
-            //if (optionsBuilder.IsConfigured)
-            //{
-            //    base.OnConfiguring(optionsBuilder);
-            //    return;
-            //}
-            optionsBuilder.UseSqlServer("Data Source=.\\" +
-                "SQLEXPRESS;Initial Catalog=Mediatek;Integrated Security=true;TrustServerCertificate=true;");   
         }
     }
 }
