@@ -51,8 +51,8 @@ namespace SVE.Mediatek.DAL.Repository
             var isBeginDate = await Context.Absence.AnyAsync(a => a.BeginDate == beginDate);
             var isEndDate = await Context.Absence.AnyAsync(b => b.EndDate == endDate);
 
-            if (!isBeginDate && !isEndDate) return false;
-            return true;
+            if (isBeginDate && isEndDate) return true;
+            return false;
         }
     }
 }

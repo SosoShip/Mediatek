@@ -87,18 +87,19 @@ namespace SVE.Mediatek
 
             // Initialization of ConnectionViewModel and Binding of the connection window's view-viewModel
             var viewModel = Services.GetService<ConnectionViewModel>();
-            viewModel.ShowStaffAction = () => ShowStaff(connectionWindow);
+            viewModel.ShowStaffAction = async () => await ShowStaff(connectionWindow);
             connectionWindow.DataContext = viewModel;
 
             connectionWindow.Show();
         }
 
-        public void ShowStaff(Window previousWindow)
+        public async Task ShowStaff(Window previousWindow)
         {
             var StaffHandlerWindow = new StaffHandler();
 
             // Initialization of StaffHandlerViewModel and Binding of the connection window's view-viewModel
             var viewModel = Services.GetService<StaffHandlerViewModel>();
+            await viewModel.DisplaytStaffList();
             viewModel.ShowAddStaffAction = () => ShowAddStaff(StaffHandlerWindow);
             viewModel.ShowChangeStaffAction = (staff) => ShowChangeStaff(staff, StaffHandlerWindow);
             viewModel.ShowAbsenceAction = (staff) => ShowAbsence(staff, StaffHandlerWindow);
@@ -116,7 +117,7 @@ namespace SVE.Mediatek
 
             // Initialization of StaffAddViewModel and Binding of the connection window's view-viewModel
             var viewModel = Services.GetService<StaffAddViewModel>();
-            viewModel.ShowStaffAction= () => ShowStaff(StaffAddWindow);
+            viewModel.ShowStaffAction= async () => await ShowStaff(StaffAddWindow);
 
             StaffAddWindow.DataContext = viewModel;
 
@@ -132,7 +133,7 @@ namespace SVE.Mediatek
             // Initialization of StaffChangeViewModel and Binding of the connection window's view-viewModel
             var viewModel = Services.GetService<StaffChangeViewModel>();
             viewModel.TheStaff = staff;
-            viewModel.ShowStaffAction = () => ShowStaff(staffChangeWindow);
+            viewModel.ShowStaffAction = async () => await ShowStaff(staffChangeWindow);
 
             staffChangeWindow.DataContext = viewModel;
 
@@ -148,7 +149,8 @@ namespace SVE.Mediatek
             // Initialization of AbsenceHandlerViewModel and Binding of the connection window's view-viewModel
             var viewModel = Services.GetService<AbsenceHandlerViewModel>();
             viewModel.TheStaff = staff;
-            viewModel.ShowStaffAction = () => ShowStaff(AbsenceHandlerWindow);
+            viewModel.DisplayAbsenceList();
+            viewModel.ShowStaffAction = async () => await ShowStaff(AbsenceHandlerWindow);
             viewModel.ShowAddAbsenceAction = () => ShowAddAbsence(staff, AbsenceHandlerWindow);
             viewModel.ShowChangeAbsenceAction = (selectedAbsence) => ShowChangeAbsence(staff, selectedAbsence, AbsenceHandlerWindow);
 
