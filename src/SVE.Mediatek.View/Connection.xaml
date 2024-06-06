@@ -63,7 +63,7 @@
             Foreground="DarkTurquoise" />
         </Grid>
         <Grid Grid.Row="1">
-            <Label Content="GESTION DU PERSONNEL" 
+            <Label Content="CONNECTION" 
             HorizontalAlignment="Center"  
             VerticalAlignment="Center" 
             FontSize="30"              

@@ -18,11 +18,6 @@ namespace SVE.Mediatek.Dal
         public DbSet<ManagerEntity> Manager { get; set; }
         public DbSet<AbsenceEntity> Absence { get; set; }
 
-        // TODO override dispose et test evec using et non
-        public override void Dispose()
-        {
-            base.Dispose();
-        }
 
         public MediatekContext()
         {
@@ -38,5 +33,13 @@ namespace SVE.Mediatek.Dal
         public MediatekContext(DbContextOptions<MediatekContext> options) : base(options)
         {
         }
+
+        // Uncomment to use CodeFirst migration. 
+        //protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        //{
+        //    optionsBuilder.UseSqlServer("Data Source=.\\" +
+        //        "SQLEXPRESS;Initial Catalog=Mediatek;Integrated Security=true;TrustServerCertificate=true;");
+        //    base.OnConfiguring(optionsBuilder);
+        //}
     }
 }

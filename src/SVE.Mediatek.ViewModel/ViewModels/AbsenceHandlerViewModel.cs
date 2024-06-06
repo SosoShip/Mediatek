@@ -48,13 +48,15 @@ namespace SVE.Mediatek.ViewModel.ViewModels
         public Action<AbsenceModel> ShowChangeAbsenceAction { get; set; }
         public ObservableCollection<AbsenceModel> AbsenceList { get; set; }
         public IAbsenceRepository AbsenceRepository { get; set; }
+        public IStaffRepository StaffRepository { get; set; }
         IMapper Mapper { get; set; }
         // Event handler for page refresh
         public event PropertyChangedEventHandler? PropertyChanged;
 
-        public AbsenceHandlerViewModel(IAbsenceRepository absenceRepository, IMapper mapper)
+        public AbsenceHandlerViewModel(IAbsenceRepository absenceRepository, IStaffRepository staffRepository, IMapper mapper)
         {
             AbsenceRepository = absenceRepository;
+            StaffRepository = staffRepository;
             Mapper = mapper;
 
             // Draw button command
@@ -85,10 +87,9 @@ namespace SVE.Mediatek.ViewModel.ViewModels
         /// <summary>
         /// Displaying the list of absences
         /// </summary>
-        public async void DisplayAbsenceList()
+        public async Task DisplayAbsenceList()
         {
-            var absenceList = await GenerateAbsenceList();
-            AbsenceList = absenceList;
+            AbsenceList = await GenerateAbsenceList();
             // View update
             RaisePropertyChanged(nameof(AbsenceList));
         }
@@ -96,10 +97,10 @@ namespace SVE.Mediatek.ViewModel.ViewModels
         /// <summary>
         /// Displays the absences of a staff member in the fields of View
         /// </summary>
-        public void DisplayAbsenceOfTheStaff()
+        public async Task DisplayAbsenceOfTheStaff()
         {
             LblAbsenceOf = $"Absence de {TheStaff.Name} {TheStaff.FirsName}";
-            DisplayAbsenceList();
+            await DisplayAbsenceList();
         }
 
         /// <summary>
@@ -110,11 +111,12 @@ namespace SVE.Mediatek.ViewModel.ViewModels
         {
             ObservableCollection<AbsenceModel>? listAbscenceModel = null;
             try
-            {
-                var staffAbsencesIds = TheStaff.AbsenceList.Select(abs => abs.Id).ToList();
+            { 
+                //var staffAbsencesIds = TheStaff.AbsenceList.Select(abs => abs.Id).ToList();
                 var listAbsenceEntity = new ObservableCollection<AbsenceEntity>(
                     await AbsenceRepository.GetAll()
-                    .Where(s => staffAbsencesIds.Contains(s.Id))
+                    .Where(a => a.StaffEntityId == TheStaff.Id)
+                    //.Where(s => staffAbsencesIds.Contains(s.Id))
                     .OrderByDescending(e => e.BeginDate).ToListAsync());
                 listAbscenceModel = Mapper.Map<ObservableCollection<AbsenceModel>>(listAbsenceEntity);
             }
@@ -144,7 +146,7 @@ namespace SVE.Mediatek.ViewModel.ViewModels
         /// <summary>
         /// Del an TheAbsence
         /// </summary>
-        public async void DelAnAbsence()
+        public async Task DelAnAbsence()
         {
             if (MessageBox.Show($"Voulez vous supprimer l'absence de {TheStaff}?",
                 "Supression d'une abscence",

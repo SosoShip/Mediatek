@@ -8,6 +8,7 @@ namespace SVE.Mediatek.DAL.Entities
 {
     public class AbsenceEntity : EntityBase
     {
+        public int? StaffEntityId { get; set; }
         public required DateOnly BeginDate { get; set; }
         public required DateOnly EndDate { get; set; }
         public required Reason Reason { get; set; }

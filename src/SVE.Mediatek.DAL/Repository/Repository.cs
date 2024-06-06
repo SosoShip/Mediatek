@@ -73,7 +73,7 @@ namespace SVE.Mediatek.DAL.Repository
         /// <param name="id"></param>
         /// <returns></returns>
         public async Task Delete(int id)
-        {
+        { 
             var entity = await Context.Set<TEntity>().FindAsync(id);
             Context.Set<TEntity>().Remove(entity);
             await Context.SaveChangesAsync();

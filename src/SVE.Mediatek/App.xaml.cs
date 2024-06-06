@@ -61,7 +61,7 @@ namespace SVE.Mediatek
             // Adding services : ManagerInitializer :
             services.AddSingleton<ManagerInitializer>();
             // Adding services : Repositories :
-            services.AddSingleton<IRepository<StaffEntity>, Repository<StaffEntity>>();
+            services.AddSingleton<IStaffRepository, StaffRepository>();
             services.AddSingleton<IAbsenceRepository, AbsenceRepository>();
             services.AddSingleton<IManagerRepository<ManagerEntity>, ManagerRepository>();
             // Adding services : Mappers :
@@ -81,7 +81,8 @@ namespace SVE.Mediatek
             // Initialization of a manager
             // In this school app, this manager will remain for life, cannot resign or be replaced.
             var newManager = Services.GetService<ManagerInitializer>();
-            newManager.InitializeManager(); 
+            Task.Run(() => newManager.InitializeManager()).Wait();
+            
 
             var connectionWindow = new Connection();
 
@@ -102,7 +103,7 @@ namespace SVE.Mediatek
             await viewModel.DisplaytStaffList();
             viewModel.ShowAddStaffAction = () => ShowAddStaff(StaffHandlerWindow);
             viewModel.ShowChangeStaffAction = (staff) => ShowChangeStaff(staff, StaffHandlerWindow);
-            viewModel.ShowAbsenceAction = (staff) => ShowAbsence(staff, StaffHandlerWindow);
+            viewModel.ShowAbsenceAction = async (staff) => await ShowAbsence(staff, StaffHandlerWindow);
            
             StaffHandlerWindow.DataContext = viewModel;
 
@@ -142,14 +143,14 @@ namespace SVE.Mediatek
             staffHandler.Close();
         }
 
-        public void ShowAbsence(StaffModel staff, Window previousWindow)
+        public async Task ShowAbsence(StaffModel staff, Window previousWindow)
         {
             var AbsenceHandlerWindow = new AbsenceHandler();
 
             // Initialization of AbsenceHandlerViewModel and Binding of the connection window's view-viewModel
             var viewModel = Services.GetService<AbsenceHandlerViewModel>();
             viewModel.TheStaff = staff;
-            viewModel.DisplayAbsenceList();
+            await viewModel.DisplayAbsenceList();
             viewModel.ShowStaffAction = async () => await ShowStaff(AbsenceHandlerWindow);
             viewModel.ShowAddAbsenceAction = () => ShowAddAbsence(staff, AbsenceHandlerWindow);
             viewModel.ShowChangeAbsenceAction = (selectedAbsence) => ShowChangeAbsence(staff, selectedAbsence, AbsenceHandlerWindow);
@@ -168,7 +169,7 @@ namespace SVE.Mediatek
             // Initialization of AbsenceAddViewModel and Binding of the connection window's view-viewModel
             var viewModel = Services.GetService<AbsenceAddViewModel>();
             viewModel.TheStaff = staff;
-            viewModel.ShowAbsenceAction = () => ShowAbsence(staff, AbsenceAddWindow);
+            viewModel.ShowAbsenceAction = async () => await ShowAbsence(staff, AbsenceAddWindow);
 
             AbsenceAddWindow.DataContext = viewModel;
 
@@ -185,7 +186,7 @@ namespace SVE.Mediatek
             var viewModel = Services.GetService<AbsenceChangeViewModel>();
             viewModel.TheStaff = staff;
             viewModel.TheAbsence = absence;
-            viewModel.ShowAbsenceAction = () => ShowAbsence(staff, AbsenceChangeWindow);
+            viewModel.ShowAbsenceAction = async () => await ShowAbsence(staff, AbsenceChangeWindow);
 
             AbsenceChangeWindow.DataContext = viewModel;
 

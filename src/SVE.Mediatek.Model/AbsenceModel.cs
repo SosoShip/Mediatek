@@ -8,6 +8,7 @@ namespace SVE.Mediatek.Model
 {
     public class AbsenceModel : ModelBase
     {
+        public int? StaffEntityId { get; set; }
         public required DateOnly BeginDate { get; set; }
         public required DateOnly EndDate { get; set; }
         public required ReasonModel Reason { get; set; }

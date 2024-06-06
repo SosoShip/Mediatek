@@ -9,7 +9,7 @@ namespace SVE.Mediatek.DAL.IntegrationTest
 {
     public class StaffRepositoryTest
     {
-        private IRepository<StaffEntity> _staffRepository;
+        private IStaffRepository _staffRepository;
         private MediatekContext _context;
 
         [SetUp]
@@ -19,7 +19,7 @@ namespace SVE.Mediatek.DAL.IntegrationTest
                 .UseInMemoryDatabase(databaseName: "TestDatabase") // Creation of an in-memory database
                 .Options;
             _context = new MediatekContext(options);
-            _staffRepository = new Repository<StaffEntity>(_context);
+            _staffRepository = new StaffRepository(_context);
         }
       
         [TearDown]

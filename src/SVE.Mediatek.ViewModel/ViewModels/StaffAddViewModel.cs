@@ -25,17 +25,17 @@ namespace SVE.Mediatek.ViewModel.ViewModels
         public ICommand ValidateCommand { get; set; }
         public ICommand CancelCommand { get; set; }
         public Action ShowStaffAction { get; set; }
-        public IRepository<StaffEntity> StaffRepository { get; set; }
+        public IStaffRepository StaffRepository { get; set; }
         IMapper Mapper { get; set; }
         public event PropertyChangedEventHandler? PropertyChanged;
 
-        public StaffAddViewModel(IRepository<StaffEntity> staffRepository, IMapper mapper)
+        public StaffAddViewModel(IStaffRepository staffRepository, IMapper mapper)
         {
             StaffRepository = staffRepository;
             Mapper = mapper;
             DepartmentList = GenerateDepartmentList();
 
-            ValidateCommand = new CommandHandler() { CommandExecute = (arg) => ValidateAddStaff() };
+            ValidateCommand = new CommandHandler() { CommandExecute = async (arg) => await ValidateAddStaff() };
             CancelCommand = new CommandHandler() { CommandExecute = (arg) => ReturnToStaffHandler() };
         }
 
@@ -64,7 +64,7 @@ namespace SVE.Mediatek.ViewModel.ViewModels
         /// <summary>
         /// Validate the addition of a staff
         /// </summary>
-        public async void ValidateAddStaff()
+        public async Task ValidateAddStaff()
         {
             //Field completion check           
             if (string.IsNullOrEmpty(TbNameValue) ||

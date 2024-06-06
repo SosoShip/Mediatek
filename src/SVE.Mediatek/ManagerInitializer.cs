@@ -24,10 +24,10 @@ namespace SVE.Mediatek
         /// <summary>
         /// Record a manager if he does not exist in the database
         /// </summary>
-        public void InitializeManager()
+        public async Task InitializeManager()
         {
             // Check of the existence of a manager in the database.
-            var managerExists = Context.Manager.Any(m => m.Email == "jcorazon@mediatek.fr");
+            var managerExists = await Context.Manager.AnyAsync(m => m.Email == "jcorazon@mediatek.fr");
             if (managerExists) return;
 
             // Record the manager if he does not exist
@@ -52,8 +52,8 @@ namespace SVE.Mediatek
                 Salt = salt
             };
 
-            Context.Add(manager);
-            Context.SaveChanges();
+            await Context.AddAsync(manager);
+            await Context.SaveChangesAsync();
         }
 
         /// <summary>

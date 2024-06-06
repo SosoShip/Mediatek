@@ -36,11 +36,11 @@ namespace SVE.Mediatek.ViewModel.ViewModels
         public Action ShowAddStaffAction { get; set; }
         public Action<StaffModel> ShowChangeStaffAction { get; set; }
         public Action<StaffModel> ShowAbsenceAction { get; set; }
-        public IRepository<StaffEntity> StaffRepository { get; set; }
+        public IStaffRepository StaffRepository { get; set; }
         public IMapper Mapper { get; set; }
         public event PropertyChangedEventHandler? PropertyChanged; // Page refresh event
 
-        public StaffHandlerViewModel(IRepository<StaffEntity> staffRepository, IMapper mapper)
+        public StaffHandlerViewModel(IStaffRepository staffRepository, IMapper mapper)
         {
             StaffRepository = staffRepository;
             Mapper = mapper;
@@ -121,14 +121,14 @@ namespace SVE.Mediatek.ViewModel.ViewModels
         /// <summary>
         /// Del a staff
         /// </summary>
-        public async void deleteStaffAsync()
+        public async Task deleteStaffAsync()
         {
             if (MessageBox.Show($"Voulez vous vraiment supprimer {SelectedStaff.Name} {SelectedStaff.FirsName}?",
                 "Supression d'un collaborateur",
                 MessageBoxButton.YesNo)
                 == MessageBoxResult.Yes)
             {
-                await StaffRepository.Delete(SelectedStaff.Id);
+                await StaffRepository.DeleteStaff(SelectedStaff.Id);
 
                 // Update
                 StaffList.Remove(SelectedStaff); 

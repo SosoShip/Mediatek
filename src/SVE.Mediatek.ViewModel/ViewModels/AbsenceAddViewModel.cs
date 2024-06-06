@@ -2,16 +2,9 @@
 using SVE.Mediatek.DAL.Entities;
 using SVE.Mediatek.DAL.Repository;
 using SVE.Mediatek.Model;
-using System;
-using System.Collections.Generic;
 using System.ComponentModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Input;
-using System.Windows.Xps;
-using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace SVE.Mediatek.ViewModel.ViewModels
 {

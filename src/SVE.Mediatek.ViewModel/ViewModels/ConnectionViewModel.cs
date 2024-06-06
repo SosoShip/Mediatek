@@ -31,13 +31,13 @@ namespace SVE.Mediatek.ViewModel.ViewModels
         {
             Mapper = mapper;
             ManagerRepository = managerRepository;
-            ConnectionCommand = new CommandHandler() { CommandExecute = (Arg) => CheckManagerCredentials() };
+            ConnectionCommand = new CommandHandler() { CommandExecute = async(Arg) => await CheckManagerCredentials() };
         }
 
         /// <summary>
         /// Verifies the credentials of a manager
         /// </summary>
-        public async void CheckManagerCredentials()
+        public async Task CheckManagerCredentials()
         {
             //Field completion check 
             if (string.IsNullOrEmpty(TbLoginValue) || string.IsNullOrEmpty(Password))

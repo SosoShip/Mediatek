@@ -46,7 +46,7 @@ namespace SVE.Mediatek.DAL.Migrations
 
                     b.HasIndex("StaffEntityId");
 
-                    b.ToTable("Absence");
+                    b.ToTable("Absence", (string)null);
                 });
 
             modelBuilder.Entity("SVE.Mediatek.DAL.Entities.StaffEntity", b =>
@@ -83,7 +83,7 @@ namespace SVE.Mediatek.DAL.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Staffs");
+                    b.ToTable("Staffs", (string)null);
 
                     b.HasDiscriminator<string>("Discriminator").HasValue("StaffEntity");
 

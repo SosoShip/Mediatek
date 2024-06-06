@@ -47,10 +47,10 @@ namespace SVE.Mediatek.ViewModel.ViewModels
         public ICommand? ValidateCommand { get; set; }
         public ICommand? CancelCommand { get; set; }
         public Action ShowStaffAction { get; set; }
-        public IRepository<StaffEntity> StaffRepository { get; set; }
+        public IStaffRepository StaffRepository { get; set; }
         IMapper Mapper { get; set; }
 
-        public StaffChangeViewModel(IRepository<StaffEntity> staffRepository, IMapper mapper)
+        public StaffChangeViewModel(IStaffRepository staffRepository, IMapper mapper)
         {
             StaffRepository = staffRepository;
             Mapper = mapper;
