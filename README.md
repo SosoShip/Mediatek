@@ -1,4 +1,4 @@
-Mediatek
+Mediatek :
 Application de gestion du personnel d'une médiathèque 
 
 Dans ce projet d'application simplifiée de fin de première année d'étude initialement prévu en MVC - winform - mariaDB, j'ai pu choisir d'intégrer des technologies différentes afin de me former sur des frameworks plus réalistes et de tenter d'intégrer certains concepts fondamentaux de la programmation.
@@ -31,7 +31,7 @@ Les actions possibles sont gérées par des boutons qui sont grisés lorsque les
 
 - Commentaire :
 
-J’ai choisi la norme ?? ce qui permet une meilleure lisibilité, je n’ai commenté que ce qui me semblais pertinent ou qui vise à mieux comprendre certains concepts nouveaux pour moi.
+J’ai choisi de mettre peu de commentaires, le nommage des méthodes étant explicite, ce qui permet une meilleure lisibilité. Je n’ai commenté que ce qui me semblais pertinent ou qui vise à mieux comprendre certains concepts nouveaux pour moi.
 
 
 - Concepts de programmation
@@ -46,7 +46,7 @@ J’ai choisi la norme ?? ce qui permet une meilleure lisibilité, je n’ai co
 
     • **Injection de dépendance** J’ai utiliser la bibliothèque Microsoft.Extensions.DependencyInjection et son « conteneur » IserviceProvider afin de faciliter l’inversion du contrôle et la gestion des tests d’intégration dans la class App. Cela m’a aussi permis d’expérimenter ce concept important de la programmation.
 
-    • ** Système de gestion de base de données** J’ai utilisé SQL Serveur management studio qui est une valeur forte de l’environnement .NET
+    • **Système de gestion de base de données** J’ai utilisé SQL Serveur management studio qui est une valeur forte de l’environnement .NET
 
     • **ORM** J’ai choisi Entity Framework qui est tout à fait adapté à un environnement .NET afin de me familiariser avec cette outil 
       
