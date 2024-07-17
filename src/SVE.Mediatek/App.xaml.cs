@@ -47,8 +47,6 @@ namespace SVE.Mediatek
             services.AddDbContext<MediatekContext>(optionsBuilder =>
                 optionsBuilder.UseSqlServer("Data Source=.\\" +
                 "SQLEXPRESS;Initial Catalog=Mediatek;Integrated Security=true;TrustServerCertificate=true;"));
-            //TODO, a la place de l'url, utiliser : Configuration.GetConnectionString("DefaultConnection") 
-            // + penser a implementer l'interface IConfiguration
 
             // Adding services : ViewModels :
             services.AddSingleton<StaffChangeViewModel>();
